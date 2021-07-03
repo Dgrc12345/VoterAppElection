@@ -6,6 +6,7 @@ import 'package:flutter_app/SignUpScreen.dart';
 
 import 'HomeScreen.dart';
 import 'SplashScreen.dart';
+import 'main1.dart';
 
 void main() {
   runApp(LoginScreen());
@@ -169,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Colors.yellow,
                               child:Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen()));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
                               },)
                         ),
                       ],

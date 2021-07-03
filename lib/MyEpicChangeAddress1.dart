@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class MyHomePage extends StatelessWidget {
-  late final String title;
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+class MyEpicChangeAddress1 extends StatelessWidget {
+  final String title;
+
+  MyEpicChangeAddress1({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,20 +15,19 @@ class MyHomePage extends StatelessWidget {
       ),
 
       body: new DefaultTabController(
-        length: 3,
+        length: 2,
         child: new Scaffold(
           appBar: new AppBar(
             actions: <Widget>[],
             title: new TabBar(
               tabs: [
                 new Tab(
-                  child: Text("HOME"),
+                  child: Text("Self"),
                 ),
                 new Tab(
-                  child: Text("CATEGORIE"),
+                  child: Text("Family"),
                 ),
-                new Tab(
-                    child: Text("PREMIUM")),
+
               ],
               indicatorColor: Colors.white,
             ),
@@ -36,11 +37,11 @@ class MyHomePage extends StatelessWidget {
               new Text("Home Page",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.pink,
+                    color:Color.fromARGB(255, 20, 134, 147),
                     fontSize: 22,
                   )),
               new Icon(Icons.directions_transit,size: 50.0,),
-              new Icon(Icons.directions_bike,size: 50.0,),
+
             ],
           ),
         ),
