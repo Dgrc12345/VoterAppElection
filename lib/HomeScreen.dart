@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/AppDrawer.dart';
 
-class MyHomePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
+  static const String routeName = '/home';
   late final String title;
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  HomePage(this.title);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: new AppBar(
         title: Text(title),
       ),

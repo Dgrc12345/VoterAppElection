@@ -14,6 +14,9 @@ void main() {
 
 class LoginScreen extends StatelessWidget {
   // This widget is the root of your application.
+
+  static const String routeName = '/login';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
