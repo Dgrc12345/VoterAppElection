@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/LoginScreen.dart';
 import 'package:flutter_app/AppDrawer.dart';
 import 'package:flutter_app/LoginScreen.dart';
 
@@ -45,6 +46,8 @@ class MyEpicChangeAddress1 extends StatelessWidget {
                   )),
               new LoginScreen(),
               //new Icon(Icons.directions_transit,size: 50.0,),
+              //new Icon(Icons.directions_transit,size: 50.0,),
+              //new LoginScreen(),
 
             ],
           ),
