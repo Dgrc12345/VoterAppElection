@@ -8,7 +8,9 @@ import 'HomeScreen.dart';
 import 'SplashScreen.dart';
 import 'main1.dart';
 
-
+void main() {
+  runApp(LoginScreen());
+}
 
 class LoginScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -36,13 +38,23 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+     class _MyHomePageState extends State<MyHomePage> {
 
-  @override
-  void initState() {
-    super.initState();
-    // startSplashScreen();
-  }
+      String dropdownValue = 'One';
+
+       List <String> spinnerItems = [
+       'One',
+      'Two',
+      'Three',
+      'Four',
+      'Five'
+      ] ;
+
+      @override
+        void initState() {
+        super.initState();
+        // startSplashScreen();
+     }
 
 
 
@@ -51,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 20, 134, 147),
+      backgroundColor: Color.fromARGB(255, 221, 226, 226),
 
       body: SafeArea(
 
@@ -66,30 +78,70 @@ class _MyHomePageState extends State<MyHomePage> {
 
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
+                Text('State', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
                 Container(
-                  child:new Row(
-                    children: <Widget>[
+                  color: Colors.white60,
+                  width: 300,
+                  height:50,
+                  child :
+                  Column(children: <Widget>[
 
-                      new Padding(padding: new EdgeInsets.only(left: 20.0 ),),
-                      Spacer(),
-                      Image.asset("images/eleclogo.png",
-                          width: 50.0,
-                          height: 50.0,
+                    DropdownButton<String>(
+                      value: dropdownValue,  isExpanded: true,
+                      icon: Icon(Icons.arrow_drop_down),
+                      iconSize: 24,
+                      elevation: 16,
+                      style: TextStyle(color: Colors.red, fontSize: 18),
 
-                          fit: BoxFit.cover),
-                      Spacer(),
-                      Text('भारत  निर्वाचन आयोग ',
-                        style: TextStyle(fontSize: 15.0,color: Colors.white),),
-                      Spacer(),
-                      new Padding(padding: new EdgeInsets.only(right: 90.0 ),),
-                    ],),),
+                      onChanged: (newValue) {
+                        setState(() {
+                          dropdownValue = newValue!;
+                        });
+                      },
+                      items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
 
-                Text('Election Commission of India',
-                  style: TextStyle(fontSize: 15.0,color: Colors.white),),
-                  new Container(
-                  margin: const EdgeInsets.only(top: 20.0),
-                 child : new Text('Login With Mobile or Email Id',
-                  style: TextStyle(fontSize: 17.0,color: Colors.white),),),
+                  ]),),
+                Text('District', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
+                Container(
+                  color: Colors.white60,
+                  width: 300,
+                  height:50,
+                  child :
+                  Column(children: <Widget>[
+
+                    DropdownButton<String>(
+                      value: dropdownValue,  isExpanded: true,
+                      icon: Icon(Icons.arrow_drop_down),
+                      iconSize: 24,
+                      elevation: 16,
+                      style: TextStyle(color: Colors.red, fontSize: 18),
+                      underline: Container(
+                        height: 2,
+                        color: Colors.deepPurpleAccent,
+                      ),
+
+                      onChanged: (newValue) {
+                        setState(() {
+                          dropdownValue = newValue!;
+                        });
+                      },
+                      items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
+
+                  ]),),
+
+
 
                 /*Image.asset("assets/dart.png", width: 150.0, height: 150,),*/
 
@@ -105,8 +157,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     TextFormField(
                         keyboardType: TextInputType.number,
                         style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(labelText: "Mobile No Or Email Id"),
-                      obscureText: true),
+                        decoration: InputDecoration(labelText: "Mobile No Or Email Id"),
+                        obscureText: true),
                     borderSide: BorderSide(
                       color: Colors.white,
                       style: BorderStyle.solid ,
@@ -140,8 +192,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     TextFormField(
                         keyboardType: TextInputType.visiblePassword,
                         style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(labelText: "Otp"),
-                      obscureText: true),
+                        decoration: InputDecoration(labelText: "Otp"),
+                        obscureText: true),
                     borderSide: BorderSide(
                       color: Colors.white,
                       style: BorderStyle.solid ,
@@ -178,58 +230,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   ),
                 ),
-                new Container(
-                  margin: const EdgeInsets.only(top: 10.0,bottom: 40.0),
-                  color: Colors.white38,
-                  width: 300,
-                  height:50,
-
-                  child: new OutlineButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));
-                    },
-                    child: new Text('NEW USER ? SIGN UP',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12.0,color: Colors.white,),),
-
-
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                      style: BorderStyle.solid ,
-                      width: 1.8,
-                    ),
-
-                  ),
-
-                ),
-
-                new Container(
-                  margin: const EdgeInsets.only(top: 120.0,bottom: 10.0),
-                  child:new Row(
-
-
-                      children: <Widget>[
-                        new Padding(padding: new EdgeInsets.only(left: 20.0 ,right: 20.0),),
-                        Text('Instructions', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
-                        Spacer(), // <-- Use this
-                        Text('FAQs' ,style: TextStyle(fontSize: 12.0,color: Colors.white,),),
-                        Spacer(),
-
-                        Text('Press Release', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
-                        Spacer(),
-                      ],
-
-                      mainAxisSize:MainAxisSize.max
-                  ),
-                ),
-                new Container(
-                  alignment: Alignment.bottomCenter,
-                  margin: const EdgeInsets.only(top: 20.0),
-                  child:new Image.asset("images/niclogo.png",
-                      width: 140.0,
-                      height: 40.0,
-
-                      fit: BoxFit.cover),),
-
-
 
 
 
