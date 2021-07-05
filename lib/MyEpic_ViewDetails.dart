@@ -45,7 +45,26 @@ class _State extends State<MyApp> {
                 Padding(
                   padding: EdgeInsets.all(1),
 
-                  child: Text('Name',textAlign: TextAlign.left,
+                  child: Text('Date of Birth',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(1),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
+                      hintText: 'Enter Date of Birth',
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Age',textAlign: TextAlign.left,
 
                     style: TextStyle(fontSize: 15.0,color: Colors.black),),),
                 Padding(
@@ -54,67 +73,85 @@ class _State extends State<MyApp> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Date of Birth',
-                      hintText: 'Enter Date of Birth',
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(8),
-                  child: TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Age',
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
                       hintText: 'Enter your age',
                     ),
                   ),
                 ),
                 Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Name of Relative',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
                   padding: EdgeInsets.all(8),
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Name of Relative',
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
                       hintText: 'Enter name of relative',
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8),
-                  child: TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Type of Relation',
-                      hintText: 'Type of Relation',
-                    ),
-                  ),
-                ),
+                  padding: EdgeInsets.all(1),
 
+                  child: Text('Name of Relative',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
                 Padding(
                   padding: EdgeInsets.all(8),
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Gender',
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
+                      hintText: 'Type of Relation',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Name of Relative',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
                       hintText: 'Gender',
                     ),
                   ),
                 ),
                 Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Name of Relative',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
                   padding: EdgeInsets.all(8),
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Address',
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
                       hintText: 'Enter your address',
                     ),
                   ),
                 ),
+
                 RaisedButton(
                   textColor: Colors.white,
                   color: Colors.yellow,
