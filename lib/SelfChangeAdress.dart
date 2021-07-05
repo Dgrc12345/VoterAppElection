@@ -9,15 +9,16 @@ import 'SplashScreen.dart';
 import 'main1.dart';
 
 void main() {
-  runApp(LoginScreen());
+  runApp(SelfChangeAdress());
 }
 
-class LoginScreen extends StatelessWidget {
+class SelfChangeAdress extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
@@ -64,7 +65,9 @@ class MyHomePage extends StatefulWidget {
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 226, 226),
-
+      appBar: AppBar(
+        title: Text('Change Address'),
+      ),
       body: SafeArea(
 
         top: false,
@@ -73,18 +76,24 @@ class MyHomePage extends StatefulWidget {
           autovalidate: true,
 
           child: SingleChildScrollView(
-            padding: const EdgeInsets.only(top: 80.0,bottom: 40.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
 
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text('State', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
                 Container(
-                  color: Colors.white60,
-                  width: 300,
-                  height:50,
-                  child :
-                  Column(children: <Widget>[
+                  decoration: BoxDecoration(
+                    color: Colors.white54,
+
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+
+                  ),
+                  child : Column(children: <Widget>[
 
                     DropdownButton<String>(
                       value: dropdownValue,  isExpanded: true,
@@ -109,22 +118,26 @@ class MyHomePage extends StatefulWidget {
                   ]),),
                 Text('District', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
                 Container(
-                  color: Colors.white60,
-                  width: 300,
-                  height:50,
-                  child :
-                  Column(children: <Widget>[
+
+                  decoration: BoxDecoration(
+                     color: Colors.white54,
+
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+
+                  ),
+                  child : Column(children: <Widget>[
 
                     DropdownButton<String>(
                       value: dropdownValue,  isExpanded: true,
                       icon: Icon(Icons.arrow_drop_down),
                       iconSize: 24,
                       elevation: 16,
+
                       style: TextStyle(color: Colors.red, fontSize: 18),
-                      underline: Container(
-                        height: 2,
-                        color: Colors.deepPurpleAccent,
-                      ),
 
                       onChanged: (newValue) {
                         setState(() {
@@ -140,101 +153,172 @@ class MyHomePage extends StatefulWidget {
                     ),
 
                   ]),),
+                Padding(
+                  padding: EdgeInsets.all(1),
 
+                  child: Text('House Number',textAlign: TextAlign.left,
 
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(1),
 
-                /*Image.asset("assets/dart.png", width: 150.0, height: 150,),*/
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
 
-                new Container(
-                  margin: const EdgeInsets.only(top: 60.0),
-                  color: Colors.white38,
-                  width: 300,
-                  height:50,
-
-                  child: new OutlineButton(
-                    onPressed: null,
-                    child: new
-                    TextFormField(
-                        keyboardType: TextInputType.number,
-                        style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(labelText: "Mobile No Or Email Id"),
-                        obscureText: true),
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                      style: BorderStyle.solid ,
-                      width: 1.8,
+                      hintText: 'Enter Your Name',
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
                     ),
-
                   ),
-
                 ),
-                Container(
-                    alignment: Alignment.centerRight,
+                Padding(
+                  padding: EdgeInsets.all(1),
 
-                    padding: EdgeInsets.only(top: 5.0,right: 40.0),
-                    child: Text(
-                      'Generate Otp',
-                      style: TextStyle(
-                          color: Colors.yellow,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16),
-                    )),
+                  child: Text('Date of Birth',textAlign: TextAlign.left,
 
-                new Container(
-                  margin: const EdgeInsets.only(top: 10.0,bottom: 40.0),
-                  color: Colors.white38,
-                  width: 300,
-                  height:50,
-
-                  child: new OutlineButton(
-                    onPressed: null,
-                    child: new
-                    TextFormField(
-                        keyboardType: TextInputType.visiblePassword,
-                        style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(labelText: "Otp"),
-                        obscureText: true),
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                      style: BorderStyle.solid ,
-                      width: 1.8,
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(1),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
+                      hintText: 'Enter Date of Birth',
                     ),
-
                   ),
-
                 ),
 
+                Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Age',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
+                      hintText: 'Enter your age',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Name of Relative',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
+                      hintText: 'Enter name of relative',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Name of Relative',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
+                      hintText: 'Type of Relation',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Name of Relative',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
+                      hintText: 'Gender',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(1),
+
+                  child: Text('Name of Relative',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,                      // Added this
+                      contentPadding: EdgeInsets.all(8),
+                      hintText: 'Enter your address',
+                    ),
+                  ),
+                ),
+
+                RaisedButton(
+                  textColor: Colors.white,
+                  color: Colors.yellow,
+                  child: Text('UPDATE'),
+                  onPressed: (){},
+                ),
                 new Container(
-                  margin: const EdgeInsets.only(top: 20.0,bottom: 4.0),
-                  child: new ButtonBar(
+                  margin: const EdgeInsets.only(top: 120.0,bottom: 10.0),
+                  child:new Row(
 
 
-                      children:[
-                        SizedBox(
-                            width: 300,
-                            height:50,
-                            child: RaisedButton(
+                      children: <Widget>[
+                        new Padding(padding: new EdgeInsets.only(left: 20.0 ,right: 20.0),),
+                        Text('Instructions', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
+                        Spacer(), // <-- Use this
+                        Text('FAQs' ,style: TextStyle(fontSize: 12.0,color: Colors.white,),),
+                        Spacer(),
 
-                              textColor: Colors.indigo,
-
-                              color: Colors.yellow,
-                              child:Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
-                              },)
-                        ),
+                        Text('Press Release', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
+                        Spacer(),
                       ],
 
-                      alignment:MainAxisAlignment.center,
                       mainAxisSize:MainAxisSize.max
-
                   ),
                 ),
+                new Container(
+                  alignment: Alignment.bottomCenter,
+                  margin: const EdgeInsets.only(top: 20.0),
+                  child:new Image.asset("images/niclogo.png",
+                      width: 140.0,
+                      height: 40.0,
 
-
-
+                      fit: BoxFit.cover),),
               ],
+
             ),
+
           ),
         ),
       ),

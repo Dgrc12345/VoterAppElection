@@ -5,6 +5,8 @@ import 'package:flutter_app/LoginScreen.dart';
 import 'package:flutter_app/AppDrawer.dart';
 import 'package:flutter_app/LoginScreen.dart';
 
+import 'SelfChangeAdress.dart';
+
 class MyEpicChangeAddress1 extends StatelessWidget {
   final String title;
   static const String routeName = '/tab';
@@ -21,6 +23,7 @@ class MyEpicChangeAddress1 extends StatelessWidget {
       body: new DefaultTabController(
         length: 2,
         child: new Scaffold(
+
           appBar: new AppBar(
             actions: <Widget>[],
             title: new TabBar(
@@ -44,8 +47,9 @@ class MyEpicChangeAddress1 extends StatelessWidget {
                     color:Color.fromARGB(255, 20, 134, 147),
                     fontSize: 22,
                   )),
-              new LoginScreen(),
+             // new LoginScreen(),
               //new Icon(Icons.directions_transit,size: 50.0,),
+              new SelfChangeAdress(),
               //new Icon(Icons.directions_transit,size: 50.0,),
               //new LoginScreen(),
 

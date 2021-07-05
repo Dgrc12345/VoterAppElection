@@ -8,7 +8,9 @@ import 'HomeScreen.dart';
 import 'SplashScreen.dart';
 import 'main1.dart';
 
-
+void main() {
+  runApp(LoginScreen());
+}
 
 class LoginScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -21,7 +23,7 @@ class LoginScreen extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -74,33 +76,41 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: <Widget>[
 
                       new Padding(padding: new EdgeInsets.only(left: 20.0 ),),
-                      Spacer(),
+
                       Image.asset("images/eleclogo.png",
                           width: 50.0,
                           height: 50.0,
 
                           fit: BoxFit.cover),
-                      Spacer(),
-                      Text('भारत  निर्वाचन आयोग ',
-                        style: TextStyle(fontSize: 15.0,color: Colors.white),),
-                      Spacer(),
-                      new Padding(padding: new EdgeInsets.only(right: 90.0 ),),
+
                     ],),),
 
-                Text('Election Commission of India',
-                  style: TextStyle(fontSize: 15.0,color: Colors.white),),
+
                   new Container(
                   margin: const EdgeInsets.only(top: 20.0),
-                 child : new Text('Login With Mobile or Email Id',
-                  style: TextStyle(fontSize: 17.0,color: Colors.white),),),
+                 child : Image.asset("images/logo_Voter.png",
+                    width: 100.0,
+                    height: 100.0,
+                  ),),
 
                 /*Image.asset("assets/dart.png", width: 150.0, height: 150,),*/
+                new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
+                Text('LOG IN', style: TextStyle(fontSize: 24.0,color: Colors.white,),),
+                new Padding(padding: new EdgeInsets.only(bottom: 10.0 ),),
+                Text('Enter Your Mobile Number', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
+                Text('or Email ID to Login', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
+
+
+
+                  /*child: new Card(color: Colors.white,child: ListTile(leading: Icon(Icons.phone),title: Text("Mobile Number Or Email Id"),),*/
+
 
                 new Container(
                   margin: const EdgeInsets.only(top: 60.0),
-                  color: Colors.white38,
+                  color: Colors.white,
                   width: 300,
                   height:50,
+
 
                   child: new OutlineButton(
                     onPressed: null,
@@ -108,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     TextFormField(
                         keyboardType: TextInputType.number,
                         style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(labelText: "Mobile No Or Email Id"),
+                      decoration: InputDecoration(labelText: "Mobile Number Or Email ID"),
                       obscureText: true),
                     borderSide: BorderSide(
                       color: Colors.white,
@@ -119,41 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
 
                 ),
-                Container(
-                    alignment: Alignment.centerRight,
 
-                    padding: EdgeInsets.only(top: 5.0,right: 40.0),
-                    child: Text(
-                      'Generate Otp',
-                      style: TextStyle(
-                          color: Colors.yellow,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16),
-                    )),
-
-                new Container(
-                  margin: const EdgeInsets.only(top: 10.0,bottom: 40.0),
-                  color: Colors.white38,
-                  width: 300,
-                  height:50,
-
-                  child: new OutlineButton(
-                    onPressed: null,
-                    child: new
-                    TextFormField(
-                        keyboardType: TextInputType.visiblePassword,
-                        style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(labelText: "Otp"),
-                      obscureText: true),
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                      style: BorderStyle.solid ,
-                      width: 1.8,
-                    ),
-
-                  ),
-
-                ),
 
                 new Container(
                   margin: const EdgeInsets.only(top: 20.0,bottom: 4.0),
@@ -169,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               textColor: Colors.indigo,
 
                               color: Colors.yellow,
-                              child:Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
+                              child:Text("GENERATE OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
                               },)
@@ -181,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   ),
                 ),
-                new Container(
+               /* new Container(
                   margin: const EdgeInsets.only(top: 10.0,bottom: 40.0),
                   color: Colors.white38,
                   width: 300,
@@ -202,9 +178,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   ),
 
-                ),
+                ),*/
 
-                new Container(
+                /*new Container(
                   margin: const EdgeInsets.only(top: 120.0,bottom: 10.0),
                   child:new Row(
 
@@ -222,9 +198,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
                       mainAxisSize:MainAxisSize.max
                   ),
-                ),
+                ),*/
                 new Container(
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment.bottomRight,
                   margin: const EdgeInsets.only(top: 20.0),
                   child:new Image.asset("images/niclogo.png",
                       width: 140.0,
