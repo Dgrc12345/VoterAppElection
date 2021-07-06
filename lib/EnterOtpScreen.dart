@@ -55,198 +55,210 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 20, 134, 147),
 
-      body: SafeArea(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
 
-        top: false,
-        bottom: false,
-        child: Form(
-          autovalidate: true,
+          image: DecorationImage(
+            image: AssetImage("images/bg.png"),
+            fit: BoxFit.cover,
 
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.only(top: 80.0,bottom: 40.0),
-            child: Column(
+            alignment: Alignment.center,
+          ),),
+        child: SafeArea(
 
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  child:new Row(
-                    children: <Widget>[
+          top: false,
+          bottom: false,
+          child: Form(
+            autovalidate: true,
 
-                      new Padding(padding: new EdgeInsets.only(left: 20.0 ),),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.only(top: 80.0,bottom: 40.0),
+              child: Column(
 
-                      Image.asset("images/eleclogo.png",
-                          width: 50.0,
-                          height: 50.0,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    child:new Row(
+                      children: <Widget>[
 
-                          fit: BoxFit.cover),
+                        new Padding(padding: new EdgeInsets.only(left: 20.0 ),),
 
-                    ],),),
+                        Image.asset("images/eleclogo.png",
+                            width: 50.0,
+                            height: 50.0,
 
+                            fit: BoxFit.cover),
 
-                new Container(
-                  margin: const EdgeInsets.only(top: 20.0),
-                  child : Image.asset("images/logo_Voter.png",
-                    width: 100.0,
-                    height: 100.0,
-                  ),),
-
-                /*Image.asset("assets/dart.png", width: 150.0, height: 150,),*/
-                new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
-                Text('ENTER OTP', style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.bold),),
-                new Padding(padding: new EdgeInsets.only(bottom: 10.0 ),),
-                Text('Otp sent on your', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
-                Text('Mobile number/ email id', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
+                      ],),),
 
 
-
-                /*child: new Card(color: Colors.white,child: ListTile(leading: Icon(Icons.phone),title: Text("Mobile Number Or Email Id"),),*/
-
-                new Row(
-
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-               children: <Widget>[
                   new Container(
-                    margin: const EdgeInsets.only(top: 60.0,left: 30),
-                    color: Colors.white,
-                    width: 50,
-                    height:50,
+                    margin: const EdgeInsets.only(top: 20.0),
+                    child : Image.asset("images/logo_Voter.png",
+                      width: 100.0,
+                      height: 100.0,
+                    ),),
+
+                  /*Image.asset("assets/dart.png", width: 150.0, height: 150,),*/
+                  new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
+                  Text('ENTER OTP', style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.bold),),
+                  new Padding(padding: new EdgeInsets.only(bottom: 10.0 ),),
+                  Text('Otp sent on your', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
+                  Text('Mobile number/ email id', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
 
 
-                    child: new OutlineButton(
-                      onPressed: null,
-                      child: new
-                      TextFormField(
 
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.black),
-                          decoration: InputDecoration(labelText: ""),
-                         ),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        style: BorderStyle.solid ,
-                        width: 1.8,
-                      ),
+                  /*child: new Card(color: Colors.white,child: ListTile(leading: Icon(Icons.phone),title: Text("Mobile Number Or Email Id"),),*/
 
-                    ),
+                  new Row(
 
-                  ),new Container(
-                    margin: const EdgeInsets.only(top: 60.0),
-                    color: Colors.white,
-                    width: 50,
-                    height:50,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                 children: <Widget>[
+                    new Container(
+                      margin: const EdgeInsets.only(top: 60.0,left: 30),
+                      color: Colors.white,
+                      width: 50,
+                      height:50,
 
 
-                    child: new OutlineButton(
-                      onPressed: null,
-                      child: new
-                      TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.black),
-                          decoration: InputDecoration(labelText: ""),
-                      ),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        style: BorderStyle.solid ,
-                        width: 1.8,
-                      ),
+                      child: new OutlineButton(
+                        onPressed: null,
+                        child: new
+                        TextFormField(
 
-                    ),
-
-                  ),new Container(
-                    margin: const EdgeInsets.only(top: 60.0),
-                    color: Colors.white,
-                    width: 50,
-                    height:50,
-
-
-                    child: new OutlineButton(
-                      onPressed: null,
-                      child: new
-                      TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.black),
-                          decoration: InputDecoration(labelText: ""),
-                          ),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        style: BorderStyle.solid ,
-                        width: 1.8,
-                      ),
-
-                    ),
-
-                  ),new Container(
-                    margin: const EdgeInsets.only(top: 60.0,right: 30.0),
-                    color: Colors.white,
-                    width: 50,
-                    height:50,
-
-
-                    child: new OutlineButton(
-                      onPressed: null,
-                      child: new
-                      TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.black),
-                          decoration: InputDecoration(labelText: ""),),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        style: BorderStyle.solid ,
-                        width: 1.8,
-                      ),
-
-                    ),
-
-                  ),],
-
-                ),
-
-
-                new Container(
-                  margin: const EdgeInsets.only(top: 20.0,bottom: 4.0),
-                  child: new ButtonBar(
-
-
-                      children:[
-                        SizedBox(
-                            width: 300,
-                            height:50,
-                            child: RaisedButton(
-
-                              textColor: Colors.indigo,
-
-                              color: Colors.yellow,
-                              child:Text("GENERATE OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
-                              },)
+                            keyboardType: TextInputType.number,
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(labelText: ""),
+                           ),
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          style: BorderStyle.solid ,
+                          width: 1.8,
                         ),
-                      ],
 
-                      alignment:MainAxisAlignment.center,
-                      mainAxisSize:MainAxisSize.max
+                      ),
+
+                    ),new Container(
+                      margin: const EdgeInsets.only(top: 60.0),
+                      color: Colors.white,
+                      width: 50,
+                      height:50,
+
+
+                      child: new OutlineButton(
+                        onPressed: null,
+                        child: new
+                        TextFormField(
+                            keyboardType: TextInputType.number,
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(labelText: ""),
+                        ),
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          style: BorderStyle.solid ,
+                          width: 1.8,
+                        ),
+
+                      ),
+
+                    ),new Container(
+                      margin: const EdgeInsets.only(top: 60.0),
+                      color: Colors.white,
+                      width: 50,
+                      height:50,
+
+
+                      child: new OutlineButton(
+                        onPressed: null,
+                        child: new
+                        TextFormField(
+                            keyboardType: TextInputType.number,
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(labelText: ""),
+                            ),
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          style: BorderStyle.solid ,
+                          width: 1.8,
+                        ),
+
+                      ),
+
+                    ),new Container(
+                      margin: const EdgeInsets.only(top: 60.0,right: 30.0),
+                      color: Colors.white,
+                      width: 50,
+                      height:50,
+
+
+                      child: new OutlineButton(
+                        onPressed: null,
+                        child: new
+                        TextFormField(
+                            keyboardType: TextInputType.number,
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(labelText: ""),),
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          style: BorderStyle.solid ,
+                          width: 1.8,
+                        ),
+
+                      ),
+
+                    ),],
 
                   ),
-                ),
-                new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
-                Text('Didnt Receive OTP?', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
-                new Padding(padding: new EdgeInsets.only(top: 10.0 ),),
-                Text('RESEND OTP', style: TextStyle(fontSize: 18.0,color: Colors.white,fontWeight: FontWeight.bold),),
-                new Container(
-                  alignment: Alignment.bottomRight,
-                  margin: const EdgeInsets.only(top: 20.0),
-                  child:new Image.asset("images/niclogo.png",
-                      width: 140.0,
-                      height: 40.0,
-
-                      fit: BoxFit.cover),),
 
 
+                  new Container(
+                    margin: const EdgeInsets.only(top: 20.0,bottom: 4.0),
+                    child: new ButtonBar(
+
+
+                        children:[
+                          SizedBox(
+                              width: 300,
+                              height:50,
+                              child: RaisedButton(
+
+                                textColor: Colors.indigo,
+
+                                color: Colors.yellow,
+                                child:Text("GENERATE OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
+                                },)
+                          ),
+                        ],
+
+                        alignment:MainAxisAlignment.center,
+                        mainAxisSize:MainAxisSize.max
+
+                    ),
+                  ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
+                  Text('Didnt Receive OTP?', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
+                  new Padding(padding: new EdgeInsets.only(top: 10.0 ),),
+                  Text('RESEND OTP', style: TextStyle(fontSize: 18.0,color: Colors.white,fontWeight: FontWeight.bold),),
+                  new Container(
+                    alignment: Alignment.bottomRight,
+                    margin: const EdgeInsets.only(top: 140.0),
+                    child:new Image.asset("images/niclogo.png",
+                        width: 140.0,
+                        height: 40.0,
+
+                        fit: BoxFit.cover),),
 
 
 
-              ],
+
+
+                ],
+              ),
             ),
           ),
         ),
