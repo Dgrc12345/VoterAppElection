@@ -66,13 +66,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
 
-     // backgroundColor: Color.fromARGB(255, 20, 134, 147),
+      //backgroundColor: Color.fromARGB(255, 20, 134, 147),
 
       body: Container(
+        height: double.infinity,
+        width: double.infinity,
       decoration: BoxDecoration(
+
       image: DecorationImage(
-      image: AssetImage("assets/images/bg.png"),
+      image: AssetImage("images/bg.png"),
       fit: BoxFit.cover,
+
+        alignment: Alignment.center,
       ),),
         child: SafeArea(
 
@@ -124,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           new Container(
             alignment: Alignment.bottomRight,
-            margin: const EdgeInsets.only(top: 20.0),
+            margin: const EdgeInsets.only(top: 200.0),
             child:new Image.asset("images/niclogo.png",
                   width: 140.0,
                   height: 40.0,

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/AppDrawer.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomeScreen extends StatelessWidget {
   static const String routeName = '/home';
   late final String title;
-  HomePage(this.title);
+  HomeScreen(this.title);
 
   @override
   Widget build(BuildContext context) {
