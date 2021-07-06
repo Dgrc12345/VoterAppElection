@@ -3,34 +3,24 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/SignUpScreen.dart';
+import 'package:flutter/services.dart';
 
 import 'HomeScreen.dart';
 import 'SplashScreen.dart';
 import 'main1.dart';
 
-void main() {
-  runApp(SelfChangeAdress());
-}
-
 class SelfChangeAdress extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    return Scaffold(
+      body: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+
   MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
@@ -42,6 +32,7 @@ class MyHomePage extends StatefulWidget {
      class _MyHomePageState extends State<MyHomePage> {
 
       String dropdownValue = 'One';
+      String stateValue = "Bihar";
 
        List <String> spinnerItems = [
        'One',
@@ -49,6 +40,14 @@ class MyHomePage extends StatefulWidget {
       'Three',
       'Four',
       'Five'
+      ] ;
+
+      List <String> spinnerState = [
+        'Bihar',
+        'Delhi',
+        'Mumbai',
+        'UP',
+        'Odhisa'
       ] ;
 
       @override
@@ -64,10 +63,8 @@ class MyHomePage extends StatefulWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 221, 226, 226),
-      appBar: AppBar(
-        title: Text('Change Address'),
-      ),
+      //backgroundColor: Color.fromARGB(255, 221, 226, 226),
+      backgroundColor: Colors.white,
       body: SafeArea(
 
         top: false,
@@ -78,81 +75,85 @@ class MyHomePage extends StatefulWidget {
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(10.0),
             child: Column(
-
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Text('State', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
                 Container(
+                  alignment: Alignment.topLeft,
+                  margin: const EdgeInsets.only(top: 10.0, bottom: 4.0),
+                  child: Text('State', style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500, color: Color.fromARGB(255, 20, 134, 147),),),
+                ),
+
+                Container(
+                  padding: EdgeInsets.only(left: 8.0),
                   decoration: BoxDecoration(
-                    color: Colors.white54,
+                    color: Colors.grey.shade200,
 
                     border: Border.all(
-                      color: Colors.white,
-                      width: 2,
+                      color: Colors.grey,
+                      width: 1,
                     ),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(1),
 
                   ),
-                  child : Column(children: <Widget>[
-
-                    DropdownButton<String>(
-                      value: dropdownValue,  isExpanded: true,
+                  child : DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      value: stateValue,  isExpanded: true,
                       icon: Icon(Icons.arrow_drop_down),
                       iconSize: 24,
                       elevation: 16,
-                      style: TextStyle(color: Colors.red, fontSize: 18),
-
+                      style: TextStyle(color: Colors.black, fontSize: 18),
                       onChanged: (newValue) {
                         setState(() {
-                          dropdownValue = newValue!;
+                          stateValue = newValue!;
                         });
                       },
-                      items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
+                      items: spinnerState.map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
                         );
                       }).toList(),
                     ),
+                  ),
+                ),
 
-                  ]),),
                 Text('District', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
-                Container(
-
-                  decoration: BoxDecoration(
-                     color: Colors.white54,
-
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(12),
-
-                  ),
-                  child : Column(children: <Widget>[
-
-                    DropdownButton<String>(
-                      value: dropdownValue,  isExpanded: true,
-                      icon: Icon(Icons.arrow_drop_down),
-                      iconSize: 24,
-                      elevation: 16,
-
-                      style: TextStyle(color: Colors.red, fontSize: 18),
-
-                      onChanged: (newValue) {
-                        setState(() {
-                          dropdownValue = newValue!;
-                        });
-                      },
-                      items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                    ),
-
-                  ]),),
+                // Container(
+                //
+                //   decoration: BoxDecoration(
+                //      color: Colors.white54,
+                //
+                //     border: Border.all(
+                //       color: Colors.white,
+                //       width: 2,
+                //     ),
+                //     borderRadius: BorderRadius.circular(12),
+                //
+                //   ),
+                //   child : Column(children: <Widget>[
+                //
+                //     DropdownButton<String>(
+                //       value: stateValue,  isExpanded: true,
+                //       icon: Icon(Icons.arrow_drop_down),
+                //       iconSize: 24,
+                //       elevation: 16,
+                //
+                //       style: TextStyle(color: Colors.red, fontSize: 18),
+                //
+                //       onChanged: (newValue) {
+                //         setState(() {
+                //           stateValue = newValue!;
+                //         });
+                //       },
+                //       items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
+                //         return DropdownMenuItem<String>(
+                //           value: value,
+                //           child: Text(value),
+                //         );
+                //       }).toList(),
+                //     ),
+                //
+                //   ]),),
                 Padding(
                   padding: EdgeInsets.all(1),
 
