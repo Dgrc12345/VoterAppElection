@@ -15,6 +15,7 @@ void main() {
   runApp(SplashScreen());
 }
 
+
 class SplashScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -32,7 +33,7 @@ class SplashScreen extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes:  {
-        Routes.home: (context) => HomePage("Home"),
+        Routes.home: (context) => HomeScreen("Home"),
         Routes.login: (context) => LoginScreen(),
         Routes.tab: (context) => MyEpicChangeAddress1(title: 'Tab Screen',),
       },

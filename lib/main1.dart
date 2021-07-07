@@ -18,9 +18,9 @@ class main1 extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 20, 134, 147),
       ),
-      home: HomePage("Home"),
+      home: HomeScreen("Home"),
       routes:  {
-        Routes.home: (context) => HomePage("Home"),
+        Routes.home: (context) => HomeScreen("Home"),
         Routes.login: (context) => LoginScreen(),
         Routes.tab: (context) => MyEpicChangeAddress1(title: 'Tab Screen',),
       },
