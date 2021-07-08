@@ -22,18 +22,19 @@ class HomeScreen extends StatelessWidget {
         length: 3,
         child: new Scaffold(
           appBar: new AppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: Colors.white,
             actions: <Widget>[],
             title: new TabBar(
               tabs: [
                 new Tab(
-                  child: Text("My Epic",style: TextStyle(fontSize: 14.0,color: Colors.green,),),
+                  child: Text("My Epic",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w500),),
                 ),
                 new Tab(
-                  child: Text("My Polling Station",style: TextStyle(fontSize: 14.0,color: Colors.green,),),
+                  child: Text("My Polling Station",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w500),),
                 ),
                 new Tab(
-                    child: Text("My Representative",style: TextStyle(fontSize: 14.0,color: Colors.green,),)),
+                    child: Text("My Representative",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w500),)),
               ],
               indicatorColor: Colors.white,
             ),
@@ -41,7 +42,8 @@ class HomeScreen extends StatelessWidget {
           body: new TabBarView(
             children: [
               new MyEpic(),
-              new Preview(),
+
+              new Icon(Icons.directions_bike,size: 50.0,),
               new Icon(Icons.directions_bike,size: 50.0,),
             ],
           ),

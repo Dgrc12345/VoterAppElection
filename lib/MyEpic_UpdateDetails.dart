@@ -3,12 +3,14 @@
 import 'package:flutter/material.dart';
 
 
-class Preview extends StatefulWidget {
+
+
+class MyEpic_UpdateDetails extends StatefulWidget {
   @override
   _State createState() => _State();
 }
 
-class _State extends State<Preview> {
+class _State extends State<MyEpic_UpdateDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,18 +38,13 @@ class _State extends State<Preview> {
 
                   child: Image.asset("images/profile1.png",alignment: Alignment.topLeft,
                     width: 120.0,
-                    height: 120.0,
-
-                     ),
-                ),
-              ),
+                    height: 120.0,),),),
 
               Padding(
                 padding: EdgeInsets.all(6),
 
                 child: Text('Name',textAlign: TextAlign.left,
-
-                  style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
+                        style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
               Padding(
                 padding: EdgeInsets.all(1),
                 child: TextField(
@@ -170,15 +167,49 @@ class _State extends State<Preview> {
                     hintText: 'Address',
                   ),
                 ),
+              ), Padding(
+                padding: EdgeInsets.all(6),
+
+                child: Text('Captcha',textAlign: TextAlign.left,
+
+                  style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
+              Padding(
+                padding: EdgeInsets.all(1),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    // Added this
+                    contentPadding: EdgeInsets.all(12),
+                    hintText: 'Address',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(6),
+
+                child: Text('Enter Captcha',textAlign: TextAlign.left,
+
+                  style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
+              Padding(
+                padding: EdgeInsets.all(1),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+
+                    isDense: true,
+                    // Added this
+                    contentPadding: EdgeInsets.all(12),
+                    hintText: 'Address',
+                  ),
+                ),
               ),
 
               Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children:[
 
                     SizedBox(
-
-                        width: 150,
-                        height:40,
                         child: RaisedButton(
 
                           textColor: Colors.teal,
@@ -186,22 +217,7 @@ class _State extends State<Preview> {
                           color: Colors.yellow,
                           padding: EdgeInsets.all(12),
 
-                          child:Text("NO",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
-                          onPressed: () {
-
-                          },)
-                    ),
-
-                    SizedBox(
-
-                        width: 150,
-                        height:40,
-                        child: RaisedButton(
-
-                          textColor: Colors.teal,
-                          padding: EdgeInsets.all(12),
-                          color: Colors.yellow,
-                          child:Text("YES",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
+                          child:Text("UPDATE",style: TextStyle(fontWeight:FontWeight.w600,fontSize: 13.0,decorationStyle:TextDecorationStyle.solid),),
                           onPressed: () {
 
                           },)
@@ -216,10 +232,5 @@ class _State extends State<Preview> {
 
 
 
-  }
-  @override
-  void dispose() {
-    print("Disposing second route");
-    super.dispose();
   }
 }

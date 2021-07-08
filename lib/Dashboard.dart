@@ -64,16 +64,11 @@ class Dashboard extends StatelessWidget {
                                         },
 
                                       child: new Card(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(7.0),
-                                        ),
-
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0),),
                                         color: Colors.lightGreen,
                                         elevation: 7,
                                           child: Column(
-
                                               mainAxisSize: MainAxisSize.max,
-
                                               children: <Widget>[
                                                 Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
                                                   children: <Widget>[

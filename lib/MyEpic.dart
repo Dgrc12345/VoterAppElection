@@ -1,5 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/HomeScreen.dart';
+import 'package:flutter_app/MyEpic_UpdateDetails.dart';
+import 'package:flutter_app/Preview.dart';
+import 'package:flutter_app/TrackApplicationStatus.dart';
+
+import 'DuplicateEpic.dart';
 
 class MyEpic extends StatelessWidget {
   // This widget is the root
@@ -32,15 +38,15 @@ class ListViewBuilder extends StatelessWidget {
         autovalidate: true,
 
         child: Container(
-        height: double.infinity,
-        width: double.infinity,
+         height: double.infinity,
+         width: double.infinity,
 
 
          child: SingleChildScrollView(
-         padding: const EdgeInsets.only(top: 5.0,bottom: 5.0),
+
          child: Column(
 
-        mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
          children: <Widget>[
 
 
@@ -51,215 +57,419 @@ class ListViewBuilder extends StatelessWidget {
              child: Card(
 
                shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(7.0),
+                 borderRadius: BorderRadius.circular(2.0),
                ),
 
 
                elevation: 10,
                child: Column(
-
                  mainAxisSize: MainAxisSize.max,
 
                  children: <Widget>[
-                   Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                     children: <Widget>[
+                   GestureDetector(
 
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: SizedBox(
-                           width: 20,
-                           height: 20,
+                     onTap: () {
 
-                           child:Image.asset("images/ic_viewdetails.png")
+
+
+                       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Preview()));
+                     },
+                  child: Container(
+                     height: 40.0,
+                     child: Row(
+
+
+
+                       children: <Widget>[
+
+                         Padding(
+                           padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                           child: SizedBox(
+                             width: 30,
+                             height: 30,
+                               child:Image.asset("images/ic_viewdetails.png")),),
+                            Container(
+                             width: MediaQuery.of(context).size.width * 0.5,
+                             child: Padding(
+
+                               padding: const EdgeInsets.only(left:15.0),
+
+                               child: Text(
+                                   'View Details',
+                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
+                             ),
+                           ),
+                         Padding(
+                           padding: const EdgeInsets.only(top:10.0,left: 15.0),
+                           child:
+                           Container(
+                             alignment: Alignment.centerRight,
+                             width: MediaQuery.of(context).size.width * 0.3,
+                             child: SizedBox(
+
+                                 width: 20,
+                                 height: 20,
+                               child:Image.asset("images/arrow.png"),),
+                           ),
+
+                         ),
+                       ],),
+                   ),),
+                   Divider(
+                     height: 10,
+                     thickness: 3,
+                   ),
+                   GestureDetector(
+                     onTap: () {
+                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEpic_UpdateDetails()));
+                     },
+                     child: Container(
+                       height: 40.0,
+                       child: Row(
+
+
+
+                         children: <Widget>[
+
+                           Padding(
+                             padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                             child: SizedBox(
+                                 width: 30,
+                                 height: 30,
+                                 child:Image.asset("images/icon_update_details.png")),),
+                           Container(
+                             width: MediaQuery.of(context).size.width * 0.5,
+                             child: Padding(
+
+                               padding: const EdgeInsets.only(left:15.0),
+
+                               child: Text(
+                                   'Update Details',
+                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
+                             ),
+                           ),
+                           Padding(
+                             padding: const EdgeInsets.only(top:10.0,left: 15.0),
+                             child:
+                             Container(
+                               alignment: Alignment.centerRight,
+                               width: MediaQuery.of(context).size.width * 0.3,
+                               child: SizedBox(
+
+                                 width: 20,
+                                 height: 20,
+                                 child:Image.asset("images/arrow.png"),),
+                             ),
 
                            ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: Text(
-                             'View Details',
-                             style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
-                         ),
-                       ),Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child:
-                         SizedBox(
-                             width: 20,
-                             height: 20,
-                           child:Image.asset("images/arrow.png"),),
-
-                       ),
-                     ],),
-                   Divider(
-                     height: 50,
-                     thickness: 5,
+                         ],),
+                     ),
                    ),
-                   Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                     children: <Widget>[
+                   Divider(
+                     height: 10,
+                     thickness: 3,
+                   ),
+                   GestureDetector(
+                     onTap: () {
+                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => TrackApplicationStatus()));
+                     },
+                     child: Container(
+                       height: 40,
+                       child: Row(
+                         children: <Widget>[
 
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: SizedBox(
-                           width: 20,
-                           height: 20,
+                           Padding(
+                             padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                             child: Container(
 
-                           child:Image.asset("images/ic_viewdetails.png")
+
+                               child: SizedBox(
+                                 width: 20,
+                                 height: 20,
+
+                                 child:Image.asset("images/ic_change_adress.png")
+
+                                 ),
+                             ),
+                           ),
+                           Padding(
+                             padding: const EdgeInsets.only(top:0.0,left: 8.0),
+                             child: Container(
+
+                               width: MediaQuery.of(context).size.width * 0.5,
+                               child: Text(
+                                   'Change in Address',
+                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                               ),
+                             ),
+                           ),Padding(
+                             padding: const EdgeInsets.only(top:10.0,left: 15.0),
+                             child:
+                             Container(
+                               alignment: Alignment.centerRight,
+                               width: MediaQuery.of(context).size.width * 0.3,
+                               child: SizedBox(
+                                   width: 20,
+                                   height: 20,
+                                 child:Image.asset("images/arrow.png"),),
+                             ),
 
                            ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: Text(
-                             'View Details',
-                             style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
-                         ),
-                       ),Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child:
-                         SizedBox(
-                             width: 20,
-                             height: 20,
-                           child:Image.asset("images/arrow.png"),),
-
-                       ),
-                     ],),
-                   Divider(
-                     height: 50,
-                     thickness: 5,
+                         ],),
+                     ),
                    ),
-                   Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                     children: <Widget>[
+                   Divider(
+                     height: 10,
+                     thickness: 3,
+                   ),
+                   GestureDetector(
+                     onTap: () {
+                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => TrackApplicationStatus()));
+                     },
+                     child: Container(
 
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: SizedBox(
-                           width: 20,
-                           height: 20,
+                         height: 40,
+                       child: Row( mainAxisSize: MainAxisSize.max,
+                         children: <Widget>[
 
-                           child:Image.asset("images/ic_viewdetails.png")
+                           Padding(
+                             padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                             child: Container(
+
+                               child: SizedBox(
+                                 width: 20,
+                                 height: 20,
+
+                                 child:Image.asset("images/ic_track_application.png")
+
+                                 ),
+                             ),
+                           ),
+                           Padding(
+                             padding: const EdgeInsets.only(left:15.0),
+                             child: Container(
+
+                               child: Container(
+
+                                 width: MediaQuery.of(context).size.width * 0.5,
+                                 child: Text(
+                                     'Track the Application Status',
+                                     style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                 ),
+                               ),
+                             ),
+                           ),Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child:
+                             Container(
+                               alignment: Alignment.centerRight,
+                               width: MediaQuery.of(context).size.width * 0.3,
+                               child: SizedBox(
+                                   width: 20,
+                                   height: 20,
+                                 child:Image.asset("images/arrow.png"),),
+                             ),
 
                            ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: Text(
-                             'View Details',
-                             style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
-                         ),
-                       ),Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child:
-                         SizedBox(
-                             width: 20,
-                             height: 20,
-                           child:Image.asset("images/arrow.png"),),
-
-                       ),
-                     ],),
-                   Divider(
-                     height: 50,
-                     thickness: 5,
+                         ],),
+                     ),
                    ),
-                   Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                     children: <Widget>[
+                   Divider(
+                     height: 10,
+                     thickness: 3,
+                   ),
+                   GestureDetector(
+                     onTap: () {
+                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => DuplicateEpic()));
+                     },
+                     child: Container(
+                       height: 40,
+                       child: Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                         children: <Widget>[
 
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: SizedBox(
-                           width: 20,
-                           height: 20,
+                           Padding(
+                             padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                             child: SizedBox(
+                               width: 20,
+                               height: 20,
 
-                           child:Image.asset("images/ic_viewdetails.png")
+                               child:Image.asset("images/ic_duplicate.png")
+
+                               ),
+                           ),
+                           Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: Container(
+
+                               width: MediaQuery.of(context).size.width * 0.5,
+                               child: Text(
+                                   'Duplicate Electors Photo Identity Card(EPIC)',
+                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                               ),
+                             ),
+                           ),Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child:
+                             Container(
+                               alignment: Alignment.centerRight,
+                               width: MediaQuery.of(context).size.width * 0.3,
+                               child: SizedBox(
+                                   width: 20,
+                                   height: 20,
+                                 child:Image.asset("images/arrow.png"),),
+                             ),
 
                            ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: Text(
-                             'View Details',
-                             style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
-                         ),
-                       ),Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child:
-                         SizedBox(
+                         ],),
+                     ),
+                   ),
+                   Divider(
+                     height: 10,
+                     thickness: 3,
+                   ),
+                   Container(
+
+                       height: 40,
+                     child: Row(  mainAxisSize: MainAxisSize.max,
+                       children: <Widget>[
+
+                         Padding(
+                           padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                           child: SizedBox(
                              width: 20,
                              height: 20,
-                           child:Image.asset("images/arrow.png"),),
 
-                       ),
-                     ],),
-                   Divider(
-                     height: 50,
-                     thickness: 5,
+                             child:Image.asset("images/ic_download.png")
+
+                             ),
+                         ),
+                         Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: Container(
+
+                             width: MediaQuery.of(context).size.width * 0.5,
+                             child: Text(
+                                 'Download e-EPIC',
+                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                             ),
+                           ),
+                         ),Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child:
+                           Container(
+                             alignment: Alignment.centerRight,
+                             width: MediaQuery.of(context).size.width * 0.3,
+                             child: SizedBox(
+                                 width: 20,
+                                 height: 20,
+                               child:Image.asset("images/arrow.png"),),
+                           ),
+
+                         ),
+                       ],),
                    ),
-                   Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                     children: <Widget>[
+                   Divider(
+                     height: 10,
+                     thickness: 3,
+                   ),
+                   Container(
+                       height: 40,
+                     child: Row( mainAxisSize: MainAxisSize.max,
+                       children: <Widget>[
 
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: SizedBox(
-                           width: 20,
-                           height: 20,
+                         Padding(
+                           padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                           child: SizedBox(
+                               width: 20,
+                               height: 20,
 
-                           child:Image.asset("images/ic_viewdetails.png")
+                               child:Image.asset("images/ic_delete.png")
 
                            ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: Text(
-                             'View Details',
-                             style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
                          ),
-                       ),Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child:
-                         SizedBox(
-                             width: 20,
-                             height: 20,
-                           child:Image.asset("images/arrow.png"),),
+                         Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: Container(
 
-                       ),
-                     ],),
-                   Divider(
-                     height: 50,
-                     thickness: 5,
+                             width: MediaQuery.of(context).size.width * 0.5,
+                             child: Text(
+                                 'Deletion of Enrollment',
+                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                             ),
+                           ),
+                         ),Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child:
+                           Container(
+                             alignment: Alignment.centerRight,
+                             width: MediaQuery.of(context).size.width * 0.3,
+                             child: SizedBox(
+                               width: 20,
+                               height: 20,
+                               child:Image.asset("images/arrow.png"),),
+                           ),
+
+                         ),
+                       ],),
                    ),
-                   Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                     children: <Widget>[
+                   Divider(
+                     height: 10,
+                     thickness: 3,
+                   ),
+                   Container(
+                       height: 40,
+                     child: Row(
+                       mainAxisSize: MainAxisSize.max,
+                       children: <Widget>[
 
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: SizedBox(
-                           width: 20,
-                           height: 20,
+                         Padding(
+                           padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                           child: SizedBox(
+                               width: 20,
+                               height: 20,
 
-                           child:Image.asset("images/ic_viewdetails.png")
+                               child:Image.asset("images/ic_viewdetails.png")
 
                            ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: Text(
-                             'View Details',
-                             style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
                          ),
-                       ),Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child:
-                         SizedBox(
-                             width: 20,
-                             height: 20,
-                           child:Image.asset("images/arrow.png"),),
+                         Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: Container(
 
-                       ),
-                     ],),
-                   Divider(
-                     height: 50,
-                     thickness: 5,
+                             width: MediaQuery.of(context).size.width * 0.5,
+                             child: Text(
+                                 'Services for Divyang',
+                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                             ),
+                           ),
+                         ),Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: Container(
+                             alignment: Alignment.centerRight,
+                             width: MediaQuery.of(context).size.width * 0.3,
+                             child: SizedBox(
+                               width: 20,
+                               height: 20,
+                               child:Image.asset("images/arrow.png"),),
+                           ),
+
+                         ),
+                       ],),
                    ),
+                   Container(
 
+                     child:new Row(
+                       children: <Widget>[
+
+                         new Padding(padding: new EdgeInsets.only(left: 20.0 ,bottom: 40.0),),
+
+                         Image.asset("images/banner1.png",
+
+
+                             fit: BoxFit.cover),
+
+                       ],),
+                   )
                  ],),),),
 
          ]),),),),),);

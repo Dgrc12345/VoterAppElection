@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/AppDrawer.dart';
 
-
-void main() {
-  runApp(MaterialApp( home: DuplicateEpic(),));
-}
-
+import 'DuplicateFamilyEpic.dart';
 
 class DuplicateEpic extends StatelessWidget {
   late final String title;
@@ -15,19 +11,14 @@ class DuplicateEpic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+     /* appBar: AppBar(
         leading: BackButton(
             color: Colors.white
         ),
         title: Text('Duplicte EPIC',style: TextStyle(fontSize: 14.0,color: Colors.white)),
 
         backgroundColor: Color.fromARGB(255, 20, 134, 147),
-      ),
-      // drawer: AppDrawer(),
-      // appBar: new AppBar(
-      //   title: Text(title),
-      // ),
-
+      ),*/
       body: new DefaultTabController(
         length: 2,
         child: new Scaffold(
@@ -47,13 +38,8 @@ class DuplicateEpic extends StatelessWidget {
           ),
           body: new TabBarView(
             children: [
-              new Text("Self",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.pink,
-                    fontSize: 22,
-                  )),
-              new Icon(Icons.directions_transit,size: 50.0,),
+              new DuplicateFamilyEpic(),
+              new DuplicateFamilyEpic(),
             ],
           ),
         ),

@@ -25,10 +25,8 @@ class _State extends State<MyApp> {
         body: SafeArea(
 
         child: SingleChildScrollView(
-          padding: const EdgeInsets.only(top: 10.0,bottom: 10.0,left: 8,right: 8),
+          padding: const EdgeInsets.only(top: 5.0,left: 8,right: 8),
         child: Column(
-
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.all(5),
@@ -38,10 +36,10 @@ class _State extends State<MyApp> {
                     style: TextStyle(fontSize: 15.0,color: Colors.black),),),
                 new Container(
                   alignment: Alignment.topLeft,
-                  margin: const EdgeInsets.only(top: 12.0),
+
                   child:new Image.asset("images/userprofile.png",
-                      width: 100.0,
-                      height: 100.0,
+                      width: 150.0,
+                      height: 150.0,
 
                       fit: BoxFit.cover),),
 
