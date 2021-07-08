@@ -14,25 +14,25 @@ class AppDrawer extends StatelessWidget {
           _createHeader(),
           _createDrawerItem(
               icon: Icons.contacts,
-              text: 'Home',
+              text: 'My Epic',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.home)),
+                  Navigator.pushReplacementNamed(context, Routes.MyEpic)),
           _createDrawerItem(
               icon: Icons.event,
-              text: 'Login',
+              text: 'My polling Station',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.login)),
+                  Navigator.pushReplacementNamed(context, Routes.MyPollingStation)),
           _createDrawerItem(
               icon: Icons.note,
-              text: 'Tab',
+              text: 'My Representative',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.tab)),
+                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
           Divider(),
           _createDrawerItem(
               icon: Icons.collections_bookmark,
               text: 'Steps',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.tab)),
+                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
 
           ListTile(
             title: Text('0.0.1'),

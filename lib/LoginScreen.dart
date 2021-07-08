@@ -16,7 +16,7 @@ void main() {
 class LoginScreen extends StatelessWidget {
   // This widget is the root of your application.
 
-  static const String routeName = '/login';
+  static const String routeName = '/My Polling Station';
 
   @override
   Widget build(BuildContext context) {

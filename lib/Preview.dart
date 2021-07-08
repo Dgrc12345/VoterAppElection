@@ -18,10 +18,7 @@ class _State extends State<Preview> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Preview'),
-        backgroundColor: Colors.teal,
-      ),
+
 
       body: SingleChildScrollView(
         child: Padding(

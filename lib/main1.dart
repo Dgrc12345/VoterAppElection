@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Dashboard.dart';
 import 'package:flutter_app/LoginScreen.dart';
 import 'package:flutter_app/MyEpicChangeAddress1.dart';
 
@@ -18,11 +19,11 @@ class main1 extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 20, 134, 147),
       ),
-      home: HomePage("Home"),
+      home: Dashboard("Home"),
       routes:  {
-        Routes.home: (context) => HomePage("Home"),
-        Routes.login: (context) => LoginScreen(),
-        Routes.tab: (context) => MyEpicChangeAddress1(title: 'Tab Screen',),
+        Routes.MyEpic: (context) => Dashboard("Home"),
+        Routes.MyPollingStation: (context) => LoginScreen(),
+        Routes.myRepersentative: (context) => MyEpicChangeAddress1(title: 'Tab Screen',),
       },
     );
   }

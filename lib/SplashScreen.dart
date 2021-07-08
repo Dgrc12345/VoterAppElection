@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/Dashboard.dart';
 import 'package:flutter_app/LoginScreen.dart';
 import 'package:flutter_app/SignUpScreen.dart';
 
@@ -32,9 +33,9 @@ class SplashScreen extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes:  {
-        Routes.home: (context) => HomePage("Home"),
-        Routes.login: (context) => LoginScreen(),
-        Routes.tab: (context) => MyEpicChangeAddress1(title: 'Tab Screen',),
+        Routes.MyEpic: (context) => Dashboard("Home"),
+        Routes.MyPollingStation: (context) => LoginScreen(),
+        Routes.myRepersentative: (context) => MyEpicChangeAddress1(title: 'Tab Screen',),
       },
     );
 

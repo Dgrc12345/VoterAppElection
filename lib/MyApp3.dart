@@ -10,9 +10,9 @@ class MyApp3 extends StatelessWidget {
     return new MaterialApp(
       title: 'Drawer Layout',
       theme: new ThemeData(
-        primaryColor: Color.fromARGB(255, 20, 134, 147),
+        primaryColor: Color.fromARGB(255, 245, 246, 246),
       ),
-      home: MyEpicChangeAddress1(title: "Drawer Layout  Tabs",),
+      home: HomeScreen("Drawer Layout  Tabs",),
     );
   }
 }
