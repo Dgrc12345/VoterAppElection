@@ -30,7 +30,34 @@ class _State extends State<MyApp> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(top: 30.0,bottom: 5.0,left: 10.0,right: 10.0),
+                  padding: const EdgeInsets.only(top: 20.0,bottom: 5.0,left: 10.0,right: 10.0),
+
+                  child: Text('EPIC Number ',textAlign: TextAlign.left,
+
+                    style: TextStyle(fontSize: 15.0,color: Colors.black),),),
+                Padding(
+                  padding: EdgeInsets.only(top:5.0,left: 10.0,right: 10.0),
+
+                  child: TextField(
+
+                    decoration: InputDecoration(
+                      fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
+
+                      contentPadding: const EdgeInsets.symmetric(vertical: 10.0),
+                      border: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Colors.blueGrey, width: 1.5),
+                        borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                      ),
+
+                      hintText: 'Please Enter EPIC Number',
+                      isDense: true,                      // Added this
+                      //contentPadding: EdgeInsets.all(2),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15.0,bottom: 5.0,left: 10.0,right: 10.0),
 
                   child: Text('Specify reason ',textAlign: TextAlign.left,
 
