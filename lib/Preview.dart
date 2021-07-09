@@ -70,8 +70,14 @@ class _State extends State<Preview> {
                 padding: EdgeInsets.all(1),
                 child: TextField(
                   obscureText: true,
+
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderSide:
+                      BorderSide(color: Colors.blueGrey, width: 1.5),
+                      borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                    ),
+
                     isDense: true,                      // Added this
                     contentPadding: EdgeInsets.all(12),
                     hintText: 'dd/mm/yyyy',
@@ -90,7 +96,11 @@ class _State extends State<Preview> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderSide:
+                      BorderSide(color: Colors.blueGrey, width: 1.5),
+                      borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                    ),
                     isDense: true,                      // Added this
                     contentPadding: EdgeInsets.all(12),
                     hintText: 'Enter your age',
@@ -108,7 +118,11 @@ class _State extends State<Preview> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderSide:
+                      BorderSide(color: Colors.blueGrey, width: 1.5),
+                      borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                    ),
                     isDense: true,                      // Added this
                     contentPadding: EdgeInsets.all(12),
                     hintText: 'Name of Relative',
@@ -126,7 +140,11 @@ class _State extends State<Preview> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderSide:
+                      BorderSide(color: Colors.blueGrey, width: 1.5),
+                      borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                    ),
                     isDense: true,                      // Added this
                     contentPadding: EdgeInsets.all(12),
                     hintText: 'Type of Relation',
@@ -144,7 +162,11 @@ class _State extends State<Preview> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderSide:
+                      BorderSide(color: Colors.blueGrey, width: 1.5),
+                      borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                    ),
                     isDense: true,                      // Added this
                     contentPadding: EdgeInsets.all(12),
                     hintText: 'Gender',
@@ -162,7 +184,11 @@ class _State extends State<Preview> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderSide:
+                      BorderSide(color: Colors.blueGrey, width: 1.5),
+                      borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                    ),
 
                     isDense: true,
                     // Added this
