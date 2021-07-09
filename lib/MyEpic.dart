@@ -64,14 +64,13 @@ class ListViewBuilder extends StatelessWidget {
                elevation: 10,
                child: Column(
                  mainAxisSize: MainAxisSize.max,
+                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
 
                  children: <Widget>[
                    GestureDetector(
 
                      onTap: () {
-
-
-
                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Preview()));
                      },
                   child: Container(
