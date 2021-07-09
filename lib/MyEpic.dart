@@ -75,10 +75,8 @@ class ListViewBuilder extends StatelessWidget {
                      },
                   child: Container(
                      height: 40.0,
-                     child: Row(
 
-
-
+                    child: Row(
                        children: <Widget>[
 
                          Padding(
@@ -93,9 +91,15 @@ class ListViewBuilder extends StatelessWidget {
 
                                padding: const EdgeInsets.only(left:15.0),
 
-                               child: Text(
-                                   'View Details',
-                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
+                               child: Flexible(
+
+                                 child: Text(
+
+                                     'View Details',
+                                   overflow: TextOverflow.ellipsis,
+                                   softWrap: true,
+                                     style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
+                               ),
                              ),
                            ),
                          Padding(
@@ -251,9 +255,13 @@ class ListViewBuilder extends StatelessWidget {
                                child: Container(
 
                                  width: MediaQuery.of(context).size.width * 0.5,
-                                 child: Text(
-                                     'Track the Application Status',
-                                     style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                 child: Flexible(
+                                   child: Text(
+                                       'Track the Application Status',
+                                       overflow: TextOverflow.ellipsis,
+                                       softWrap: true,
+                                       style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                   ),
                                  ),
                                ),
                              ),
