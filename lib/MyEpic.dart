@@ -232,9 +232,11 @@ class ListViewBuilder extends StatelessWidget {
                      child: Container(
 
                          height: 40,
+
                        child: Row(
                          mainAxisSize: MainAxisSize.max,
-                         children: <Widget>[
+                           mainAxisAlignment: MainAxisAlignment.center,
+                           children: <Widget>[
 
                            Padding(
                              padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
@@ -276,6 +278,7 @@ class ListViewBuilder extends StatelessWidget {
                                alignment: Alignment.centerRight,
 
                                child: SizedBox(
+
                                    width: 20,
                                    height: 20,
                                  child:Image.asset("images/arrow.png"),),
