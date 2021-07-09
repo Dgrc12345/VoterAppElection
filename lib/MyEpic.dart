@@ -232,7 +232,8 @@ class ListViewBuilder extends StatelessWidget {
                      child: Container(
 
                          height: 40,
-                       child: Row( mainAxisSize: MainAxisSize.max,
+                       child: Row(
+                         mainAxisSize: MainAxisSize.max,
                          children: <Widget>[
 
                            Padding(
@@ -256,12 +257,15 @@ class ListViewBuilder extends StatelessWidget {
 
                                  width: MediaQuery.of(context).size.width * 0.5,
                                  child: Flexible(
+
                                    child: Text(
                                        'Track the Application Status',
                                        overflow: TextOverflow.ellipsis,
                                        softWrap: true,
+
                                        style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
                                    ),
+                                   flex: 1,
                                  ),
                                ),
                              ),
@@ -270,7 +274,7 @@ class ListViewBuilder extends StatelessWidget {
                              child:
                              Container(
                                alignment: Alignment.centerRight,
-                               width: MediaQuery.of(context).size.width * 0.3,
+
                                child: SizedBox(
                                    width: 20,
                                    height: 20,
