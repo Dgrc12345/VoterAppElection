@@ -13,7 +13,7 @@ class _State extends State<Preview> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
+      appBar: new AppBar(title: Text("View Detail"),),
 
       body: SingleChildScrollView(
         child: Padding(

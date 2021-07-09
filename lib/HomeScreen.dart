@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
           ),
           body: new TabBarView(
             children: [
-              new MyEpic(),
+              new ListViewBuilder(),
 
               new Icon(Icons.directions_bike,size: 50.0,),
               new Icon(Icons.directions_bike,size: 50.0,),

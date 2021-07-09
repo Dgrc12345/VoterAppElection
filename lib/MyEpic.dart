@@ -6,22 +6,23 @@ import 'package:flutter_app/Preview.dart';
 import 'package:flutter_app/TrackApplicationStatus.dart';
 
 import 'DuplicateEpic.dart';
+import 'Routes.dart';
 
-class MyEpic extends StatelessWidget {
-  // This widget is the root
-  // of your application.
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-        title: "ListView.builder",
-        theme: new ThemeData(
-            primarySwatch: Colors.green
-        ),
-        debugShowCheckedModeBanner: false,
-        home: new ListViewBuilder()
-    );
-  }
-}
+// class MyEpic extends StatelessWidget {
+//   // This widget is the root
+//   // of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return new MaterialApp(
+//         title: "ListView.builder",
+//         theme: new ThemeData(
+//             primarySwatch: Colors.green
+//         ),
+//         debugShowCheckedModeBanner: false,
+//         home: new ListViewBuilder()
+//     );
+//   }
+// }
 class ListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -71,7 +72,7 @@ class ListViewBuilder extends StatelessWidget {
                    GestureDetector(
 
                      onTap: () {
-                       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Preview()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => Preview()));
                      },
                   child: Container(
                      height: 40.0,
