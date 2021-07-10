@@ -35,7 +35,7 @@ class SplashScreen extends StatelessWidget {
       routes:  {
         Routes.MyEpic: (context) => Dashboard("Home"),
         Routes.MyPollingStation: (context) => LoginScreen(),
-        Routes.myRepersentative: (context) => MyEpicChangeAddress1(title: 'Tab Screen',),
+        Routes.myRepersentative: (context) => Dashboard("Home"),
       },
     );
 

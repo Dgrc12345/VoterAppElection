@@ -6,11 +6,12 @@ import 'package:flutter_app/SignUpScreen.dart';
 import 'package:flutter/services.dart';
 
 import 'HomeScreen.dart';
+import 'MyEpicFamilyChangeAddress3.dart';
 import 'MyEpicSelfChangeAddressNext.dart';
 import 'SplashScreen.dart';
 import 'main1.dart';
 
-class SelfChangeAdress extends StatelessWidget {
+class MyEpicFamilyChangeAddressNext extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -37,32 +38,32 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-     class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
 
-      String dropdownValue = 'One';
-      String stateValue = "Bihar";
+  String dropdownValue = 'One';
+  String stateValue = "Bihar";
 
-       List <String> spinnerItems = [
-       'One',
-      'Two',
-      'Three',
-      'Four',
-      'Five'
-      ] ;
+  List <String> spinnerItems = [
+    'One',
+    'Two',
+    'Three',
+    'Four',
+    'Five'
+  ] ;
 
-      List <String> spinnerState = [
-        'Bihar',
-        'Delhi',
-        'Mumbai',
-        'UP',
-        'Odhisa'
-      ] ;
+  List <String> spinnerState = [
+    'Bihar',
+    'Delhi',
+    'Mumbai',
+    'UP',
+    'Odhisa'
+  ] ;
 
-      @override
-        void initState() {
-        super.initState();
-        // startSplashScreen();
-     }
+  @override
+  void initState() {
+    super.initState();
+    // startSplashScreen();
+  }
 
 
 
@@ -104,85 +105,85 @@ class MyHomePage extends StatefulWidget {
                           margin: EdgeInsets.only(left: 10.0,right: 10.0,top: 20.0),
 
                           child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.4,
-                                child: Padding(
+                              children: <Widget>[
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.4,
+                                  child: Padding(
 
-                                  padding: const EdgeInsets.only(left:5.0),
+                                    padding: const EdgeInsets.only(left:5.0),
 
-                                  child: Flexible(
+                                    child: Flexible(
 
-                                    child: Text(
-                                        'Name',
-                                        overflow: TextOverflow.ellipsis,
-                                        softWrap: true,
-                                        style: TextStyle(fontSize: 15.0,color: Colors.grey,fontWeight: FontWeight.w200)),
+                                      child: Text(
+                                          'Name',
+                                          overflow: TextOverflow.ellipsis,
+                                          softWrap: true,
+                                          style: TextStyle(fontSize: 15.0,color: Colors.grey,fontWeight: FontWeight.w200)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.4,
-                                child: Padding(
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.4,
+                                  child: Padding(
 
-                                  padding: const EdgeInsets.only(left:15.0),
+                                    padding: const EdgeInsets.only(left:15.0),
 
-                                  child: Flexible(
+                                    child: Flexible(
 
-                                    child: Text(
-                                        'Epic Number',
-                                        overflow: TextOverflow.ellipsis,
-                                        softWrap: true,
-                                        style: TextStyle(fontSize: 15.0,color: Colors.grey,fontWeight: FontWeight.w200)),
+                                      child: Text(
+                                          'Epic Number',
+                                          overflow: TextOverflow.ellipsis,
+                                          softWrap: true,
+                                          style: TextStyle(fontSize: 15.0,color: Colors.grey,fontWeight: FontWeight.w200)),
+                                    ),
                                   ),
                                 ),
-                              ),
 
 
-                            ]
-                        ),
+                              ]
+                          ),
 
 
                         ), Container(
 
                           margin: EdgeInsets.only(left: 10.0,right: 10.0),
-                        child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.4,
-                                child: Padding(
+                          child: Row(
+                              children: <Widget>[
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.4,
+                                  child: Padding(
 
-                                  padding: const EdgeInsets.only(left:5.0),
+                                    padding: const EdgeInsets.only(left:5.0),
 
-                                  child: Flexible(
+                                    child: Flexible(
 
-                                    child: Text(
-                                        'Chandni',
-                                        overflow: TextOverflow.ellipsis,
-                                        softWrap: true,
-                                        style: TextStyle(fontSize: 15.0,color: Colors.blueGrey,fontWeight: FontWeight.bold)),
+                                      child: Text(
+                                          'Chandni',
+                                          overflow: TextOverflow.ellipsis,
+                                          softWrap: true,
+                                          style: TextStyle(fontSize: 15.0,color: Colors.blueGrey,fontWeight: FontWeight.bold)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.4,
-                                child: Padding(
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.4,
+                                  child: Padding(
 
-                                  padding: const EdgeInsets.only(left:15.0),
+                                    padding: const EdgeInsets.only(left:15.0),
 
-                                  child: Flexible(
+                                    child: Flexible(
 
-                                    child: Text(
-                                        'NEL366485864',
-                                        overflow: TextOverflow.ellipsis,
-                                        softWrap: true,
-                                        style: TextStyle(fontSize: 15.0,color: Colors.blueGrey,fontWeight: FontWeight.bold)),
+                                      child: Text(
+                                          'NEL366485864',
+                                          overflow: TextOverflow.ellipsis,
+                                          softWrap: true,
+                                          style: TextStyle(fontSize: 15.0,color: Colors.blueGrey,fontWeight: FontWeight.bold)),
+                                    ),
                                   ),
                                 ),
-                              ),
 
 
-                            ]),
+                              ]),
                         ),
                       ],
                     ),
@@ -425,7 +426,7 @@ class MyHomePage extends StatefulWidget {
 
                                 child:Text("Next",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 13.0,decorationStyle:TextDecorationStyle.solid),),
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEpicSelfChangeAddressNext()));
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEpicFamilyChangeAddress3()));
                                 },)
                           ),]),
                   ),

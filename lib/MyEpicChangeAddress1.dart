@@ -5,20 +5,20 @@ import 'package:flutter_app/LoginScreen.dart';
 import 'package:flutter_app/AppDrawer.dart';
 import 'package:flutter_app/LoginScreen.dart';
 
+import 'MyEpicFamilyChangeAddress.dart';
 import 'SelfChangeAdress.dart';
 
 class MyEpicChangeAddress1 extends StatelessWidget {
-  final String title;
-  static const String routeName = '/My Repersentative';
-  MyEpicChangeAddress1({Key? key, required this.title}) : super(key: key);
+  late final String title;
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: AppDrawer(),
+      /*drawer: AppDrawer(),
       appBar: new AppBar(
         title: Text(title),
-      ),
+      ),*/
 
       body: new DefaultTabController(
         length: 2,
@@ -41,18 +41,9 @@ class MyEpicChangeAddress1 extends StatelessWidget {
           ),
           body: new TabBarView(
             children: [
-              new Text("Home Page",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color:Color.fromARGB(255, 20, 134, 147),
-                    fontSize: 22,
-                  )),
-             // new LoginScreen(),
-              //new Icon(Icons.directions_transit,size: 50.0,),
-              new SelfChangeAdress(),
-              //new Icon(Icons.directions_transit,size: 50.0,),
-              //new LoginScreen(),
 
+              new SelfChangeAdress(),
+              new MyEpicFamilyChangeAddress(),
             ],
           ),
         ),

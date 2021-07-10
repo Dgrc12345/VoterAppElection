@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/HomeScreen.dart';
+import 'package:flutter_app/MyEpicChangeAddress1.dart';
 import 'package:flutter_app/MyEpic_UpdateDetails.dart';
 import 'package:flutter_app/Preview.dart';
 import 'package:flutter_app/TrackApplicationStatus.dart';
@@ -95,7 +96,6 @@ class ListViewBuilder extends StatelessWidget {
                                child: Flexible(
 
                                  child: Text(
-
                                      'View Details',
                                    overflow: TextOverflow.ellipsis,
                                    softWrap: true,
@@ -114,9 +114,7 @@ class ListViewBuilder extends StatelessWidget {
                                  width: 20,
                                  height: 20,
                                child:Image.asset("images/arrow.png"),),
-                           ),
-
-                         ),
+                           ),),
                        ],),
                    ),),
                    Divider(
@@ -130,11 +128,7 @@ class ListViewBuilder extends StatelessWidget {
                      child: Container(
                        height: 40.0,
                        child: Row(
-
-
-
                          children: <Widget>[
-
                            Padding(
                              padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
                              child: SizedBox(
@@ -175,7 +169,7 @@ class ListViewBuilder extends StatelessWidget {
                    ),
                    GestureDetector(
                      onTap: () {
-                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => TrackApplicationStatus()));
+                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEpicChangeAddress1()));
                      },
                      child: Container(
                        height: 40,

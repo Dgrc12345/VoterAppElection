@@ -43,50 +43,61 @@ class _State extends State<Preview> {
               ),
 
               Padding(
-                padding: EdgeInsets.all(6),
+                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
 
                 child: Text('Name',textAlign: TextAlign.left,
 
                   style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
               Padding(
-                padding: EdgeInsets.all(1),
+                padding: EdgeInsets.all(8),
                 child: TextField(
-                  obscureText: true,
+
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    isDense: true,                      // Added this
+                    fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
+
                     contentPadding: EdgeInsets.all(12),
-                    hintText: 'Name',
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(6),
-
-                child: Text('Date of Birth',textAlign: TextAlign.left,
-
-                  style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
-              Padding(
-                padding: EdgeInsets.all(1),
-                child: TextField(
-                  obscureText: true,
-
-                  decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderSide:
                       BorderSide(color: Colors.blueGrey, width: 1.5),
                       borderRadius: BorderRadius.all(Radius.circular(2.5)),
                     ),
 
+                    hintText: 'Name',
                     isDense: true,                      // Added this
-                    contentPadding: EdgeInsets.all(12),
-                    hintText: 'dd/mm/yyyy',
+                    //contentPadding: EdgeInsets.all(2),
                   ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+
+                child: Text('Date of Birth',textAlign: TextAlign.left,
+
+                  style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: TextField(
+                  decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
+
+                    contentPadding: EdgeInsets.all(12),
+                    border: OutlineInputBorder(
+
+                      borderSide:
+                      BorderSide(color: Colors.blueGrey, width: 1.5),
+                      borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                    ),
+
+                    hintText: 'dd/mm/yyyy',
+                    isDense: true,                      // Added this
+                    //contentPadding: EdgeInsets.all(2),
+                  ),
+
                 ),
               ),
 
               Padding(
-                padding: EdgeInsets.all(6),
+                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
 
                 child: Text('Age',textAlign: TextAlign.left,
 
@@ -96,6 +107,7 @@ class _State extends State<Preview> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
                     border: OutlineInputBorder(
                       borderSide:
                       BorderSide(color: Colors.blueGrey, width: 1.5),
@@ -108,7 +120,7 @@ class _State extends State<Preview> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(6),
+                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
 
                 child: Text('Name Of Relative',textAlign: TextAlign.left,
 
@@ -118,6 +130,7 @@ class _State extends State<Preview> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
                     border: OutlineInputBorder(
                       borderSide:
                       BorderSide(color: Colors.blueGrey, width: 1.5),
@@ -130,16 +143,17 @@ class _State extends State<Preview> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(6),
+                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
 
                 child: Text('Type of Relation',textAlign: TextAlign.left,
 
                   style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
               Padding(
-                padding: EdgeInsets.all(1),
+                padding: EdgeInsets.all(8),
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
                     border: OutlineInputBorder(
                       borderSide:
                       BorderSide(color: Colors.blueGrey, width: 1.5),
@@ -152,16 +166,17 @@ class _State extends State<Preview> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(6),
+                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
 
                 child: Text('Gender',textAlign: TextAlign.left,
 
                   style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
               Padding(
-                padding: EdgeInsets.all(1),
+                padding: EdgeInsets.all(8),
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
                     border: OutlineInputBorder(
                       borderSide:
                       BorderSide(color: Colors.blueGrey, width: 1.5),
@@ -174,16 +189,17 @@ class _State extends State<Preview> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(6),
+                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
 
                 child: Text('Address',textAlign: TextAlign.left,
 
                   style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
               Padding(
-                padding: EdgeInsets.all(1),
+                padding: EdgeInsets.all(8),
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
                     border: OutlineInputBorder(
                       borderSide:
                       BorderSide(color: Colors.blueGrey, width: 1.5),
