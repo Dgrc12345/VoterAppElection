@@ -1,14 +1,17 @@
 
 
 import 'package:flutter/material.dart';
+void main() {
+  runApp(MaterialApp( home: ApplyForVoterID(),));
+}
 
 
-class MyEpic_UpdateDetails extends StatefulWidget {
+class ApplyForVoterID extends StatefulWidget {
   @override
   _State createState() => _State();
 }
 
-class _State extends State<MyEpic_UpdateDetails> {
+class _State extends State<ApplyForVoterID> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,11 +19,12 @@ class _State extends State<MyEpic_UpdateDetails> {
         leading: BackButton(
             color: Colors.white
         ),
-        title: Text('View Detail',style: TextStyle(fontSize: 14.0,color: Colors.white)),
+        title: Text('Apply for Voter ID',style: TextStyle(fontSize: 14.0,color: Colors.white)),
 
         backgroundColor: Color.fromARGB(255, 20, 134, 147),
       ),
       backgroundColor: Colors.white,
+      //appBar: new AppBar(title: Text("Apply for Voter ID"),),
 
       body: SingleChildScrollView(
         child: Padding(
@@ -30,11 +34,12 @@ class _State extends State<MyEpic_UpdateDetails> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.all(1),
+                //padding: EdgeInsets.all(1),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Photograph',textAlign: TextAlign.left,
 
-                  style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
+                  style: TextStyle(fontSize: 15.0,color: Colors.black),),),
               Container(
                 width: 120.0,
                 height: 120.0,
@@ -50,11 +55,12 @@ class _State extends State<MyEpic_UpdateDetails> {
               ),
 
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                //padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Name',textAlign: TextAlign.left,
 
-                  style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
+                  style: TextStyle(fontSize: 15.0,color: Colors.black),),),
               Padding(
                 padding: EdgeInsets.all(8),
                 child: TextField(
@@ -69,14 +75,14 @@ class _State extends State<MyEpic_UpdateDetails> {
                       borderRadius: BorderRadius.all(Radius.circular(2.5)),
                     ),
 
-                    hintText: 'Name',
+                    hintText: 'Enter Name',
                     isDense: true,                      // Added this
                     //contentPadding: EdgeInsets.all(2),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Date of Birth',textAlign: TextAlign.left,
 
@@ -104,7 +110,7 @@ class _State extends State<MyEpic_UpdateDetails> {
               ),
 
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Age',textAlign: TextAlign.left,
 
@@ -126,7 +132,7 @@ class _State extends State<MyEpic_UpdateDetails> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Name Of Relative',textAlign: TextAlign.left,
 
@@ -148,7 +154,7 @@ class _State extends State<MyEpic_UpdateDetails> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Type of Relation',textAlign: TextAlign.left,
 
@@ -170,7 +176,7 @@ class _State extends State<MyEpic_UpdateDetails> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Gender',textAlign: TextAlign.left,
 
@@ -192,7 +198,7 @@ class _State extends State<MyEpic_UpdateDetails> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Address',textAlign: TextAlign.left,
 
@@ -215,9 +221,29 @@ class _State extends State<MyEpic_UpdateDetails> {
                   ),
                 ),
               ),
-
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                //padding: EdgeInsets.all(1),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
+
+                child: Text('Upload proof of address',textAlign: TextAlign.left,
+
+                  style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
+              Container(
+                width: 400.0,
+                height: 150.0,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15.0,left: 10,right: 10),
+                  //padding: EdgeInsets.all(6),
+
+                  child: Image.asset("images/profile1.png",alignment: Alignment.topLeft,
+                    width: 120.0,
+                    height: 120.0,
+
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Captcha ',textAlign: TextAlign.left,
 
@@ -234,7 +260,7 @@ class _State extends State<MyEpic_UpdateDetails> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
+                padding: const EdgeInsets.only(top: 5.0,left: 10,right: 10),
 
                 child: Text('Enter Captcha ',textAlign: TextAlign.left,
 
@@ -261,32 +287,13 @@ class _State extends State<MyEpic_UpdateDetails> {
                 ),
               ),
 
-              Padding(
-                padding: const EdgeInsets.only(top:15.0,left: 15.0,right: 15.0),
-                child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children:[
-
-                      SizedBox(
-
-                          width:150,
-                          height:50,
-                          child: RaisedButton(
-
-                            textColor: Colors.teal,
-
-                            color: Colors.yellow,
-                            padding: EdgeInsets.all(12),
-
-                            child:Text("UPDATE",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 13.0,decorationStyle:TextDecorationStyle.solid),),
-                            onPressed: () {
-
-                            },)
-                      ),
-
-
-                    ]
-
-
+              Container(
+                margin: EdgeInsets.all(10),
+                child: FlatButton(
+                  child: Text('SUBMIT', style: TextStyle(fontSize: 15.0),),
+                  color: Colors.yellow,
+                  textColor: Colors.black,
+                  onPressed: () {},
                 ),
               ),
 
