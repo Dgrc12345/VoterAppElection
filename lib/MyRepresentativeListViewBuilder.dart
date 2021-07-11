@@ -39,8 +39,8 @@ class MyRepresentativeListView extends State<MyRepresentativeListViewBuilder> {
                 // subtitle: Text(subtitles[index]),
                 leading: ConstrainedBox(
                   constraints: BoxConstraints(
-                    minWidth: 44,
-                    minHeight: 44,
+                    minWidth: 54,
+                    minHeight: 54,
                     maxWidth: 64,
                     maxHeight: 64,
                   ),

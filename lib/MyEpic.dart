@@ -79,6 +79,7 @@ class ListViewBuilder extends StatelessWidget {
                      height: 40.0,
 
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        children: <Widget>[
 
                          Padding(
@@ -99,7 +100,7 @@ class ListViewBuilder extends StatelessWidget {
                                      'View Details',
                                    overflow: TextOverflow.ellipsis,
                                    softWrap: true,
-                                     style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
+                                     style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)),
                                ),
                              ),
                            ),
@@ -128,6 +129,7 @@ class ListViewBuilder extends StatelessWidget {
                      child: Container(
                        height: 40.0,
                        child: Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                          children: <Widget>[
                            Padding(
                              padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
@@ -143,7 +145,7 @@ class ListViewBuilder extends StatelessWidget {
 
                                child: Text(
                                    'Update Details',
-                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
+                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)),
                              ),
                            ),
                            Padding(
@@ -174,6 +176,7 @@ class ListViewBuilder extends StatelessWidget {
                      child: Container(
                        height: 40,
                        child: Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                          children: <Widget>[
 
                            Padding(
@@ -191,13 +194,13 @@ class ListViewBuilder extends StatelessWidget {
                              ),
                            ),
                            Padding(
-                             padding: const EdgeInsets.only(top:0.0,left: 8.0),
+                             padding: const EdgeInsets.only(top:0.0,left: 5.0),
                              child: Container(
 
                                width: MediaQuery.of(context).size.width * 0.5,
                                child: Text(
                                    'Change in Address',
-                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)
                                ),
                              ),
                            ),Padding(
@@ -224,58 +227,41 @@ class ListViewBuilder extends StatelessWidget {
                      onTap: () {
                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => TrackApplicationStatus()));
                      },
-                     child: Container(
+                     child:  Container(
 
-                         height: 40,
-
-                       child: Row(
-                         mainAxisSize: MainAxisSize.max,
-                           mainAxisAlignment: MainAxisAlignment.center,
-                           children: <Widget>[
+                       height: 40,
+                       child: Row(  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         children: <Widget>[
 
                            Padding(
                              padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
-                             child: Container(
-
-                               child: SizedBox(
+                             child: SizedBox(
                                  width: 20,
                                  height: 20,
 
                                  child:Image.asset("images/ic_track_application.png")
 
-                                 ),
                              ),
                            ),
                            Padding(
-                             padding: const EdgeInsets.only(left:15.0),
+                             padding: const EdgeInsets.all(5.0),
                              child: Container(
 
-                               child: Container(
-
-                                 width: MediaQuery.of(context).size.width * 0.5,
-                                 child: Flexible(
-
-                                   child: Text(
-                                       'Track the Application Status',
-                                       overflow: TextOverflow.ellipsis,
-                                       softWrap: true,
-
-                                       style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
-                                   ),
-                                   flex: 1,
-                                 ),
+                               width: MediaQuery.of(context).size.width * 0.5,
+                               child: Text(
+                                   'Track the Application Status',
+                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)
                                ),
                              ),
                            ),Padding(
-                             padding: const EdgeInsets.all(8.0),
+                             padding: const EdgeInsets.only(top:10.0,left: 15.0),
                              child:
                              Container(
                                alignment: Alignment.centerRight,
-
+                               width: MediaQuery.of(context).size.width * 0.3,
                                child: SizedBox(
-
-                                   width: 20,
-                                   height: 20,
+                                 width: 20,
+                                 height: 20,
                                  child:Image.asset("images/arrow.png"),),
                              ),
 
@@ -293,7 +279,7 @@ class ListViewBuilder extends StatelessWidget {
                      },
                      child: Container(
                        height: 40,
-                       child: Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                       child: Row(    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                          children: <Widget>[
 
                            Padding(
@@ -307,17 +293,17 @@ class ListViewBuilder extends StatelessWidget {
                                ),
                            ),
                            Padding(
-                             padding: const EdgeInsets.all(8.0),
+                             padding: const EdgeInsets.all(5.0),
                              child: Container(
 
                                width: MediaQuery.of(context).size.width * 0.5,
                                child: Text(
                                    'Duplicate Electors Photo Identity Card(EPIC)',
-                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                   style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)
                                ),
                              ),
                            ),Padding(
-                             padding: const EdgeInsets.all(8.0),
+                             padding: const EdgeInsets.only(top:10.0,left: 15.0),
                              child:
                              Container(
                                alignment: Alignment.centerRight,
@@ -339,7 +325,7 @@ class ListViewBuilder extends StatelessWidget {
                    Container(
 
                        height: 40,
-                     child: Row(  mainAxisSize: MainAxisSize.max,
+                     child: Row(   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        children: <Widget>[
 
                          Padding(
@@ -353,17 +339,17 @@ class ListViewBuilder extends StatelessWidget {
                              ),
                          ),
                          Padding(
-                           padding: const EdgeInsets.all(8.0),
+                           padding: const EdgeInsets.all(5.0),
                            child: Container(
 
                              width: MediaQuery.of(context).size.width * 0.5,
                              child: Text(
                                  'Download e-EPIC',
-                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)
                              ),
                            ),
                          ),Padding(
-                           padding: const EdgeInsets.all(8.0),
+                           padding: const EdgeInsets.only(top:10.0,left: 15.0),
                            child:
                            Container(
                              alignment: Alignment.centerRight,
@@ -383,7 +369,7 @@ class ListViewBuilder extends StatelessWidget {
                    ),
                    Container(
                        height: 40,
-                     child: Row( mainAxisSize: MainAxisSize.max,
+                     child: Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        children: <Widget>[
 
                          Padding(
@@ -397,17 +383,17 @@ class ListViewBuilder extends StatelessWidget {
                            ),
                          ),
                          Padding(
-                           padding: const EdgeInsets.all(8.0),
+                           padding: const EdgeInsets.all(5.0),
                            child: Container(
 
                              width: MediaQuery.of(context).size.width * 0.5,
                              child: Text(
                                  'Deletion of Enrollment',
-                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)
                              ),
                            ),
                          ),Padding(
-                           padding: const EdgeInsets.all(8.0),
+                           padding: const EdgeInsets.only(top:10.0,left: 15.0),
                            child:
                            Container(
                              alignment: Alignment.centerRight,
@@ -428,7 +414,7 @@ class ListViewBuilder extends StatelessWidget {
                    Container(
                        height: 40,
                      child: Row(
-                       mainAxisSize: MainAxisSize.max,
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        children: <Widget>[
 
                          Padding(
@@ -442,17 +428,17 @@ class ListViewBuilder extends StatelessWidget {
                            ),
                          ),
                          Padding(
-                           padding: const EdgeInsets.all(8.0),
+                           padding: const EdgeInsets.all(5.0),
                            child: Container(
 
                              width: MediaQuery.of(context).size.width * 0.5,
                              child: Text(
                                  'Services for Divyang',
-                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                 style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)
                              ),
                            ),
                          ),Padding(
-                           padding: const EdgeInsets.all(8.0),
+                           padding: const EdgeInsets.only(top:10.0,left: 15.0),
                            child: Container(
                              alignment: Alignment.centerRight,
                              width: MediaQuery.of(context).size.width * 0.3,
@@ -470,7 +456,7 @@ class ListViewBuilder extends StatelessWidget {
                      child:new Row(
                        children: <Widget>[
 
-                         new Padding(padding: new EdgeInsets.only(left: 20.0 ,bottom: 40.0),),
+                         new Padding(padding: new EdgeInsets.only(left: 5.0 ,bottom: 30.0),),
 
                          Image.asset("images/banner1.png",
 
