@@ -3,28 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/HomeScreen.dart';
 import 'package:flutter_app/MyEpicChangeAddress1.dart';
 import 'package:flutter_app/MyEpic_UpdateDetails.dart';
+import 'package:flutter_app/MyPollingStationViewLocation.dart';
 import 'package:flutter_app/Preview.dart';
 import 'package:flutter_app/TrackApplicationStatus.dart';
 
 import 'DuplicateEpic.dart';
 import 'Routes.dart';
 
-// class MyEpic extends StatelessWidget {
-//   // This widget is the root
-//   // of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return new MaterialApp(
-//         title: "ListView.builder",
-//         theme: new ThemeData(
-//             primarySwatch: Colors.green
-//         ),
-//         debugShowCheckedModeBanner: false,
-//         home: new ListViewBuilder()
-//     );
-//   }
-// }
-class MyPollingStation extends StatelessWidget {
+ class MyPollingStation extends StatelessWidget {
+   // This widget is the root// of your application.
+   @override
+   Widget build(BuildContext context) {
+     return new MaterialApp(
+        title: "ListView.builder",
+         theme: new ThemeData(
+            primarySwatch: Colors.green
+         ),
+        debugShowCheckedModeBanner: false,
+         home: new ListViewBuilder1()
+    );
+   }
+ }
+class ListViewBuilder1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +74,11 @@ class MyPollingStation extends StatelessWidget {
                             GestureDetector(
 
                               onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Preview()));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MyPollingStationViewLocation(text: 'Constituency'),
+                                    ));
                               },
                               child: Container(
                                 height: 40.0,
@@ -124,7 +128,11 @@ class MyPollingStation extends StatelessWidget {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEpic_UpdateDetails()));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MyPollingStationViewLocation(text: 'Polling Booth'),
+                                    ));
                               },
                               child: Container(
                                 height: 40.0,
@@ -170,7 +178,11 @@ class MyPollingStation extends StatelessWidget {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEpicChangeAddress1()));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MyPollingStationViewLocation(text: 'BLO/EO Details'),
+                                    ));
                               },
                               child: Container(
                                 height: 40,

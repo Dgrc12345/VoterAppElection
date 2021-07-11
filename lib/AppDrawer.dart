@@ -34,7 +34,7 @@ class AppDrawer extends StatelessWidget {
               icon: Icons.collections_bookmark,
               text: 'cVIGIL',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
+                  Navigator.pushReplacementNamed(context, Routes.cVIGIL)),
           Divider(),
           _createDrawerItem(
               icon: Icons.collections_bookmark,

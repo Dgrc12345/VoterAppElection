@@ -247,36 +247,42 @@ class Dashboard extends StatelessWidget {
                         mainAxisSize: MainAxisSize.max,
 
                         children: <Widget>[
-                          Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                          Row(   mainAxisAlignment: MainAxisAlignment.center,mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
 
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: SizedBox(
-                              width: 60,
-                              height: 60,
+                            child: Expanded(
+                              child: SizedBox(
+                                width: 60,
+                                height: 60,
 
-                              child: ImageIcon(
-                                AssetImage("images/eye.png"),
+                                child: ImageIcon(
+                                  AssetImage("images/eye.png"),
 
-                                color: Color(0xFFF0F1F1),
+                                  color: Color(0xFFF0F1F1),
 
+                                ),
                               ),
                             ),
                           ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
+                                child: Expanded(
                                 child: Text(
                                   'Citizen Vigilance',
                                   style: TextStyle(fontSize: 18.0,color: Colors.white70)
-                            ),
+                                   ),
+                                ),
                               ),Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: ImageIcon(
-                                  AssetImage("images/arrow.png"),
+                                child: Expanded(
+                                  child: ImageIcon(
+                                    AssetImage("images/arrow.png"),
 
-                                  color: Color(0xFFF0F1F1),
+                                    color: Color(0xFFF0F1F1),
 
+                                  ),
                                 ),
                               ),
                          ],),
@@ -295,28 +301,28 @@ class Dashboard extends StatelessWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Row(  mainAxisSize: MainAxisSize.max,
+                          Row(  mainAxisSize: MainAxisSize.max,mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
 
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                    'Live Election News ',
-                                    style: TextStyle(fontSize: 15.0,color: Colors.black54)
+                                child: Expanded(
+                                  child: Text(
+                                      'Live Election News ',
+                                      style: TextStyle(fontSize: 15.0,color: Colors.black54)
+                                  ),
                                 ),
                               ),
                             ],),
-                          Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                          Row(  mainAxisAlignment: MainAxisAlignment.center,mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
-
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
+                               Expanded(
+                                 child: Text(
                                     'Ec Rolls out Digital Voter ID Cards ',
                                     style: TextStyle(fontSize: 18.0,color: Colors.teal,fontWeight: FontWeight.w200)
                                 ),
-                              ),Padding(
-                                padding: const EdgeInsets.all(8.0),
+                               ),
+                              Expanded(
                                 child: ImageIcon(
                                   AssetImage("images/arrow.png"),
 
@@ -324,6 +330,7 @@ class Dashboard extends StatelessWidget {
 
                                 ),
                               ),
+                             
                             ],),
 
 

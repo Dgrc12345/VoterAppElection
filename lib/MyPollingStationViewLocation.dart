@@ -9,7 +9,10 @@ import 'package:flutter_app/TrackApplicationStatus.dart';
 import 'DuplicateEpic.dart';
 import 'Routes.dart';
 
-class MyPollingStation extends StatelessWidget {
+class MyPollingStationViewLocation extends StatelessWidget {
+
+  final String text;
+  MyPollingStationViewLocation({required this.text}) ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,9 +61,7 @@ class MyPollingStation extends StatelessWidget {
                           children: <Widget>[
                             GestureDetector(
 
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Preview()));
-                              },
+
                               child: Container(
                                 height: 40.0,
 
@@ -82,7 +83,7 @@ class MyPollingStation extends StatelessWidget {
                                         child: Flexible(
 
                                           child: Text(
-                                              'Constituency',
+                                              text,
                                               overflow: TextOverflow.ellipsis,
                                               softWrap: true,
                                               style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
@@ -102,108 +103,37 @@ class MyPollingStation extends StatelessWidget {
                                           child:Image.asset("images/arrow.png"),),
                                       ),),
                                   ],),
-                              ),),
-                            Divider(
-                              height: 10,
-                              thickness: 3,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEpic_UpdateDetails()));
-                              },
-                              child: Container(
-                                height: 40.0,
-                                child: Row(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
-                                      child: SizedBox(
-                                          width: 30,
-                                          height: 30,
-                                          child:Image.asset("images/icon_update_details.png")),),
-                                    Container(
-                                      width: MediaQuery.of(context).size.width * 0.5,
-                                      child: Padding(
-
-                                        padding: const EdgeInsets.only(left:15.0),
-
-                                        child: Text(
-                                            'Polling Booth',
-                                            style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top:10.0,left: 15.0),
-                                      child:
-                                      Container(
-                                        alignment: Alignment.centerRight,
-                                        width: MediaQuery.of(context).size.width * 0.3,
-                                        child: SizedBox(
-
-                                          width: 20,
-                                          height: 20,
-                                          child:Image.asset("images/arrow.png"),),
-                                      ),
-
-                                    ),
-                                  ],),
-                              ),
-                            ),
-                            Divider(
-                              height: 10,
-                              thickness: 3,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyEpicChangeAddress1()));
-                              },
-                              child: Container(
-                                height: 40,
-                                child: Row(
-                                  children: <Widget>[
-
-                                    Padding(
-                                      padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
-                                      child: Container(
-
-
-                                        child: SizedBox(
-                                            width: 20,
-                                            height: 20,
-
-                                            child:Image.asset("images/ic_change_adress.png")
-
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top:0.0,left: 8.0),
-                                      child: Container(
-
-                                        width: MediaQuery.of(context).size.width * 0.5,
-                                        child: Text(
-                                            'BLO/EO Details',
-                                            style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
-                                        ),
-                                      ),
-                                    ),Padding(
-                                      padding: const EdgeInsets.only(top:10.0,left: 15.0),
-                                      child:
-                                      Container(
-                                        alignment: Alignment.centerRight,
-                                        width: MediaQuery.of(context).size.width * 0.3,
-                                        child: SizedBox(
-                                          width: 20,
-                                          height: 20,
-                                          child:Image.asset("images/arrow.png"),),
-                                      ),
-
-                                    ),
-                                  ],),
                               ),
                             ),
 
                           ],),),),
+                    Center(
+                      child: Container(
+                        margin: const EdgeInsets.only(top:50.0,left: 25.0,right: 25.0),
+                        height: MediaQuery.of(context).size.height*0.1,
+                        width: MediaQuery.of(context).size.width,
+
+                        child: FlatButton(
+                            child: Image.asset("images/ic_change_adress.png"),
+                          color:Color.fromARGB(75, 44, 141, 153),
+                          textColor: Colors.black,
+                          height: 60.0,
+                          onPressed: () {},
+                        ),
+
+                      ),
+                    ),
+                    Container(margin: const EdgeInsets.only(left: 25.0,right: 25.0),
+                      width: MediaQuery.of(context).size.width,
+                      child: FlatButton(
+                          child: Text("Software Technology Park Of India Patna Bihar"),
+                        color:Color.fromARGB(158, 11, 92, 102),
+                        textColor: Colors.black,
+                        height: 60.0,
+                        onPressed: () {},
+                      ),
+
+                    ),
                     Container(
                       height: MediaQuery.of(context).size.height*0.7,
 

@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app/Dashboard.dart';
 import 'package:flutter_app/LoginScreen.dart';
 import 'package:flutter_app/SignUpScreen.dart';
+import 'package:flutter_app/cVIGILScreen.dart';
 
 import 'HomeScreen.dart';
 import 'MyEpicChangeAddress1.dart';
@@ -36,6 +37,7 @@ class SplashScreen extends StatelessWidget {
         Routes.MyEpic: (context) => Dashboard("Home"),
         Routes.MyPollingStation: (context) => LoginScreen(),
         Routes.myRepersentative: (context) => Dashboard("Home"),
+        Routes.cVIGIL: (context) => cVIGILScreen("cVIGIL"),
       },
     );
 
