@@ -46,30 +46,36 @@ class Dashboard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Container(
-
+                    alignment: FractionalOffset.center,
 
                     child:new Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        new Container(
+                        Expanded(
+                          child: Center(
+                            child: new Container(
+                              child: new ButtonBar(
 
-                          child: new ButtonBar(
-                              children:[
-                                SizedBox(
-                                    width: 110,
-                                    height:110,
 
-                                    child:GestureDetector(
-                                        onTap: () {
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen("HOME")));
-                                        },
-
+                                children:[
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width * 0.3,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPollingStation()));
+                                      },
                                       child: new Card(
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0),),
-                                        color: Colors.lightGreen,
-                                        elevation: 7,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(7.0),
+                                          ),
+
+                                          color: Colors.lightGreen,
+                                          elevation: 7,
+
                                           child: Column(
+
                                               mainAxisSize: MainAxisSize.max,
+
                                               children: <Widget>[
                                                 Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
                                                   children: <Widget>[
@@ -83,7 +89,8 @@ class Dashboard extends StatelessWidget {
                                                         child: ImageIcon(
                                                           AssetImage("images/myepic.png"),
 
-                                                          color: Color(0xFFCF5CE3),
+                                                          color: Color(
+                                                              0xFFCB74DE),
 
                                                         ),
                                                       ),
@@ -91,135 +98,140 @@ class Dashboard extends StatelessWidget {
                                                     Padding(
                                                       padding: const EdgeInsets.all(8.0),
                                                       child: Text(
-                                                          'My Epic',textAlign:TextAlign.center,
+                                                          '  My Epic      \n    ',textAlign:TextAlign.center,
                                                           style: TextStyle(fontSize: 12.0,color: Colors.black87)
                                                       ),
                                                     ),
                                                   ],),]
                                           )
                                       ),
-
-                                    ),
-                                ),
-                              ],
-
-                              alignment:MainAxisAlignment.center,
-
-
-                          ),),
-                        new Container(
-
-                          child: new ButtonBar(
-
-
-                              children:[
-                                SizedBox(
-                                    width: 110,
-                                    height:110,
-                                    child: new Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(7.0),
-                                      ),
-
-                                      color: Colors.lightGreen,
-                                      elevation: 7,
-                                        child: Column(
-
-                                            mainAxisSize: MainAxisSize.max,
-
-                                            children: <Widget>[
-                                              Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                                                children: <Widget>[
-
-                                                  Padding(
-                                                    padding: const EdgeInsets.all(8.0),
-                                                    child: SizedBox(
-                                                      width: 30,
-                                                      height: 30,
-
-                                                      child: ImageIcon(
-                                                        AssetImage("images/polling.png"),
-
-                                                        color: Color(0xFFE4F558),
-
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding: const EdgeInsets.all(8.0),
-                                                    child: Text(
-                                                        'My Polling Station',textAlign:TextAlign.center,
-                                                        style: TextStyle(fontSize: 12.0,color: Colors.black87)
-                                                    ),
-                                                  ),
-                                                ],),]
-                                        )
-                                    )
-                                ),
-                              ],
-
-                              alignment:MainAxisAlignment.center,
-
-
-                          ),),new Container(
-
-                          child: new ButtonBar(
-
-
-                              children:[
-                                SizedBox(
-                                    width: 110,
-                                    height:110,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPollingStation()));
-                                      },
-                                      child: new Card(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(7.0),
-                                        ),
-
-                                        color: Colors.lightGreen,
-                                        elevation: 7,
-
-                                        child: Column(
-
-                                          mainAxisSize: MainAxisSize.max,
-
-                                          children: <Widget>[
-                                        Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                                          children: <Widget>[
-
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: SizedBox(
-                                                width: 30,
-                                                height: 30,
-
-                                                child: ImageIcon(
-                                                  AssetImage("images/myrepresentative.png"),
-
-                                                  color: Color(0xFF5787D9),
-
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: Text(
-                                                  'My Representative',textAlign:TextAlign.center,
-                                                  style: TextStyle(fontSize: 12.0,color: Colors.black87)
-                                              ),
-                                            ),
-                                          ],),]
-                                      )
-                                ),
                                     ),),
-                              ],
+                                ],
 
 
 
-                          ),)
+                              ),),
+                          ),
+                        ),
+                        Expanded(
+                          child: Center(
+                            child: new Container(
+
+                              child: new ButtonBar(
+
+
+                                  children:[
+                                    SizedBox(
+                                        width: MediaQuery.of(context).size.width * 0.3,
+                                        child: new Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(7.0),
+                                          ),
+
+                                          color: Colors.lightGreen,
+                                          elevation: 7,
+                                            child: Column(
+
+                                                mainAxisSize: MainAxisSize.max,
+
+                                                children: <Widget>[
+                                                  Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                                                    children: <Widget>[
+
+                                                      Padding(
+                                                        padding: const EdgeInsets.all(8.0),
+                                                        child: SizedBox(
+                                                          width: 30,
+                                                          height: 30,
+
+                                                          child: ImageIcon(
+                                                            AssetImage("images/polling.png"),
+
+                                                            color: Color(0xFFE4F558),
+
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding: const EdgeInsets.all(8.0),
+                                                        child: Text(
+                                                            'My Polling Station',textAlign:TextAlign.center,
+                                                            style: TextStyle(fontSize: 12.0,color: Colors.black87)
+                                                        ),
+                                                      ),
+                                                    ],),]
+                                            )
+                                        )
+                                    ),
+                                  ],
+
+                                  alignment:MainAxisAlignment.center,
+
+
+                              ),),
+                          ),
+                        ),
+                        Expanded(
+                          child: Center(
+                            child: new Container(
+                              child: new ButtonBar(
+
+
+                                  children:[
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.width * 0.3,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPollingStation()));
+                                          },
+                                          child: new Card(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(7.0),
+                                            ),
+
+                                            color: Colors.lightGreen,
+                                            elevation: 7,
+
+                                            child: Column(
+
+                                              mainAxisSize: MainAxisSize.max,
+
+                                              children: <Widget>[
+                                            Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                                              children: <Widget>[
+
+                                                Padding(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: SizedBox(
+                                                    width: 30,
+                                                    height: 30,
+
+                                                    child: ImageIcon(
+                                                      AssetImage("images/myrepresentative.png"),
+
+                                                      color: Color(0xFF5787D9),
+
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                      'My Representative',textAlign:TextAlign.center,
+                                                      style: TextStyle(fontSize: 12.0,color: Colors.black87)
+                                                  ),
+                                                ),
+                                              ],),]
+                                          )
+                                    ),
+                                        ),),
+                                  ],
+
+
+
+                              ),),
+                          ),
+                        )
 
 
 
@@ -301,33 +313,47 @@ class Dashboard extends StatelessWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Row(  mainAxisSize: MainAxisSize.max,mainAxisAlignment: MainAxisAlignment.center,
+                          Row(  mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
 
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Expanded(
+
                                   child: Text(
                                       'Live Election News ',
                                       style: TextStyle(fontSize: 15.0,color: Colors.black54)
                                   ),
-                                ),
+
                               ),
                             ],),
-                          Row(  mainAxisAlignment: MainAxisAlignment.center,mainAxisSize: MainAxisSize.max,
+                          Row(  mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
                                Expanded(
-                                 child: Text(
-                                    'Ec Rolls out Digital Voter ID Cards ',
-                                    style: TextStyle(fontSize: 18.0,color: Colors.teal,fontWeight: FontWeight.w200)
-                                ),
+                                 child: Center(
+
+                                   child: Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Container(
+                                       child: Text(
+                                          'Ec Rolls out Digital Voter ID Cards ',
+                                          style: TextStyle(fontSize: 18.0,color: Colors.teal,fontWeight: FontWeight.w200)
+                                          ),
+                                     ),
+                                   ),
+                                 ),
                                ),
                               Expanded(
-                                child: ImageIcon(
-                                  AssetImage("images/arrow.png"),
 
-                                  color: Color(0xFF313B3B),
+                                child: Container(
 
+                                  child: const Align(
+                                    alignment: Alignment.topRight,
+                                  child: ImageIcon(
+                                    AssetImage("images/arrow.png"),
+                                    color: Color(0xFF313B3B),
+
+                                   ),
+                                  ),
                                 ),
                               ),
                              
@@ -340,86 +366,90 @@ class Dashboard extends StatelessWidget {
 
 
                     child:new Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
-                        new Container(
-                        width: 150.0,
-                        height: 130.0,
-                           child :  Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                              children: <Widget>[
-
-                                Padding(
-                                  padding: const EdgeInsets.all(0.0),
-                                  child: SizedBox(
-
-
-                                      child:Image.asset("images/electiondate_bg.png", width: 150.0,
-                                        height: 100.0,fit: BoxFit.fill,)
-
-
-
-
-                                  ),
-                                ),
-                                Container(
-                                  width: 150.0,
-                                  height: 25.0,
-
-                                  decoration: BoxDecoration(
-
-                                    color: Colors.black54,
-
-
-
-                                  ),
-
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(1.0),
-                                    child: Text(
-                                        'Election Date',textAlign:TextAlign.center,
-                                        style: TextStyle(fontSize: 12.0,color: Colors.white)
-                                    ),
-                                  ),
-                                ),
-                              ],)
-                          ),
-                        new Container(
+                        Expanded(
+                          child: new Container(
                           width: 150.0,
                           height: 130.0,
-                            child :  Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                              children: <Widget>[
+                             child :  Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
 
-                                Padding(
-                                  padding: const EdgeInsets.all(0.0),
-                                  child: SizedBox(
+                                  Padding(
+                                    padding: const EdgeInsets.all(0.0),
+                                    child: SizedBox(
 
 
-                                      child:Image.asset("images/electiondate_bg.png", width: 150.0,
-                                        height: 100.0,fit: BoxFit.fill,)
-
+                                        child:Image.asset("images/electiondate_bg.png", width: 150.0,
+                                          height: 100.0,fit: BoxFit.fill,)
 
 
 
+
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  width: 150.0,
-                                  height: 25.0,
-                                  decoration: BoxDecoration(
-                                    color: Colors.black54,
+                                  Container(
+                                    width: 150.0,
+                                    height: 25.0,
+
+                                    decoration: BoxDecoration(
+
+                                      color: Colors.black54,
 
 
 
+                                    ),
+
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Text(
+                                          'Election Date',textAlign:TextAlign.center,
+                                          style: TextStyle(fontSize: 12.0,color: Colors.white)
+                                      ),
+                                    ),
                                   ),
+                                ],)
+                            ),
+                        ),
+                        Expanded(
+                          child: new Container(
+                            width: 150.0,
+                            height: 130.0,
+                              child :  Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
 
-                                  child: Padding(
+                                  Padding(
+                                    padding: const EdgeInsets.all(0.0),
+                                    child: SizedBox(
 
-                                    padding: const EdgeInsets.all(1.0),
-                                    child: Text(
-                                        'Voter Trunout',textAlign:TextAlign.center,
-                                        style: TextStyle(fontSize: 12.0,color: Colors.white)
-                                    ),),),],)),
+
+                                        child:Image.asset("images/electiondate_bg.png", width: 150.0,
+                                          height: 100.0,fit: BoxFit.fill,)
+
+
+
+
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 150.0,
+                                    height: 25.0,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black54,
+
+
+
+                                    ),
+
+                                    child: Padding(
+
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Text(
+                                          'Voter Trunout',textAlign:TextAlign.center,
+                                          style: TextStyle(fontSize: 12.0,color: Colors.white)
+                                      ),),),],)),
+                        ),
 
 
 
