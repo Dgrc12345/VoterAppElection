@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp( home: MyApp(),));
-}
 
-class MyApp extends StatefulWidget {
+class DownloadeEpic extends StatefulWidget {
   @override
   _State createState() => _State();
 }
 
-class _State extends State<MyApp> {
+class _State extends State<DownloadeEpic> {
   String stateValue = "Bihar";
   List <String> spinnerState = [
     'Bihar',

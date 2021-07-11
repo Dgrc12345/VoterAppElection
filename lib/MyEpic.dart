@@ -6,8 +6,11 @@ import 'package:flutter_app/MyEpic_UpdateDetails.dart';
 import 'package:flutter_app/Preview.dart';
 import 'package:flutter_app/TrackApplicationStatus.dart';
 
+import 'DeletionEnrolment.dart';
+import 'DownloadeEpic.dart';
 import 'DuplicateEpic.dart';
 import 'Routes.dart';
+import 'ServicesForDivyang.dart';
 
 // class MyEpic extends StatelessWidget {
 //   // This widget is the root
@@ -322,7 +325,11 @@ class ListViewBuilder extends StatelessWidget {
                      height: 10,
                      thickness: 3,
                    ),
-                   Container(
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => DownloadeEpic()));
+                   },
+                  child: Container(
 
                        height: 40,
                      child: Row(   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -362,12 +369,16 @@ class ListViewBuilder extends StatelessWidget {
 
                          ),
                        ],),
-                   ),
+                   ),),
                    Divider(
                      height: 10,
                      thickness: 3,
                    ),
-                   Container(
+                   GestureDetector(
+                      onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => DeletionEnrolment()));
+                    },
+                   child:Container(
                        height: 40,
                      child: Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        children: <Widget>[
@@ -406,12 +417,16 @@ class ListViewBuilder extends StatelessWidget {
 
                          ),
                        ],),
-                   ),
+                   ),),
                    Divider(
                      height: 10,
                      thickness: 3,
                    ),
-                   Container(
+                   GestureDetector(
+                      onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ServicesForDivyang()));
+                   },
+                   child:Container(
                        height: 40,
                      child: Row(
                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -450,8 +465,12 @@ class ListViewBuilder extends StatelessWidget {
 
                          ),
                        ],),
-                   ),
-                   Container(
+                   ),),
+                   GestureDetector(
+                     onTap: () {
+                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => ServicesForDivyang()));
+                   },
+                   child:Container(
 
                      child:new Row(
                        children: <Widget>[
@@ -464,7 +483,7 @@ class ListViewBuilder extends StatelessWidget {
                              fit: BoxFit.cover),
 
                        ],),
-                   )
+                   ),),
                  ],),),),
 
          ]),),),),),);

@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp( home: ServicesForDivyang(),));
-}
+import 'RequestForMarkingAsPWD.dart';
+import 'RequestForWheelchair.dart';
+
+
 
 class ServicesForDivyang extends StatelessWidget {
   // This widget is the root
@@ -80,68 +81,80 @@ class ListViewBuilder extends StatelessWidget {
                               height: 50,
                               thickness: 5,
                             ),
-                            Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                              children: <Widget>[
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => RequestForMakingAsPWD()));
+                          },
+                          child:  Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
 
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: SizedBox(
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: SizedBox(
+                                        width: 20,
+                                        height: 20,
+
+                                        child:Image.asset("images/ic_viewdetails.png")
+
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                        'Request for Marking as PWD',
+                                        style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                    ),
+                                  ),Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child:
+                                    SizedBox(
                                       width: 20,
                                       height: 20,
-
-                                      child:Image.asset("images/ic_viewdetails.png")
+                                      child:Image.asset("images/arrow.png"),),
 
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                      'Request for Marking as PWD',
-                                      style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
-                                  ),
-                                ),Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child:
-                                  SizedBox(
-                                    width: 20,
-                                    height: 20,
-                                    child:Image.asset("images/arrow.png"),),
-
-                                ),
-                              ],),
+                                ],),
+                            ),),
                             Divider(
                               height: 50,
                               thickness: 5,
                             ),
-                            Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                              children: <Widget>[
+                             GestureDetector(
+                              onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => RequestForWheelchair()));
+                              }, child:Container(
+                              child: Row(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
 
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: SizedBox(
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: SizedBox(
+                                        width: 20,
+                                        height: 20,
+
+                                        child:Image.asset("images/ic_viewdetails.png")
+
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                        'Request for Wheelchair',
+                                        style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
+                                    ),
+                                  ),Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child:
+                                    SizedBox(
                                       width: 20,
                                       height: 20,
-
-                                      child:Image.asset("images/ic_viewdetails.png")
+                                      child:Image.asset("images/arrow.png"),),
 
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                      'Request for Wheelchair',
-                                      style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)
-                                  ),
-                                ),Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child:
-                                  SizedBox(
-                                    width: 20,
-                                    height: 20,
-                                    child:Image.asset("images/arrow.png"),),
-
-                                ),
-                              ],),
+                                ],),
+                            ),),
                             Divider(
                               height: 50,
                               thickness: 5,
