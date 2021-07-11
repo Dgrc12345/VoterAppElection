@@ -73,7 +73,7 @@ class MyPollingStationViewLocation extends StatelessWidget {
                                       child: SizedBox(
                                           width: 30,
                                           height: 30,
-                                          child:Image.asset("images/ic_viewdetails.png")),),
+                                          child:Image.asset("images/arrow.png")),),
                                     Container(
                                       width: MediaQuery.of(context).size.width * 0.5,
                                       child: Padding(
@@ -90,18 +90,7 @@ class MyPollingStationViewLocation extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top:10.0,left: 15.0),
-                                      child:
-                                      Container(
-                                        alignment: Alignment.centerRight,
-                                        width: MediaQuery.of(context).size.width * 0.3,
-                                        child: SizedBox(
 
-                                          width: 20,
-                                          height: 20,
-                                          child:Image.asset("images/arrow.png"),),
-                                      ),),
                                   ],),
                               ),
                             ),

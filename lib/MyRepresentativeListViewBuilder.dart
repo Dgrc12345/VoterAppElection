@@ -39,8 +39,8 @@ class MyRepresentativeListView extends State<MyRepresentativeListViewBuilder> {
                 // subtitle: Text(subtitles[index]),
                 leading: ConstrainedBox(
                   constraints: BoxConstraints(
-                    minWidth: 54,
-                    minHeight: 54,
+                    minWidth: 64,
+                    minHeight: 64,
                     maxWidth: 64,
                     maxHeight: 64,
                   ),
@@ -78,7 +78,11 @@ class MyRepresentativeListView extends State<MyRepresentativeListViewBuilder> {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Expanded(child: RaisedButton(onPressed: () {},child: Text("Profile"),color:Color.fromARGB(255, 20, 134, 147),textColor: Colors.white,)),
+                        Expanded(child: RaisedButton(onPressed: () {},
+                          child: Text("Profile"),
+                          color:Color.fromARGB(255, 20, 134, 147),
+                          textColor: Colors.white,)
+                        ),
                         Expanded(child: RaisedButton(onPressed: () {},child: Text("View Affidavit"),color:Color.fromARGB(255, 20, 134, 147),textColor: Colors.white,)),
                       ],
 

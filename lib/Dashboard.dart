@@ -62,7 +62,7 @@ class Dashboard extends StatelessWidget {
                                     width: MediaQuery.of(context).size.width * 0.3,
                                     child: GestureDetector(
                                       onTap: () {
-                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPollingStation()));
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen("Home")));
                                       },
                                       child: new Card(
                                           shape: RoundedRectangleBorder(

@@ -237,7 +237,7 @@ class ListViewBuilder1 extends StatelessWidget {
                       child:new Row(
                         children: <Widget>[
 
-                          new Padding(padding: new EdgeInsets.only(left: 20.0 ,bottom: 40.0),),
+                          new Padding(padding: new EdgeInsets.only(left: 10.0 ,bottom: 30.0),),
 
                           Image.asset("images/banner1.png",
 
