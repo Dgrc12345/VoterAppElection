@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/AppDrawer.dart';
 import 'package:flutter_app/HomeScreen.dart';
+import 'package:flutter_app/MyPollingStation.dart';
 
 import 'EnterOtpScreen.dart';
 
@@ -169,46 +170,51 @@ class Dashboard extends StatelessWidget {
                                 SizedBox(
                                     width: 110,
                                     height:110,
-                                    child: new Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(7.0),
-                                      ),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPollingStation()));
+                                      },
+                                      child: new Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(7.0),
+                                        ),
 
-                                      color: Colors.lightGreen,
-                                      elevation: 7,
+                                        color: Colors.lightGreen,
+                                        elevation: 7,
 
-                                      child: Column(
+                                        child: Column(
 
-                                        mainAxisSize: MainAxisSize.max,
+                                          mainAxisSize: MainAxisSize.max,
 
-                                        children: <Widget>[
-                                      Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
-                                        children: <Widget>[
+                                          children: <Widget>[
+                                        Column(   mainAxisAlignment: MainAxisAlignment.spaceEvenly,mainAxisSize: MainAxisSize.max,
+                                          children: <Widget>[
 
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: SizedBox(
-                                              width: 30,
-                                              height: 30,
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: SizedBox(
+                                                width: 30,
+                                                height: 30,
 
-                                              child: ImageIcon(
-                                                AssetImage("images/myrepresentative.png"),
+                                                child: ImageIcon(
+                                                  AssetImage("images/myrepresentative.png"),
 
-                                                color: Color(0xFF5787D9),
+                                                  color: Color(0xFF5787D9),
 
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text(
-                                                'My Representative',textAlign:TextAlign.center,
-                                                style: TextStyle(fontSize: 12.0,color: Colors.black87)
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                  'My Representative',textAlign:TextAlign.center,
+                                                  style: TextStyle(fontSize: 12.0,color: Colors.black87)
+                                              ),
                                             ),
-                                          ),
-                                        ],),]
-                                    )
-                                ),),
+                                          ],),]
+                                      )
+                                ),
+                                    ),),
                               ],
 
 

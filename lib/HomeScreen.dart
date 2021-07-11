@@ -4,6 +4,7 @@ import 'package:flutter_app/AppDrawer.dart';
 import 'package:flutter_app/Preview.dart';
 
 import 'MyEpic.dart';
+import 'MyPollingStation.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -42,8 +43,9 @@ class HomeScreen extends StatelessWidget {
           body: new TabBarView(
             children: [
               new ListViewBuilder(),
+              new MyPollingStation(),
 
-              new Icon(Icons.directions_bike,size: 50.0,),
+
               new Icon(Icons.directions_bike,size: 50.0,),
             ],
           ),

@@ -9,7 +9,7 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(5.0),
         children: <Widget>[
           _createHeader(),
           _createDrawerItem(
@@ -17,11 +17,13 @@ class AppDrawer extends StatelessWidget {
               text: 'My Epic',
               onTap: () =>
                   Navigator.pushReplacementNamed(context, Routes.MyEpic)),
+          Divider(),
           _createDrawerItem(
               icon: Icons.event,
               text: 'My polling Station',
               onTap: () =>
                   Navigator.pushReplacementNamed(context, Routes.MyPollingStation)),
+          Divider(),
           _createDrawerItem(
               icon: Icons.note,
               text: 'My Representative',
@@ -30,10 +32,45 @@ class AppDrawer extends StatelessWidget {
           Divider(),
           _createDrawerItem(
               icon: Icons.collections_bookmark,
-              text: 'Steps',
+              text: 'cVIGIL',
               onTap: () =>
                   Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
-
+          Divider(),
+          _createDrawerItem(
+              icon: Icons.collections_bookmark,
+              text: 'Election Date',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
+          Divider(),
+          _createDrawerItem(
+              icon: Icons.collections_bookmark,
+              text: 'Voter Turnout',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
+          Divider(),
+          _createDrawerItem(
+              icon: Icons.collections_bookmark,
+              text: 'Trends',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
+          Divider(),
+          _createDrawerItem(
+              icon: Icons.collections_bookmark,
+              text: 'Results',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
+          Divider(),
+          _createDrawerItem(
+              icon: Icons.collections_bookmark,
+              text: 'Services for Divyang',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
+          Divider(),
+          _createDrawerItem(
+              icon: Icons.collections_bookmark,
+              text: 'Voter Education Resources',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.myRepersentative)),
           ListTile(
             title: Text('0.0.1'),
             onTap: () {},
@@ -48,14 +85,15 @@ class AppDrawer extends StatelessWidget {
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
         decoration: BoxDecoration(
+            color: Color.fromARGB(255, 20, 134, 147),
             image: DecorationImage(
                 fit: BoxFit.contain,
-                image: AssetImage('images/eleclogo.png'))),
+                image: AssetImage('images/icon_username.png',))),
         child: Stack(children: <Widget>[
           Positioned(
               bottom: 12.0,
               left: 16.0,
-              child: Text("Flutter Step-by-Step",
+              child: Text("Name",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
