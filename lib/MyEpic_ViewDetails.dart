@@ -19,7 +19,7 @@ class _State extends State<MyApp> {
           ),
           title: Text('View Details',style: TextStyle(fontSize: 14.0,color: Colors.white)),
 
-          backgroundColor: Color.fromARGB(255, 20, 134, 147),
+          backgroundColor: Color.fromARGB(255, 99, 196, 206),
         ),
 
         body: SafeArea(

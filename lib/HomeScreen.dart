@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/AppDrawer.dart';
+import 'package:flutter_app/MyRepresentative.dart';
 import 'package:flutter_app/Preview.dart';
 
 import 'MyEpic.dart';
@@ -44,9 +45,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               new ListViewBuilder(),
               new MyPollingStation(),
+              new MyRepresentative(),
 
 
-              new Icon(Icons.directions_bike,size: 50.0,),
+              //new Icon(Icons.directions_bike,size: 50.0,),
             ],
           ),
         ),
