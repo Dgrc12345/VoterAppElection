@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Voter App',
       theme: ThemeData(
 
         primarySwatch: Colors.teal,
@@ -131,9 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: new
                       TextFormField(
                           keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(labelText: "Mobile Number Or Email ID"),
-                        obscureText: true),
+                          style: TextStyle(color: Colors.black),
+                        decoration: InputDecoration(labelText: "Mobile Number Or Email ID"),),
                       borderSide: BorderSide(
                         color: Colors.white,
                         style: BorderStyle.solid ,
@@ -171,48 +170,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),
                   ),
-                 /* new Container(
-                    margin: const EdgeInsets.only(top: 10.0,bottom: 40.0),
-                    color: Colors.white38,
-                    width: 300,
-                    height:50,
+                  new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
+                  GestureDetector(
 
-                    child: new OutlineButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));
-                      },
-                      child: new Text('NEW USER ? SIGN UP',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12.0,color: Colors.white,),),
+                   onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));},
+
+                    child:  Text('SIGN UP', textAlign:TextAlign.center,style: TextStyle(fontSize: 15.0,color: Colors.white,fontWeight: FontWeight.w600),),
+                  ),
 
 
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        style: BorderStyle.solid ,
-                        width: 1.8,
-                      ),
-
-                    ),
-
-                  ),*/
-
-                  /*new Container(
-                    margin: const EdgeInsets.only(top: 120.0,bottom: 10.0),
-                    child:new Row(
-
-
-                        children: <Widget>[
-                          new Padding(padding: new EdgeInsets.only(left: 20.0 ,right: 20.0),),
-                          Text('Instructions', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
-                          Spacer(), // <-- Use this
-                          Text('FAQs' ,style: TextStyle(fontSize: 12.0,color: Colors.white,),),
-                          Spacer(),
-
-                          Text('Press Release', style: TextStyle(fontSize: 12.0,color: Colors.white,),),
-                          Spacer(),
-                        ],
-
-                        mainAxisSize:MainAxisSize.max
-                    ),
-                  ),*/
                   new Container(
                     alignment: Alignment.bottomRight,
                     margin: const EdgeInsets.only(top: 200.0),

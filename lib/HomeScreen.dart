@@ -23,20 +23,28 @@ class HomeScreen extends StatelessWidget {
       body: new DefaultTabController(
         length: 3,
         child: new Scaffold(
+
           appBar: new AppBar(
+
+            flexibleSpace:FlexibleSpaceBar(),
             automaticallyImplyLeading: false,
             backgroundColor: Colors.white,
-            actions: <Widget>[],
+            actions: <Widget>[
+
+            ],
             title: new TabBar(
+              unselectedLabelColor: Colors.grey,
+              labelColor: Colors.deepOrange,
+
               tabs: [
                 new Tab(
-                  child: Text("My Epic",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w500),),
+                  child: Text("My Epic",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w800),),
                 ),
                 new Tab(
-                  child: Text("My Polling Station",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w500),),
+                  child: Text("My Polling Station",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w800),),
                 ),
                 new Tab(
-                    child: Text("My Representative",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w500),)),
+                    child: Text("My Representative",style: TextStyle(fontSize: 12.0,color: Colors.blueGrey,fontWeight:FontWeight.w800),)),
               ],
               indicatorColor: Colors.white,
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/LoginScreen.dart';
 
 import 'EnterOtpScreen.dart';
 
@@ -14,7 +15,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Voter App',
       theme: ThemeData(
 
         primarySwatch: Colors.teal,

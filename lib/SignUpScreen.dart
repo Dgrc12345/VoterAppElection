@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/SignUpScreen.dart';
+import 'package:flutter_app/main.dart';
 
 import 'HomeScreen.dart';
 import 'SplashScreen.dart';
@@ -125,9 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: new
                       TextFormField(
                           keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(labelText: "Mobile Number Or Email ID"),
-                          obscureText: true),
+                          style: TextStyle(color: Colors.black),
+                          decoration: InputDecoration(labelText: "Mobile Number Or Email ID"),),
                       borderSide: BorderSide(
                         color: Colors.white,
                         style: BorderStyle.solid ,
@@ -207,6 +207,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         mainAxisSize:MainAxisSize.max
                     ),
                   ),*/
+                  new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
+                  GestureDetector(
+
+                    onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));},
+
+                    child:  Text('LOG IN', textAlign:TextAlign.center,style: TextStyle(fontSize: 15.0,color: Colors.white,fontWeight: FontWeight.w600),),
+                  ),
+
+
                   new Container(
                     alignment: Alignment.bottomRight,
                     margin: const EdgeInsets.only(top: 200.0),

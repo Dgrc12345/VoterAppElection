@@ -111,14 +111,14 @@ class MyHomePage extends StatefulWidget {
 
                                   padding: const EdgeInsets.only(left:5.0),
 
-                                  child: Flexible(
+                                  //child: Flexible(
 
                                     child: Text(
                                         'Name',
-                                        overflow: TextOverflow.ellipsis,
-                                        softWrap: true,
+                                        // overflow: TextOverflow.ellipsis,
+                                        // softWrap: true,
                                         style: TextStyle(fontSize: 15.0,color: Colors.grey,fontWeight: FontWeight.w200)),
-                                  ),
+                                 // ),
                                 ),
                               ),
                               Container(
@@ -127,14 +127,14 @@ class MyHomePage extends StatefulWidget {
 
                                   padding: const EdgeInsets.only(left:15.0),
 
-                                  child: Flexible(
+                                  //child: Flexible(
 
                                     child: Text(
                                         'Epic Number',
-                                        overflow: TextOverflow.ellipsis,
-                                        softWrap: true,
+                                        // overflow: TextOverflow.ellipsis,
+                                        // softWrap: true,
                                         style: TextStyle(fontSize: 15.0,color: Colors.grey,fontWeight: FontWeight.w200)),
-                                  ),
+                                  //),
                                 ),
                               ),
 
@@ -154,14 +154,14 @@ class MyHomePage extends StatefulWidget {
 
                                   padding: const EdgeInsets.only(left:5.0),
 
-                                  child: Flexible(
+                                  //child: Flexible(
 
                                     child: Text(
                                         'Chandni',
-                                        overflow: TextOverflow.ellipsis,
-                                        softWrap: true,
+                                        // overflow: TextOverflow.ellipsis,
+                                        // softWrap: true,
                                         style: TextStyle(fontSize: 15.0,color: Colors.blueGrey,fontWeight: FontWeight.bold)),
-                                  ),
+                                //  ),
                                 ),
                               ),
                               Container(
@@ -170,14 +170,13 @@ class MyHomePage extends StatefulWidget {
 
                                   padding: const EdgeInsets.only(left:15.0),
 
-                                  child: Flexible(
+
 
                                     child: Text(
                                         'NEL366485864',
-                                        overflow: TextOverflow.ellipsis,
-                                        softWrap: true,
+
                                         style: TextStyle(fontSize: 15.0,color: Colors.blueGrey,fontWeight: FontWeight.bold)),
-                                  ),
+
                                 ),
                               ),
 
@@ -194,8 +193,7 @@ class MyHomePage extends StatefulWidget {
                         Image.asset("images/info.png"),
                         Text(
                             'Current address details',
-                            overflow: TextOverflow.ellipsis,
-                            softWrap: true,
+
                             style: TextStyle(fontSize: 15.0,color: Colors.teal,fontWeight: FontWeight.bold)),
                       ],
                     ),

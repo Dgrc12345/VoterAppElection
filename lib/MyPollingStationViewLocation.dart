@@ -73,21 +73,19 @@ class MyPollingStationViewLocation extends StatelessWidget {
                                       child: SizedBox(
                                           width: 30,
                                           height: 30,
-                                          child:Image.asset("images/arrow.png")),),
+                                          child:Image.asset("images/ic_backarrow.png")),),
                                     Container(
                                       width: MediaQuery.of(context).size.width * 0.5,
                                       child: Padding(
 
                                         padding: const EdgeInsets.only(left:15.0),
 
-                                        child: Flexible(
 
                                           child: Text(
                                               text,
-                                              overflow: TextOverflow.ellipsis,
-                                              softWrap: true,
+
                                               style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200)),
-                                        ),
+
                                       ),
                                     ),
 

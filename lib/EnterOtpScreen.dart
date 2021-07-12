@@ -33,12 +33,20 @@ class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _focusNodes = List.generate(4, (index) => FocusNode());
+
+  TextEditingController field1 = TextEditingController();
+  TextEditingController field2 = TextEditingController();
+  TextEditingController field3 = TextEditingController();
+  TextEditingController field4 = TextEditingController();
+
+  
+
 
   @override
   void initState() {
@@ -51,6 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
+
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 20, 134, 147),
@@ -132,6 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             keyboardType: TextInputType.number,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(labelText: ""),
+                            textInputAction: TextInputAction.next,
+
                            ),
                         borderSide: BorderSide(
                           color: Colors.white,

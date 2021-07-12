@@ -97,14 +97,14 @@ class ListViewBuilder extends StatelessWidget {
 
                                padding: const EdgeInsets.only(left:15.0),
 
-                               child: Flexible(
+                               //child: Flexible(
 
                                  child: Text(
                                      'View Details',
-                                   overflow: TextOverflow.ellipsis,
-                                   softWrap: true,
+                                   // overflow: TextOverflow.ellipsis,
+                                   // softWrap: true,
                                      style: TextStyle(fontSize: 15.0,color: Colors.black87,fontWeight: FontWeight.w200,height: 1.1)),
-                               ),
+                              // ),
                              ),
                            ),
                          Padding(

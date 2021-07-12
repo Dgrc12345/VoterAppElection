@@ -220,7 +220,7 @@ class Dashboard extends StatelessWidget {
                                                   padding: const EdgeInsets.all(8.0),
                                                   child: Text(
                                                       'My Representative',textAlign:TextAlign.center,
-                                                      style: TextStyle(fontSize: 12.0,color: Colors.black87)
+                                                      style: TextStyle(fontSize: 12.0,color: Colors.black)
                                                   ),
                                                 ),
                                               ],),]
@@ -254,7 +254,7 @@ class Dashboard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(7.0),
                       ),
 
-                      color: Colors.black54,
+                      color: Colors.black87,
                       elevation: 10,
                       child: Column(
 
@@ -266,7 +266,7 @@ class Dashboard extends StatelessWidget {
 
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Expanded(
+
                               child: SizedBox(
                                 width: 60,
                                 height: 60,
@@ -279,18 +279,18 @@ class Dashboard extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
+
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Expanded(
+
                                 child: Text(
                                   'Citizen Vigilance',
                                   style: TextStyle(fontSize: 18.0,color: Colors.white70)
                                    ),
-                                ),
+
                               ),Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Expanded(
+
                                   child: ImageIcon(
                                     AssetImage("images/arrow.png"),
 
@@ -298,7 +298,7 @@ class Dashboard extends StatelessWidget {
 
                                   ),
                                 ),
-                              ),
+
                          ],),
 
                     ],),),),
@@ -427,12 +427,7 @@ class Dashboard extends StatelessWidget {
 
 
                                         child:Image.asset("images/electiondate_bg.png", width: 150.0,
-                                          height: 100.0,fit: BoxFit.fill,)
-
-
-
-
-                                    ),
+                                          height: 100.0,fit: BoxFit.fill,)),
                                   ),
                                   Container(
                                     width: 150.0,

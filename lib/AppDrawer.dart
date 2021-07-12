@@ -9,7 +9,6 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.all(5.0),
         children: <Widget>[
           _createHeader(),
           _createDrawerItem(
@@ -109,7 +108,7 @@ class AppDrawer extends StatelessWidget {
           Icon(icon),
           Padding(
             padding: EdgeInsets.only(left: 8.0),
-            child: Text(text),
+            child:Text(text,textAlign: TextAlign.left, style: TextStyle(fontSize: 15.0,color: Colors.teal),),
           )
         ],
       ),
