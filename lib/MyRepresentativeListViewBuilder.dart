@@ -96,8 +96,6 @@ class MyRepresentativeListView extends State<MyRepresentativeListViewBuilder> {
               )
 
 
-
-
           );
         });
   }

@@ -1,12 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/LoginScreen.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 
 import 'EnterOtpScreen.dart';
 
 void main() {
   runApp(LoginScreen());
 }
+makePostRequest() async {
 
+  final uri = Uri.parse('https://cvigil.eci.gov.in/api/otp');
+  final headers = {'Content-Type': 'application/json'};
+  Map<String, dynamic> body = {'mobile_number': 9693160081, 'device_id':7854220,"fcm_id":5874988};
+  String jsonBody = json.encode(body);
+  final encoding = Encoding.getByName('utf-8');
+
+  Response response = await post(
+    uri,
+    headers: headers,
+    body: jsonBody,
+    encoding: encoding,
+  );
+
+  int statusCode = response.statusCode;
+  String responseBody = response.body;
+}
 class LoginScreen extends StatelessWidget {
   // This widget is the root of your application.
 
@@ -155,7 +174,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.yellow,
                                 child:Text("GENERATE OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
+                                  setState(() {
+                                    makePostRequest();
+
+                                  });
+                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
                                 },)
                           ),
                         ],
