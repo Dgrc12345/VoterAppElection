@@ -35,6 +35,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   http: ^0.13.3
+  shared_preferences: '>=0.5.12+2 <2.0.0'
 
 
 

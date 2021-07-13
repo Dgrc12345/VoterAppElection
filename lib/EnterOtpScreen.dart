@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
 
+import 'Api/ApiServiceUrl.dart';
+import 'dart:developer';
 import 'main1.dart';
 
 void main() {
@@ -39,10 +41,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   var _focusNodes = List.generate(4, (index) => FocusNode());
 
-  TextEditingController field1 = TextEditingController();
-  TextEditingController field2 = TextEditingController();
-  TextEditingController field3 = TextEditingController();
-  TextEditingController field4 = TextEditingController();
+  String otp="";
+
 
 
 
@@ -128,15 +128,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: PinEntryTextField(
                         showFieldAsBox: true,
                         onSubmit: (String pin){
-                          showDialog(
-                              context: context,
-                              builder: (context){
-                                return AlertDialog(
-                                  title: Text("Pin"),
-                                  content: Text('Pin entered is $pin'),
-                                );
-                              }
-                          ); //end showDialog()
+                          otp=pin;
+
                         }, // end onSubmit
                       ), // end PinEntryTextField()
                     ), // end Padding()
@@ -157,9 +150,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                 textColor: Colors.indigo,
 
                                 color: Colors.yellow,
-                                child:Text("GENERATE OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
+                                child:Text("Veify OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
+
+                                  log('datavalueinotp: $otp');
+                                  Api.makeVeifyOtpRequest("7739763684","7854220",otp);
+                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
                                 },)
                           ),
                         ],
@@ -173,6 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('Didnt Receive OTP?', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
                   new Padding(padding: new EdgeInsets.only(top: 10.0 ),),
                   Text('RESEND OTP', style: TextStyle(fontSize: 18.0,color: Colors.white,fontWeight: FontWeight.bold),),
+
                   new Container(
                     alignment: Alignment.bottomRight,
                     margin: const EdgeInsets.only(top: 140.0),
