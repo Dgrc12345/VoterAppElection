@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Model/UserDetails.dart';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
+
 import 'dart:developer';
 class Api{
   static const String mainUrl = "https://cvigil.eci.gov.in/api/";
