@@ -2,10 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/SignUpScreen.dart';
 
-import 'HomeScreen.dart';
-import 'SplashScreen.dart';
+import 'package:pin_entry_text_field/pin_entry_text_field.dart';
+
 import 'main1.dart';
 
 void main() {
@@ -45,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController field3 = TextEditingController();
   TextEditingController field4 = TextEditingController();
 
-  
+
 
 
   @override
@@ -123,107 +122,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   /*child: new Card(color: Colors.white,child: ListTile(leading: Icon(Icons.phone),title: Text("Mobile Number Or Email Id"),),*/
 
-                  new Row(
-
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                 children: <Widget>[
-                    new Container(
-                      margin: const EdgeInsets.only(top: 60.0,left: 30),
-                      color: Colors.white,
-                      width: 50,
-                      height:50,
-
-
-                      child: new OutlineButton(
-                        onPressed: null,
-                        child: new
-                        TextFormField(
-
-                            keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(labelText: ""),
-                            textInputAction: TextInputAction.next,
-
-                           ),
-                        borderSide: BorderSide(
-                          color: Colors.white,
-                          style: BorderStyle.solid ,
-                          width: 1.8,
-                        ),
-
-                      ),
-
-                    ),new Container(
-                      margin: const EdgeInsets.only(top: 60.0),
-                      color: Colors.white,
-                      width: 50,
-                      height:50,
-
-
-                      child: new OutlineButton(
-                        onPressed: null,
-                        child: new
-                        TextFormField(
-                            keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(labelText: ""),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.white,
-                          style: BorderStyle.solid ,
-                          width: 1.8,
-                        ),
-
-                      ),
-
-                    ),new Container(
-                      margin: const EdgeInsets.only(top: 60.0),
-                      color: Colors.white,
-                      width: 50,
-                      height:50,
-
-
-                      child: new OutlineButton(
-                        onPressed: null,
-                        child: new
-                        TextFormField(
-                            keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(labelText: ""),
-                            ),
-                        borderSide: BorderSide(
-                          color: Colors.white,
-                          style: BorderStyle.solid ,
-                          width: 1.8,
-                        ),
-
-                      ),
-
-                    ),new Container(
-                      margin: const EdgeInsets.only(top: 60.0,right: 30.0),
-                      color: Colors.white,
-                      width: 50,
-                      height:50,
-
-
-                      child: new OutlineButton(
-                        onPressed: null,
-                        child: new
-                        TextFormField(
-                            keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(labelText: ""),),
-                        borderSide: BorderSide(
-                          color: Colors.white,
-                          style: BorderStyle.solid ,
-                          width: 1.8,
-                        ),
-
-                      ),
-
-                    ),],
-
+                  new Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: PinEntryTextField(
+                        showFieldAsBox: true,
+                        onSubmit: (String pin){
+                          showDialog(
+                              context: context,
+                              builder: (context){
+                                return AlertDialog(
+                                  title: Text("Pin"),
+                                  content: Text('Pin entered is $pin'),
+                                );
+                              }
+                          ); //end showDialog()
+                        }, // end onSubmit
+                      ), // end PinEntryTextField()
+                    ), // end Padding()
                   ),
 
 

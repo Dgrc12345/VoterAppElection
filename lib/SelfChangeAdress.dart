@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 
 import 'HomeScreen.dart';
 import 'MyEpicSelfChangeAddressNext.dart';
-import 'SplashScreen.dart';
+
 import 'main1.dart';
 
 class SelfChangeAdress extends StatelessWidget {

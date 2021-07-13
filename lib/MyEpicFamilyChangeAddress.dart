@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 
 import 'HomeScreen.dart';
 import 'MyEpicFamilyChangeAddressNext.dart';
-import 'SplashScreen.dart';
+
 import 'main1.dart';
 class MyEpicFamilyChangeAddress extends StatelessWidget {
   // This widget is the root of your application.

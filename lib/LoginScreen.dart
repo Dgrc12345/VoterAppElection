@@ -1,17 +1,11 @@
-import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/EnterOtpScreen.dart';
-import 'package:flutter_app/SignUpScreen.dart';
+import 'package:flutter_app/Api/ApiServiceUrl.dart';
+import 'package:flutter_app/LoginScreen.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 
-import 'HomeScreen.dart';
-import 'SplashScreen.dart';
-import 'main1.dart';
+import 'EnterOtpScreen.dart';
 
-void main() {
-  runApp(LoginScreen());
-}
 
 class LoginScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -43,13 +37,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+  TextEditingController phoneController= TextEditingController();
   @override
   void initState() {
     super.initState();
+    makePostRequest();
     // startSplashScreen();
   }
 
+  Future makePostRequest() async {
+    final uri = Uri.parse(Api.login);
+    final headers = {'Content-Type': 'application/json'};
+    Map<String, dynamic> body = {'mobile_number': phoneController.text, 'device_id':7854220,"fcm_id":5874988};
+    String jsonBody = json.encode(body);
+    final encoding = Encoding.getByName('utf-8');
+    Response response = await post(
+      uri,
+      headers: headers,
+      body: jsonBody,
+      encoding: encoding,
+    );
+    int statusCode = response.statusCode;
+    String responseBody = response.body;
+  }
 
 
 
@@ -74,7 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
               image: DecorationImage(
                 image: AssetImage("images/bg.png"),
                 fit: BoxFit.cover,
-
                 alignment: Alignment.center,
               ),),
             child: SingleChildScrollView(
@@ -84,8 +93,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Container(
-
-
                     child:new Row(
                       children: <Widget>[
 
@@ -100,9 +107,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],),),
 
 
-                    new Container(
+                  new Container(
                     margin: const EdgeInsets.only(top: 20.0),
-                   child : Image.asset("images/logo_Voter.png",
+                    child : Image.asset("images/logo_Voter.png",
                       width: 100.0,
                       height: 100.0,
                     ),),
@@ -114,10 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('Enter Your Mobile Number', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
                   Text('or Email ID to Login', style: TextStyle(fontSize: 14.0,color: Colors.white,),),
 
-
-
-                    /*child: new Card(color: Colors.white,child: ListTile(leading: Icon(Icons.phone),title: Text("Mobile Number Or Email Id"),),*/
-
+                  /*child: new Card(color: Colors.white,child: ListTile(leading: Icon(Icons.phone),title: Text("Mobile Number Or Email Id"),),*/
 
                   new Container(
                     margin: const EdgeInsets.only(top: 60.0),
@@ -126,13 +130,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     height:50,
 
 
+                    // ignore: deprecated_member_use
                     child: new OutlineButton(
                       onPressed: null,
                       child: new
                       TextFormField(
-                          keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.black),
-                        decoration: InputDecoration(labelText: "Mobile Number Or Email ID"),),
+                        controller: phoneController,
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.black),
+                        decoration: InputDecoration(hintText: "Mobile Number Or Email ID"),
+                      ),
                       borderSide: BorderSide(
                         color: Colors.white,
                         style: BorderStyle.solid ,
@@ -151,6 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                         children:[
                           SizedBox(
+
                               width: 300,
                               height:50,
                               child: RaisedButton(
@@ -160,7 +168,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.yellow,
                                 child:Text("GENERATE OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
+                                  setState(() {
+                                    makePostRequest();
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
+                                  });
+                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
                                 },)
                           ),
                         ],
@@ -170,14 +182,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),
                   ),
-                  new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
-                  GestureDetector(
-
-                   onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));},
-
-                    child:  Text('SIGN UP', textAlign:TextAlign.center,style: TextStyle(fontSize: 15.0,color: Colors.white,fontWeight: FontWeight.w600),),
-                  ),
-
 
                   new Container(
                     alignment: Alignment.bottomRight,
@@ -187,6 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 40.0,
 
                         fit: BoxFit.cover),),
+
 
 
 

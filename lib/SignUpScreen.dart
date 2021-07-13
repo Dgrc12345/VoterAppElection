@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/LoginScreen.dart';
 import 'package:flutter_app/SignUpScreen.dart';
 import 'package:flutter_app/main.dart';
 
 import 'HomeScreen.dart';
-import 'SplashScreen.dart';
+
 import 'main1.dart';
 
 void main() {

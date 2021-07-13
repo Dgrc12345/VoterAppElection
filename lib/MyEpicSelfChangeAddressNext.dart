@@ -6,7 +6,7 @@ import 'package:flutter_app/SignUpScreen.dart';
 import 'package:flutter/services.dart';
 
 import 'HomeScreen.dart';
-import 'SplashScreen.dart';
+
 import 'main1.dart';
 class MyEpicSelfChangeAddressNext extends StatelessWidget {
   // This widget is the root of your application.
