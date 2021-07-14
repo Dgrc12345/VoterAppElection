@@ -20,11 +20,11 @@ class main1 extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 20, 134, 147),
       ),
-      home: Dashboard("Home"),
+      home: Dashboard(),
       routes:  {
-        Routes.MyEpic: (context) => Dashboard("Home"),
+        Routes.MyEpic: (context) => Dashboard(),
         Routes.MyPollingStation: (context) => LoginScreen(),
-        Routes.myRepersentative: (context) => Dashboard("Home"),
+        Routes.myRepersentative: (context) => Dashboard(),
         Routes.cVIGIL: (context) => cVIGILScreen("cVIGIL"),
       },
     );

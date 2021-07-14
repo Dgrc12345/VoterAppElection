@@ -33,9 +33,9 @@ class SplashScreen extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes:  {
-        Routes.MyEpic: (context) => Dashboard("Home"),
+        Routes.MyEpic: (context) => Dashboard(),
         Routes.MyPollingStation: (context) => LoginScreen(),
-        Routes.myRepersentative: (context) => Dashboard("Home"),
+        Routes.myRepersentative: (context) => Dashboard(),
         Routes.cVIGIL: (context) => cVIGILScreen("cVIGIL"),
       },
     );

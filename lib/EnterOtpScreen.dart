@@ -155,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                                   log('datavalueinotp: $otp');
                                   Api.makeVeifyOtpRequest("7739763684","7854220",otp);
-                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
                                 },)
                           ),
                         ],
