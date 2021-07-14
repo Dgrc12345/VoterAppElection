@@ -37,7 +37,7 @@ class Api{
     }
 
   }
-  static Future<UserDetail> userLogin(String mobNo,String devceId,String otp, context) async {
+  static Future<UserDetails> userLogin(String mobNo,String devceId,String otp, context) async {
     var model = {
       "mobile_number": mobNo,
       "device_id": devceId,
@@ -52,7 +52,7 @@ class Api{
       print(response.body.toString());
       print(response.statusCode.toString());
       if (response.statusCode == 200) {
-        return UserDetail.fromJson(jsonDecode(response.body));
+        return UserDetails.fromJson(jsonDecode(response.body));
 
       }else(
           throw Exception('Failed to get userdetails'));
