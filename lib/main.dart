@@ -23,7 +23,9 @@ class SplashScreen extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
     return MaterialApp(
-      title: 'Flutter Demo',
+    debugShowCheckedModeBanner: false,
+
+      title: 'Voter App',
 
       theme: ThemeData(
 

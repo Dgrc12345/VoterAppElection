@@ -57,7 +57,7 @@ class cVIGILScreen extends StatelessWidget {
                     GestureDetector(
 
                       onTap: () {
-                       // Navigator.of(context).push(MaterialPageRoute(builder: (context) => cVIGILSubmitComplain()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => cVIGILSubmitComplain()));
                       },
                       child: Container(
                         height: 40.0,
@@ -66,7 +66,7 @@ class cVIGILScreen extends StatelessWidget {
                           children: <Widget>[
 
                             Padding(
-                              padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                              padding: const EdgeInsets.only(top:10.0,left: 10.0,bottom: 5.0),
                               child: SizedBox(
                                   width: 30,
                                   height: 30,
@@ -88,7 +88,7 @@ class cVIGILScreen extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top:10.0,left: 15.0),
+                              padding: const EdgeInsets.only(top:10.0,left: 10.0),
                               child:
                               Container(
                                 alignment: Alignment.centerRight,
@@ -114,7 +114,7 @@ class cVIGILScreen extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             Padding(
-                              padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                              padding: const EdgeInsets.only(top:10.0,left: 10.0,bottom: 5.0),
                               child: SizedBox(
                                   width: 30,
                                   height: 30,
@@ -131,7 +131,7 @@ class cVIGILScreen extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top:10.0,left: 15.0),
+                              padding: const EdgeInsets.only(top:10.0,left: 10.0),
                               child:
                               Container(
                                 alignment: Alignment.centerRight,
@@ -161,7 +161,7 @@ class cVIGILScreen extends StatelessWidget {
                           children: <Widget>[
 
                             Padding(
-                              padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                              padding: const EdgeInsets.only(top:10.0,left: 10.0,bottom: 5.0),
                               child: Container(
 
 
@@ -185,7 +185,7 @@ class cVIGILScreen extends StatelessWidget {
                                 ),
                               ),
                             ),Padding(
-                              padding: const EdgeInsets.only(top:10.0,left: 15.0),
+                              padding: const EdgeInsets.only(top:10.0,left: 10.0),
                               child:
                               Container(
                                 alignment: Alignment.centerRight,
@@ -215,7 +215,7 @@ class cVIGILScreen extends StatelessWidget {
                           children: <Widget>[
 
                             Padding(
-                              padding: const EdgeInsets.only(top:10.0,left: 15.0,bottom: 5.0),
+                              padding: const EdgeInsets.only(top:10.0,left: 10.0,bottom: 5.0),
                               child: SizedBox(
                                   width: 20,
                                   height: 20,
@@ -225,7 +225,7 @@ class cVIGILScreen extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(5.0),
                               child: Container(
 
                                 width: MediaQuery.of(context).size.width * 0.5,
@@ -235,7 +235,7 @@ class cVIGILScreen extends StatelessWidget {
                                 ),
                               ),
                             ),Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(5.0),
                               child:
                               Container(
                                 alignment: Alignment.centerRight,
@@ -256,7 +256,7 @@ class cVIGILScreen extends StatelessWidget {
                       child:new Row(
                         children: <Widget>[
 
-                          new Padding(padding: new EdgeInsets.only(left: 20.0 ,bottom: 40.0),),
+                          new Padding(padding: new EdgeInsets.only(left: 10.0 ,bottom: 30.0),),
 
                           Image.asset("images/banner1.png",
 
