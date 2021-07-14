@@ -9,20 +9,26 @@ UserDetails userDetailsFromJson(String str) => UserDetails.fromJson(json.decode(
 String userDetailsToJson(UserDetails data) => json.encode(data.toJson());
 
 class UserDetails {
+
   UserDetails({
     required this.success,
     required this.token,
     required this.userDetails,
   });
 
-  bool success;
-  String token;
-  UserDetailsClass userDetails;
+  UserDetails.fromUser() {
+
+  }
+  late bool success;
+  late String token;
+  late UserDetailsClass userDetails;
+
 
   factory UserDetails.fromJson(Map<String, dynamic> json) => UserDetails(
     success: json["success"],
     token: json["token"],
     userDetails: UserDetailsClass.fromJson(json["user_details"]),
+
   );
 
   Map<String, dynamic> toJson() => {
@@ -31,6 +37,7 @@ class UserDetails {
     "user_details": userDetails.toJson(),
   };
 }
+
 
 class UserDetailsClass {
   UserDetailsClass({
@@ -74,44 +81,44 @@ class UserDetailsClass {
     required this.isActive,
   });
 
-  int id;
-  String userType;
-  String name;
-  dynamic state;
-  dynamic district;
-  dynamic ac;
-  dynamic stateName;
-  dynamic districtName;
-  dynamic acName;
-  dynamic pincode;
-  dynamic userMonitorId;
-  dynamic landmark;
-  dynamic latitude;
-  dynamic longitude;
-  dynamic ipaddress;
-  DateTime createdAt;
-  DateTime updatedAt;
-  String mobileNumber;
-  String email;
-  int otpAttempt;
-  DateTime otpTime;
-  dynamic otpTransfer;
-  String deviceId;
-  String fcmId;
-  String sessionId;
-  String isLogin;
-  dynamic monitorId;
-  dynamic address;
-  dynamic constType;
-  dynamic parentId;
-  dynamic pc;
-  dynamic pcName;
-  dynamic isPcHead;
-  dynamic pcHeadDecision;
-  dynamic deletedAt;
-  dynamic additionCeoFlag;
-  dynamic passwordNew;
-  int isActive;
+  late int id;
+  late String userType;
+  late String name;
+  late dynamic state;
+  late dynamic district;
+  late dynamic ac;
+  late  dynamic stateName;
+  late dynamic districtName;
+  late dynamic acName;
+  late dynamic pincode;
+  late dynamic userMonitorId;
+  late dynamic landmark;
+  late dynamic latitude;
+  late dynamic longitude;
+  late dynamic ipaddress;
+  late DateTime createdAt;
+  late DateTime updatedAt;
+  late String mobileNumber;
+  late String email;
+  late int otpAttempt;
+  late DateTime otpTime;
+  late dynamic otpTransfer;
+  late String deviceId;
+  late String fcmId;
+  late String sessionId;
+  late String isLogin;
+  late dynamic monitorId;
+  late dynamic address;
+  late dynamic constType;
+  late dynamic parentId;
+  late  dynamic pc;
+  late dynamic pcName;
+  late  dynamic isPcHead;
+  late dynamic pcHeadDecision;
+  late dynamic deletedAt;
+  late dynamic additionCeoFlag;
+  late  dynamic passwordNew;
+  late int isActive;
 
   factory UserDetailsClass.fromJson(Map<String, dynamic> json) => UserDetailsClass(
     id: json["id"],

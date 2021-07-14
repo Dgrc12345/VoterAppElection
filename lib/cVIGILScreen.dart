@@ -251,11 +251,6 @@ class cVIGILScreen extends StatelessWidget {
                       ),
                     ),
 
-
-
-
-
-
                     Container(
                       height: MediaQuery.of(context).size.height*0.7,
                       child:new Row(

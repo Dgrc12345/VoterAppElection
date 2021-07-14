@@ -2,11 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Model/UserDetails.dart';
 
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
 
 import 'Api/ApiServiceUrl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer';
+
+import 'Api/SessionManager.dart';
 import 'main1.dart';
 
 void main() {
@@ -42,16 +46,16 @@ class _MyHomePageState extends State<MyHomePage> {
   var _focusNodes = List.generate(4, (index) => FocusNode());
 
   String otp="";
-
-
-
+  late Future<UserDetails> futureAlbum;
 
 
   @override
   void initState() {
     super.initState();
-    // startSplashScreen();
+    //futureAlbum = fetchAlbum();
   }
+
+
 
 
 
@@ -123,10 +127,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   /*child: new Card(color: Colors.white,child: ListTile(leading: Icon(Icons.phone),title: Text("Mobile Number Or Email Id"),),*/
 
                   new Container(
+
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
+
                       child: PinEntryTextField(
+
                         showFieldAsBox: true,
+
                         onSubmit: (String pin){
                           otp=pin;
 
@@ -151,11 +159,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
                                 color: Colors.yellow,
                                 child:Text("Veify OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
-                                onPressed: () {
+                                onPressed: () async{
 
-                                  log('datavalueinotp: $otp');
-                                  Api.makeVeifyOtpRequest("7739763684","7854220",otp);
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => main1()));
+                                  UserDetails user=await Api.userLogin("7739763684","7854220",otp);
+
+
+
+                                  SessionManager prefs1 =  SessionManager();
+                                  prefs1.setAuthToken(user.token);
+                                  prefs1.setUserInfo(user);
+
+                                  int ggdg=user.userDetails.id;
+                                  String ggdg1=user.userDetails.name;
+                                  print("valueinname $ggdg1");
+                                  print("valueid $ggdg");
+
+                                  UserDetails userverify;
+                                  userverify= await prefs1.getUserInfo() ;
+                                  String gdygfyg=userverify.userDetails.name;
+                                  print("print uservalue,$gdygfyg");
+
+
                                 },)
                           ),
                         ],

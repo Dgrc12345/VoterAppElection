@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Api/ApiServiceUrl.dart';
 import 'package:flutter_app/LoginScreen.dart';
@@ -11,6 +13,8 @@ class LoginScreen extends StatelessWidget {
   // This widget is the root of your application.
 
   static const String routeName = '/My Polling Station';
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +36,7 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -41,8 +46,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    makePostRequest();
-    // startSplashScreen();
+
+
+  }
+  bool validateMobile(String value) {
+    bool check=true;
+    String patttern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+    RegExp regExp = new RegExp(patttern);
+    if (value.length == 0) {
+      check=false;
+      return check;
+    }else{}
+
+    return check;
   }
 
   Future makePostRequest() async {
@@ -59,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     int statusCode = response.statusCode;
     String responseBody = response.body;
+    log('datavalueinotp: $responseBody');
   }
 
 
@@ -79,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Container(
             height: double.infinity,
             width: double.infinity,
+
             decoration: BoxDecoration(
 
               image: DecorationImage(
@@ -133,13 +151,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     // ignore: deprecated_member_use
                     child: new OutlineButton(
                       onPressed: null,
-                      child: new
-                      TextFormField(
+                      child:new  TextFormField(
                         controller: phoneController,
-                        keyboardType: TextInputType.number,
-                        style: TextStyle(color: Colors.black),
-                        decoration: InputDecoration(hintText: "Mobile Number Or Email ID"),
-                      ),
+                        decoration: const InputDecoration(
+                            icon: const Icon(Icons.person,),
+                            hintText: 'Mobile Number Or Email ID',),
+                            ),
+
                       borderSide: BorderSide(
                         color: Colors.white,
                         style: BorderStyle.solid ,
@@ -169,7 +187,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child:Text("GENERATE OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
                                 onPressed: () {
                                   setState(() {
-                                    makePostRequest();
+
+                                    if(validateMobile(phoneController.text)){
+                                      makePostRequest();
+                                    }
                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
                                   });
                                   //Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
@@ -182,10 +203,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),
                   ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0 ),),
+                  Text("SIGN UP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17.0,decorationStyle:TextDecorationStyle.solid,color: Colors.white),),
 
                   new Container(
                     alignment: Alignment.bottomRight,
-                    margin: const EdgeInsets.only(top: 200.0),
+
                     child:new Image.asset("images/niclogo.png",
                         width: 140.0,
                         height: 40.0,
