@@ -13,7 +13,7 @@ class _State extends State<DownloadeEpic> {
     'Delhi',
     'Mumbai',
     'UP',
-    'Odhisa'
+
   ] ;
   @override
   Widget build(BuildContext context) {
