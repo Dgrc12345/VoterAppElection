@@ -2,7 +2,12 @@
 
 import 'dart:io';
 
+import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Api/ApiServiceUrl.dart';
+import 'package:flutter_app/Model/DefaultResponse.dart';
+import 'package:flutter_app/Model/IncidentType.dart';
+import 'package:flutter_app/Model/StoreComplain.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:convert';
@@ -23,26 +28,33 @@ class cVIGILSubmitComplain extends StatefulWidget {
 class _State extends State<cVIGILSubmitComplain> {
   TextEditingController candidateNameController= TextEditingController();
   String dropdownValue = 'One';
-
-  List <String> spinnerItems = [
-    'One',
-    'Two',
-    'Three',
-    'Four',
-    'Five'
-  ] ;
-
+  List<IncidentType> spinnerItems = <IncidentType>[];
 
   String lat="",long="",img64="";
   late File imageFile ;
   bool imgTaken=false;
   bool isLoading=false;
   String _currentAddress="";
+  late Future<IncidentType> incidentTypes;
+  String incidentName="",incident_id="";
+
 
   @override
-  void initState() {
-
+  void initState()
+  {
     super.initState();
+    loadIncident_Type();
+
+  }
+
+  void loadIncident_Type() {
+
+
+    setState(() => {
+      spinnerItems=Api.fetchIncidentTypes as List<IncidentType>
+    });
+
+
   }
 
   Future getCurrentLocation() async {
@@ -148,7 +160,7 @@ class _State extends State<cVIGILSubmitComplain> {
         // });
         // log('lat: $lat');
         // log('long: $long');
-        _getAddressFromLatLng();
+        // _getAddressFromLatLng();
       });
     }).catchError((e) {
       print(e);
@@ -171,9 +183,20 @@ class _State extends State<cVIGILSubmitComplain> {
         log('location: $_currentAddress');
 
       });
-     // Navigator.of(context).pop();
+      // Navigator.of(context).pop();
     } catch (e) {
       print(e);
+    }
+  }
+
+  Future<String> _getId() async {
+    var deviceInfo = DeviceInfoPlugin();
+    if (Platform.isIOS) { // import 'dart:io'
+      var iosDeviceInfo = await deviceInfo.iosInfo;
+      return iosDeviceInfo.identifierForVendor; // unique ID on iOS
+    } else {
+      var androidDeviceInfo = await deviceInfo.androidInfo;
+      return androidDeviceInfo.androidId; // unique ID on Android
     }
   }
 
@@ -241,24 +264,20 @@ class _State extends State<cVIGILSubmitComplain> {
                   ),
                   child: DropdownButtonHideUnderline(
 
-                    child: DropdownButton<String>(
-
-                      value: dropdownValue,  isExpanded: true,
-                      icon: Icon(Icons.arrow_drop_down),
-                      iconSize: 24,
-                      elevation: 16,
-                      style: TextStyle(color: Colors.black, fontSize: 14),
-                      onChanged: (newValue) {
+                    child: DropdownButton(
+                      value: incident_id,
+                      hint: Text("Select"),
+                      items: spinnerItems.map((item){
+                        return DropdownMenuItem(
+                          child: Text(item.incidenceTypeEn),
+                          value: item.incidenceTypeId.toString(),);
+                      }).toList(),
+                      onChanged: (newVal){
                         setState(() {
-                          dropdownValue = newValue!;
+                          incidentName = newVal.toString();
+                          incident_id = newVal.toString();
                         });
                       },
-                      items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
                     ),
 
                   ),
@@ -311,12 +330,12 @@ class _State extends State<cVIGILSubmitComplain> {
                       isDense: true,
                       enabled: false,// Added this
                       contentPadding: EdgeInsets.all(12),
-                      hintText: (lat=="")?"Locate me":"Location:$_currentAddress",
+                      hintText: (lat=="" && long=="")?"Locate me":"Lat:$lat And Long$long",
                       prefixIcon: Icon(Icons.location_on),
                     ),
                   ),
                   onTap: () {
-                   // showLoadingIndicator(context);
+                    // showLoadingIndicator(context);
                     getCurrentLocation();
                   },
                 ),
@@ -424,9 +443,16 @@ class _State extends State<cVIGILSubmitComplain> {
                             padding: EdgeInsets.all(12),
 
                             child:Text("SUBMIT",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 13.0,decorationStyle:TextDecorationStyle.solid),),
-                            onPressed: () {
+                            onPressed: ()
+                            async{
 
-                            },)
+                              String deviceId = await _getId();
+                              //   StoreComplain data=new StoreComplain(deviceId, lat, long, complaintOffenceType, complaintOffenceText, complaintText, complaintLandmark, complaintStateName, complaintStateCode, complaintDistrictName, complaintDistrictCode, gpsLocation, fcmId, isDemo)
+
+                              //  DefaultResponse user=await Api.InsertComplain(data);
+
+                            },
+                          )
                       ),
 
 
@@ -447,4 +473,6 @@ class _State extends State<cVIGILSubmitComplain> {
     print("Disposing second route");
     super.dispose();
   }
+
+
 }

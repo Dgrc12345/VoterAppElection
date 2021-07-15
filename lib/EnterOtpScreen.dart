@@ -163,8 +163,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.yellow,
                                 child:Text("Veify OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
                                 onPressed: () async{
-
-                                  UserDetails user=await Api.userLogin("9905858074","7854220",otp);
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dashboard()));
+                                  UserDetails user=await Api.userLogin("7667426822","7854220",otp);
 
 
 
