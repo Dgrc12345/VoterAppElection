@@ -53,13 +53,15 @@ class SessionManager {
 
   //firebase cloud messaging token
   final String fcm_token = "mobihub.fcm_token";
+
+
   Future<UserDetails> getUserInfo() async {
     final SharedPreferences pref = await SharedPreferences.getInstance();
-    int? _id;
+    int _id;
     bool _success;
     String Token;
     String _userType,
-         
+
         _token,
         _name,
         _state,
@@ -70,18 +72,21 @@ class SessionManager {
         _acName,
         _pincode;
 
-    _userType = (pref.getString(userType) ?? null)!;
+ _userType = (pref.getString(userType));
 
-    _name = (pref.getString(name) ?? null)!;
-    _state = (pref.getString(state) ?? null)!;
-    _district = (pref.getString(district) ?? null)!;
-    _ac = (pref.getString(ac) ?? null)!;
-    _stateName = (pref.getString(stateName) ?? null)!;
-    _districtName = (pref.getString(districtName) ?? null)!;
-    _acName = (pref.getString(acName) ?? null)!;
-    _pincode = (pref.getString(pincode) ?? null)!;
+    _name = (pref.getString(name));
+    print("$_name");
+    _state = (pref.getString(state) );
+    _district = (pref.getString(district) );
+    _ac = (pref.getString(ac) );
+    _stateName = (pref.getString(stateName) );
+    _districtName = (pref.getString(districtName) );
+    _acName = (pref.getString(acName));
+    _pincode = (pref.getString(pincode) );
 
-    UserDetails  user = await UserDetails.fromUser();
+   // UserDetails  user = await UserDetails.fromUser();
+    UserDetails  user = await UserDetails();
+    print("data??? $user");
 
     user.userDetails.userType = _userType;
     user.userDetails.name= _name;
@@ -104,7 +109,7 @@ class SessionManager {
 
 
     prefs.setString(name, mUser.userDetails.name);
-    String vakur=mUser.userDetails.userType;
+    String vakur=mUser.userDetails.name;
     print("valueinnamesession $vakur");
     prefs.setString(district, mUser.userDetails.district);
     prefs.setString(state, mUser.userDetails.state);
@@ -120,12 +125,10 @@ class SessionManager {
   /*Future<UserDetails> getNewUser() async {
     final SharedPreferences pref = await SharedPreferences.getInstance();
     bool by_admin, company_edit, default_dp, no_following;
-
     by_admin = pref.getBool(this.by_admin) ?? null;
     company_edit = pref.getBool(this.company_edit) ?? null;
     default_dp = pref.getBool(this.default_dp) ?? null;
     no_following = pref.getBool(this.no_following) ?? null;
-
     NewUser user = new NewUser();
     user.by_admin = by_admin;
     user.company_edit = company_edit;
@@ -133,7 +136,6 @@ class SessionManager {
     user.no_following = no_following;
     return user;
   }
-
   Future<void> setNewUser(NewUser mUser) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool(by_admin, mUser.by_admin);
@@ -147,7 +149,7 @@ class SessionManager {
   Future<String> getAuthToken() async {
     final SharedPreferences pref = await SharedPreferences.getInstance();
     String auth_token;
-    auth_token = (pref.getString(this.auth_token) ?? null)!;
+    auth_token = (pref.getString(this.auth_token) ?? null);
     return auth_token;
   }
 
@@ -165,7 +167,6 @@ class SessionManager {
     auth_token = pref.getString(this.fcm_token) ?? null;
     return auth_token;
   }
-
   Future<void> setFCMToken(String fcm_token) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString(this.fcm_token, fcm_token);

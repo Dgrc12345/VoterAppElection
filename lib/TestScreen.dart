@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TestScreen extends StatefulWidget {
-  const TestScreen({required Key key}) : super(key: key);
+  const TestScreen({Key key}) : super(key: key);
   @override
   createState() => _TestScreenState();
 }
 
 class _TestScreenState extends State<TestScreen> with SingleTickerProviderStateMixin {
-  late TabController controller;
-  late List<Tab> tabBars;
-  late List<Widget> tabBarViews;
+  TabController controller;
+  List<Tab> tabBars;
+   List<Widget> tabBarViews;
   final tabIconSize = 30.0;
 
   @override

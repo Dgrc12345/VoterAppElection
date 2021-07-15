@@ -29,7 +29,7 @@ class SelfChangeAdress extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  MyHomePage({Key key,  this.title}) : super(key: key);
 
   final String title;
 
@@ -226,7 +226,7 @@ class MyHomePage extends StatefulWidget {
                         style: TextStyle(color: Colors.black, fontSize: 14),
                         onChanged: (newValue) {
                           setState(() {
-                            stateValue = newValue!;
+                            stateValue = newValue;
                           });
                         },
                         items: spinnerState.map<DropdownMenuItem<String>>((String value) {
@@ -270,7 +270,7 @@ class MyHomePage extends StatefulWidget {
                         style: TextStyle(color: Colors.black, fontSize: 14),
                         onChanged: (newValue) {
                           setState(() {
-                            dropdownValue = newValue!;
+                            dropdownValue = newValue;
                           });
                         },
                         items: spinnerItems.map<DropdownMenuItem<String>>((String value) {

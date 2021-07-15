@@ -89,7 +89,7 @@ class _State extends State<DownloadeEpic> {
                       style: TextStyle(color: Colors.black, fontSize: 14),
                       onChanged: (newValue) {
                         setState(() {
-                          stateValue = newValue!;
+                          stateValue = newValue;
                         });
                       },
                       items: spinnerState.map<DropdownMenuItem<String>>((String value) {

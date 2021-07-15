@@ -5,7 +5,7 @@ import 'package:flutter_app/AppDrawer.dart';
 import 'DuplicateFamilyEpic.dart';
 
 class DuplicateEpic extends StatelessWidget {
-  late final String title;
+ String title;
   //DuplicateEpic(this.title);
 
   @override

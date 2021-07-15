@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/HomeScreen.dart';
 import 'package:flutter_app/LoginScreen.dart';
@@ -101,7 +101,7 @@ class AppDrawer extends StatelessWidget {
   }
 
   Widget _createDrawerItem(
-      {required IconData icon, required String text, required GestureTapCallback onTap}) {
+      { IconData icon,  String text,  GestureTapCallback onTap}) {
     return ListTile(
       title: Row(
         children: <Widget>[

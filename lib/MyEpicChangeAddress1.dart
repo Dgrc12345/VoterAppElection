@@ -9,7 +9,7 @@ import 'MyEpicFamilyChangeAddress.dart';
 import 'SelfChangeAdress.dart';
 
 class MyEpicChangeAddress1 extends StatelessWidget {
-  late final String title;
+ String title;
 
 
   @override

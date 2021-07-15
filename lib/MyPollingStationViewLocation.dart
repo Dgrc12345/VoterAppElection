@@ -12,7 +12,7 @@ import 'Routes.dart';
 class MyPollingStationViewLocation extends StatelessWidget {
 
   final String text;
-  MyPollingStationViewLocation({required this.text}) ;
+  MyPollingStationViewLocation({this.text}) ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -54,7 +54,7 @@ class _State extends State<DeletionSelfEnrollment> {
                       style: TextStyle(color: Colors.black, fontSize: 14),
                       onChanged: (newValue) {
                         setState(() {
-                          stateValue = newValue!;
+                          stateValue = newValue;
                         });
                       },
                       items: spinnerState.map<DropdownMenuItem<String>>((String value) {

@@ -8,7 +8,7 @@ import 'MyPollingStation.dart';
 
 
 class cVIGIL_Main_Complainlist extends StatelessWidget {
-  late final String title;
+   final String title;
   cVIGIL_Main_Complainlist(this.title);
 
   @override

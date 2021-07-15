@@ -1,35 +1,32 @@
-// To parse this JSON data, do
-//
-//     final userDetails = userDetailsFromJson(jsonString);
-
 import 'dart:convert';
 
 UserDetails userDetailsFromJson(String str) => UserDetails.fromJson(json.decode(str));
-
 String userDetailsToJson(UserDetails data) => json.encode(data.toJson());
 
 class UserDetails {
 
   UserDetails({
-    required this.success,
-    required this.token,
-    required this.userDetails,
+    this.success,
+    this.token,
+ this.userDetails,
   });
 
-  UserDetails.fromUser() {
+
+  bool success;
+  String token;
+  UserDetailsClass userDetails;
+
+
+  factory UserDetails.fromJson(Map<String, dynamic> json) {
+    print("heello ji $json");
+    UserDetails(
+        success: json["success"],
+        token: json["token"],
+        //  userDetails: UserDetailsClass.fromJson(json["user_details"]),
+        userDetails: json["user_details"] == null ? null : UserDetailsClass
+            .fromJson(json["user_details"]));
 
   }
-  late bool success;
-  late String token;
-  late UserDetailsClass userDetails;
-
-
-  factory UserDetails.fromJson(Map<String, dynamic> json) => UserDetails(
-    success: json["success"],
-    token: json["token"],
-    userDetails: UserDetailsClass.fromJson(json["user_details"]),
-
-  );
 
   Map<String, dynamic> toJson() => {
     "success": success,
@@ -41,9 +38,9 @@ class UserDetails {
 
 class UserDetailsClass {
   UserDetailsClass({
-    required this.id,
-    required this.userType,
-    required this.name,
+     this.id,
+   this.userType,
+  this.name,
     this.state,
     this.district,
     this.ac,
@@ -56,17 +53,17 @@ class UserDetailsClass {
     this.latitude,
     this.longitude,
     this.ipaddress,
-   required this.createdAt,
-   required this.updatedAt,
-   required this.mobileNumber,
-   required this.email,
-   required this.otpAttempt,
-   required this.otpTime,
-   required this.otpTransfer,
-   required this.deviceId,
-   required this.fcmId,
-   required this.sessionId,
-   required this.isLogin,
+    this.createdAt,
+   this.updatedAt,
+   this.mobileNumber,
+     this.email,
+   this.otpAttempt,
+    this.otpTime,
+    this.otpTransfer,
+    this.deviceId,
+    this.fcmId,
+    this.sessionId,
+     this.isLogin,
     this.monitorId,
     this.address,
     this.constType,
@@ -78,88 +75,91 @@ class UserDetailsClass {
     this.deletedAt,
     this.additionCeoFlag,
     this.passwordNew,
-    required this.isActive,
+   this.isActive,
   });
 
-  late int id;
-  late String userType;
-  late String name;
-  late dynamic state;
-  late dynamic district;
-  late dynamic ac;
-  late  dynamic stateName;
-  late dynamic districtName;
-  late dynamic acName;
-  late dynamic pincode;
-  late dynamic userMonitorId;
-  late dynamic landmark;
-  late dynamic latitude;
-  late dynamic longitude;
-  late dynamic ipaddress;
-  late DateTime createdAt;
-  late DateTime updatedAt;
-  late String mobileNumber;
-  late String email;
-  late int otpAttempt;
-  late DateTime otpTime;
-  late dynamic otpTransfer;
-  late String deviceId;
-  late String fcmId;
-  late String sessionId;
-  late String isLogin;
-  late dynamic monitorId;
-  late dynamic address;
-  late dynamic constType;
-  late dynamic parentId;
-  late  dynamic pc;
-  late dynamic pcName;
-  late  dynamic isPcHead;
-  late dynamic pcHeadDecision;
-  late dynamic deletedAt;
-  late dynamic additionCeoFlag;
-  late  dynamic passwordNew;
-  late int isActive;
+  int id;
+  String userType;
+   String name;
+   dynamic state;
+   dynamic district;
+   dynamic ac;
+    dynamic stateName;
+  dynamic districtName;
+  dynamic acName;
+ dynamic pincode;
+  dynamic userMonitorId;
+   dynamic landmark;
+  dynamic latitude;
+  dynamic longitude;
+  dynamic ipaddress;
+   DateTime createdAt;
+   DateTime updatedAt;
+   String mobileNumber;
+   String email;
+  int otpAttempt;
+   DateTime otpTime;
+ dynamic otpTransfer;
+ String deviceId;
+   String fcmId;
+   String sessionId;
+  String isLogin;
+   dynamic monitorId;
+   dynamic address;
+   dynamic constType;
+   dynamic parentId;
+   dynamic pc;
+  dynamic pcName;
+    dynamic isPcHead;
+   dynamic pcHeadDecision;
+  dynamic deletedAt;
+   dynamic additionCeoFlag;
+    dynamic passwordNew;
+  int isActive;
 
-  factory UserDetailsClass.fromJson(Map<String, dynamic> json) => UserDetailsClass(
-    id: json["id"],
-    userType: json["user_type"],
-    name: json["name"],
-    state: json["state"],
-    district: json["district"],
-    ac: json["ac"],
-    stateName: json["state_name"],
-    districtName: json["district_name"],
-    acName: json["ac_name"],
-    pincode: json["pincode"],
-    userMonitorId: json["user_monitor_id"],
-    landmark: json["landmark"],
-    latitude: json["latitude"],
-    longitude: json["longitude"],
-    ipaddress: json["ipaddress"],
-    createdAt: DateTime.parse(json["created_at"]),
+  factory UserDetailsClass.fromJson(Map<String, dynamic> json) {
+    print("value mil rahi hai $json");
+    UserDetailsClass(
+        id: json["id"] == null ? null : json["id"],
+        userType: json["user_type"] == null ? null : json["user_type"],
+        name: json["name"] == null ? null : json["name"],
+        state: json["state"] == null ? null : json["state"],
+        district: json["district"] == null ? null : json["district"],
+        ac: json["ac"] == null ? null : json["ac"],
+        stateName: json["state_name"] == null ? null : json["state_name"],
+        districtName: json["district_name"] == null ? null : json["district_name"],
+        acName: json["ac_name"] == null ? null : json["ac_name"],
+        pincode: json["pincode"] == null ? null : json["pincode"],
+        userMonitorId: json["user_monitor_id"] == null ? null : json["user_monitor_id"],
+        landmark: json["landmark"] == null ? null : json["landmark"],
+        latitude: json["latitude"] == null ? null : json["latitude"],
+        longitude: json["longitude"] == null ? null : json["longitude"],
+        ipaddress: json["ipaddress"] == null ? null : json["ipaddress"],
+        createdAt: DateTime.parse(json["created_at"]),
     updatedAt: DateTime.parse(json["updated_at"]),
-    mobileNumber: json["mobile_number"],
-    email: json["email"],
-    otpAttempt: json["OTP_attempt"],
-    otpTime: DateTime.parse(json["OTP_time"]),
-    otpTransfer: json["OTP_transfer"],
-    deviceId: json["device_id"],
-    fcmId: json["fcm_id"],
-    sessionId: json["session_id"],
-    isLogin: json["is_login"],
-    monitorId: json["monitor_id"],
-    address: json["address"],
-    constType: json["const_type"],
-    parentId: json["parent_id"],
-    pc: json["pc"],
-    pcName: json["pc_name"],
-    isPcHead: json["is_pc_head"],
-    pcHeadDecision: json["pc_head_decision"],
-    deletedAt: json["deleted_at"],
-    additionCeoFlag: json["addition_ceo_flag"],
-    passwordNew: json["password_new"],
-    isActive: json["is_active"],
-  );
+    mobileNumber: json["mobile_number"] == null ? null : json["mobile_number"],
+    email: json["email"] == null ? null : json["email"],
+    otpAttempt: json["OTP_attempt"] == null ? null : json["OTP_attempt"],
+    otpTime: DateTime.parse(json["OTP_time"] == null ? null : json["OTP_time"],),
+    otpTransfer: json["OTP_transfer"] == null ? null : json["OTP_transfer"],
+    deviceId: json["device_id"] == null ? null : json["device_id"],
+    fcmId: json["fcm_id"] == null ? null : json["fcm_id"],
+    sessionId: json["session_id"] == null ? null : json["session_id"],
+    isLogin: json["is_login"] == null ? null : json["is_login"],
+    monitorId: json["monitor_id"] == null ? null : json["monitor_id"],
+    address: json["address"] == null ? null : json["address"],
+    constType: json["const_type"] == null ? null : json["const_type"],
+    parentId: json["parent_id"] == null ? null : json["parent_id"],
+    pc: json["pc"] == null ? null : json["pc"],
+    pcName: json["pc_name"] == null ? null : json["pc_name"],
+    isPcHead: json["is_pc_head"] == null ? null : json["is_pc_head"],
+    pcHeadDecision: json["pc_head_decision"] == null ? null : json["pc_head_decision"],
+    deletedAt: json["deleted_at"] == null ? null : json["deleted_at"],
+    additionCeoFlag: json["addition_ceo_flag"] == null ? null : json["addition_ceo_flag"],
+    passwordNew: json["password_new"] == null ? null : json["password_new"],
+    isActive: json["is_active"] == null ? null : json["is_active"]);
+  }
+
 
   Map<String, dynamic> toJson() => {
     "id": id,

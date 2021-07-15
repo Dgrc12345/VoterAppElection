@@ -14,7 +14,7 @@ class Api{
 
 
 
-   static Future makeVeifyOtpRequest(String mobNo,String devceId,String otp) async {
+  static Future makeVeifyOtpRequest(String mobNo,String devceId,String otp) async {
     final uri = Uri.parse(OtpVerify);
     final headers = {
       'Content-Type': 'application/json'};
@@ -63,5 +63,4 @@ class Api{
   }
 
 }
-
 

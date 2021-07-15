@@ -1,5 +1,3 @@
-
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -34,7 +32,7 @@ class _State extends State<cVIGILSubmitComplain> {
 
 
   String lat="",long="",img64="";
-  late File imageFile ;
+  File imageFile ;
   bool imgTaken=false;
   bool isLoading=false;
   String _currentAddress="";
@@ -171,7 +169,7 @@ class _State extends State<cVIGILSubmitComplain> {
         log('location: $_currentAddress');
 
       });
-     // Navigator.of(context).pop();
+      // Navigator.of(context).pop();
     } catch (e) {
       print(e);
     }
@@ -250,7 +248,7 @@ class _State extends State<cVIGILSubmitComplain> {
                       style: TextStyle(color: Colors.black, fontSize: 14),
                       onChanged: (newValue) {
                         setState(() {
-                          dropdownValue = newValue!;
+                          dropdownValue = newValue;
                         });
                       },
                       items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
@@ -316,7 +314,7 @@ class _State extends State<cVIGILSubmitComplain> {
                     ),
                   ),
                   onTap: () {
-                   // showLoadingIndicator(context);
+                    // showLoadingIndicator(context);
                     getCurrentLocation();
                   },
                 ),
