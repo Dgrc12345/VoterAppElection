@@ -2,8 +2,8 @@
 
 import 'dart:io';
 
-/*
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:convert';
 import 'package:geolocator/geolocator.dart';
@@ -15,22 +15,34 @@ import 'dart:developer';
 class cVIGILSubmitComplain extends StatefulWidget {
 
 
+
   @override
   _State createState() => _State();
 }
 
-
-
 class _State extends State<cVIGILSubmitComplain> {
   TextEditingController candidateNameController= TextEditingController();
-  late File _image;
- // late Position _currentPosition ="" as Position;
-  String lat="",long="";
+  String dropdownValue = 'One';
+
+  List <String> spinnerItems = [
+    'One',
+    'Two',
+    'Three',
+    'Four',
+    'Five'
+  ] ;
+
+
+  String lat="",long="",img64="";
+  late File imageFile ;
+  bool imgTaken=false;
+  bool isLoading=false;
+  String _currentAddress="";
 
   @override
   void initState() {
-    super.initState();
 
+    super.initState();
   }
 
   Future getCurrentLocation() async {
@@ -44,69 +56,83 @@ class _State extends State<cVIGILSubmitComplain> {
     _getCurrentLocation();
   }
 
-  _imgFromCamera() async {
-    File image = await ImagePicker.pickImage(
-        source: ImageSource.camera, imageQuality: 50
+  showLoadingIndicator(BuildContext context){
+    AlertDialog alert=AlertDialog(
+      content: new Row(
+        children: [
+          CircularProgressIndicator(),
+          Container(margin: EdgeInsets.only(left: 5),child:Text("Capturing current location" )),
+        ],),
     );
-
-    setState(() {
-      _image = image;
-
-      log('img_data: $_image');
-      // List<int> imageBytes = widget._image.readAsBytesSync();
-      // //print(imageBytes);
-      // String base64Image = base64Encode(imageBytes);
-    });
-  }
-
-  _imgFromGallery() async {
-    File image = await  ImagePicker.pickImage(
-        source: ImageSource.gallery, imageQuality: 50
-    );
-
-    setState(() {
-      _image = image;
-    });
-
-  }
-
-  showAlertDialog(BuildContext context) {
-
-    // set up the buttons
-    Widget cancelButton = TextButton(
-      child: Text("Pick from gallery"),
-      onPressed:  () {
-        _imgFromGallery();
-
-      },
-    );
-    Widget continueButton = TextButton(
-      child: Text("Capture Image"),
-      onPressed:  () {
-
-        _imgFromCamera();
-
-      },
-    );
-
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text("Image"),
-      content: Text("Choose Image From Gallery Or Capture"),
-      actions: [
-        cancelButton,
-        continueButton,
-      ],
-    );
-
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
+    showDialog(barrierDismissible: false,
+      context:context,
+      builder:(BuildContext context){
         return alert;
       },
     );
   }
+
+  //********************** IMAGE PICKER
+  Future imageSelector(BuildContext context, String pickerType) async {
+    switch (pickerType) {
+      case "gallery":
+
+      /// GALLERY IMAGE PICKER
+        imageFile = await ImagePicker.pickImage(
+            source: ImageSource.gallery, imageQuality: 90);
+        imgTaken=true;
+        final bytes = File(imageFile.path).readAsBytesSync();
+
+        img64 = base64Encode(bytes);
+        break;
+
+      case "camera": // CAMERA CAPTURE CODE
+        imageFile = await ImagePicker.pickImage(
+            source: ImageSource.camera, imageQuality: 90);
+        imgTaken=true;
+        final bytes = File(imageFile.path).readAsBytesSync();
+
+        img64 = base64Encode(bytes);
+        break;
+    }
+
+    if (imageFile != null) {
+      print("You selected  image : " + imageFile.path);
+      setState(() {
+        debugPrint("SELECTED IMAGE PICK   $imageFile");
+      });
+    } else {
+      print("You have not taken image");
+    }
+  }
+
+  // Image picker
+  void _settingModalBottomSheet(context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+            child: new Wrap(
+              children: <Widget>[
+                new ListTile(
+                    title: new Text('Gallery'),
+                    onTap: () => {
+                      imageSelector(context, "gallery"),
+                      Navigator.pop(context),
+                    }),
+                new ListTile(
+                  title: new Text('Camera'),
+                  onTap: () => {
+                    imageSelector(context, "camera"),
+                    Navigator.pop(context)
+                  },
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
 
   _getCurrentLocation() {
     Geolocator
@@ -115,12 +141,41 @@ class _State extends State<cVIGILSubmitComplain> {
       setState(() {
         lat = position.latitude.toString();
         long = position.longitude.toString();
+        // setState(() {
+        //   debugPrint("Latitude   $lat");
+        //   debugPrint("Longitude   $long");
+        //   Navigator.pop(context);
+        // });
+        // log('lat: $lat');
+        // log('long: $long');
+        _getAddressFromLatLng();
       });
     }).catchError((e) {
       print(e);
     });
   }
 
+
+  _getAddressFromLatLng() async {
+    try {
+      List<Placemark> placemarks = await placemarkFromCoordinates(
+          double.parse(lat),
+          double.parse(long)
+      );
+
+      Placemark place = placemarks[0];
+
+      setState(()
+      {
+        _currentAddress = "${place.locality}, ${place.postalCode}, ${place.country}";
+        log('location: $_currentAddress');
+
+      });
+     // Navigator.of(context).pop();
+    } catch (e) {
+      print(e);
+    }
+  }
 
 
   @override
@@ -170,21 +225,42 @@ class _State extends State<cVIGILSubmitComplain> {
                   style: TextStyle(fontSize: 15.0,color: Colors.teal),),),
               Padding(
                 padding: EdgeInsets.all(8),
-                child: TextField(
-                  decoration: InputDecoration(
-                    fillColor: Color.fromARGB(255, 238, 241, 241), filled: true,
+                child: Container(
+                  height: 40,
 
-                    contentPadding: EdgeInsets.all(12),
-                    border: OutlineInputBorder(
 
-                      borderSide:
-                      BorderSide(color: Colors.blueGrey, width: 1.5),
-                      borderRadius: BorderRadius.all(Radius.circular(2.5)),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(1),
+
+                  ),
+                  child: DropdownButtonHideUnderline(
+
+                    child: DropdownButton<String>(
+
+                      value: dropdownValue,  isExpanded: true,
+                      icon: Icon(Icons.arrow_drop_down),
+                      iconSize: 24,
+                      elevation: 16,
+                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      onChanged: (newValue) {
+                        setState(() {
+                          dropdownValue = newValue!;
+                        });
+                      },
+                      items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
                     ),
 
-                    hintText: 'Type of incidence',
-                    isDense: true,                      // Added this
-                    //contentPadding: EdgeInsets.all(2),
                   ),
 
                 ),
@@ -215,9 +291,12 @@ class _State extends State<cVIGILSubmitComplain> {
               Padding(
                 padding: EdgeInsets.only(left: 6.0,bottom: 4.0),
 
+
                 child: Text('Location',textAlign: TextAlign.left,
 
-                  style: TextStyle(fontSize: 15.0,color: Colors.teal ),),),
+                  style: TextStyle(fontSize: 15.0,color: Colors.teal ),),
+
+              ),
               Padding(
                 padding: EdgeInsets.all(8),
                 child: GestureDetector(
@@ -229,12 +308,15 @@ class _State extends State<cVIGILSubmitComplain> {
                         BorderSide(color: Colors.blueGrey, width: 1.5),
                         borderRadius: BorderRadius.all(Radius.circular(2.5)),
                       ),
-                      isDense: true,                      // Added this
+                      isDense: true,
+                      enabled: false,// Added this
                       contentPadding: EdgeInsets.all(12),
-                      hintText: "Latitude:$lat,Longitude:$long",
+                      hintText: (lat=="")?"Locate me":"Location:$_currentAddress",
+                      prefixIcon: Icon(Icons.location_on),
                     ),
                   ),
                   onTap: () {
+                   // showLoadingIndicator(context);
                     getCurrentLocation();
                   },
                 ),
@@ -248,27 +330,30 @@ class _State extends State<cVIGILSubmitComplain> {
 
                 ],
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Expanded(child: Center(
-              //
-              //         child:(_image!=null)?Image.file(_image):
-              //
-              //           Image.asset("images/capture_img.png")
-              //     )
-              //     ),
-              //     VerticalDivider(width: 1.0),
-              //     Expanded(child: Center(child: Image.asset("images/capture_img.png"))),
-              //
-              //   ],
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(child: Center(
+
+                      child:(imgTaken)?Image.file(imageFile):
+
+
+                      Image.asset("images/capture_img.png")
+
+                  )
+                  ),
+                  VerticalDivider(width: 1.0),
+                  Expanded(child: Center(child: Image.asset("images/capture_img.png"))),
+
+                ],
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(child: Center(child: GestureDetector(
                       onTap: () {
-                        showAlertDialog(context);
+                        //  showAlertDialog(context);
+                        _settingModalBottomSheet(context);
                       },
                       child: Text("Upload",style: TextStyle(fontSize: 15.0,color: Colors.teal,fontWeight: FontWeight.w200,)
                       )))),
@@ -362,4 +447,4 @@ class _State extends State<cVIGILSubmitComplain> {
     print("Disposing second route");
     super.dispose();
   }
-}*/
+}
