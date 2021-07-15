@@ -13,9 +13,7 @@ import 'dart:developer';
 import 'Api/SessionManager.dart';
 import 'main1.dart';
 
-void main() {
-  runApp(EnterOtpScreen());
-}
+
 
 class EnterOtpScreen extends StatelessWidget {
   // This widget is the root of your application.
