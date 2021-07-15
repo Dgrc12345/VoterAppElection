@@ -70,16 +70,16 @@ class SessionManager {
         _acName,
         _pincode;
 
-    _userType = (pref.getString(userType) ?? null)!;
+    _userType = (pref.getString(userType) )!;
 
-    _name = (pref.getString(name) ?? null)!;
-    _state = (pref.getString(state) ?? null)!;
-    _district = (pref.getString(district) ?? null)!;
-    _ac = (pref.getString(ac) ?? null)!;
-    _stateName = (pref.getString(stateName) ?? null)!;
-    _districtName = (pref.getString(districtName) ?? null)!;
-    _acName = (pref.getString(acName) ?? null)!;
-    _pincode = (pref.getString(pincode) ?? null)!;
+    _name = (pref.getString(name) )!;
+    _state = (pref.getString(state) )!;
+    _district = (pref.getString(district))!;
+    _ac = (pref.getString(ac))!;
+    _stateName = (pref.getString(stateName) )!;
+    _districtName = (pref.getString(districtName))!;
+    _acName = (pref.getString(acName) )!;
+    _pincode = (pref.getString(pincode))!;
 
     UserDetails  user = await UserDetails.fromUser();
 

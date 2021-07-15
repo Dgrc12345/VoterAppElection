@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Dashboard.dart';
+import 'package:flutter_app/HomeScreen.dart';
 import 'package:flutter_app/Model/UserDetails.dart';
 
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
@@ -11,6 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer';
 
 import 'Api/SessionManager.dart';
+import 'ServicesForDivyang.dart';
 import 'main1.dart';
 
 void main() {
@@ -168,6 +171,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                   SessionManager prefs1 =  SessionManager();
                                   prefs1.setAuthToken(user.token);
                                   prefs1.setUserInfo(user);
+                                  if(user.success=true){
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dashboard()));
+                                  }
 
                                   int ggdg=user.userDetails.id;
                                   String ggdg1=user.userDetails.name;
