@@ -9,7 +9,7 @@ import 'DeletionSelfEnrollment.dart';
 
 
 class DeletionEnrolment extends StatelessWidget {
-  late final String title;
+    String title;
   //DuplicateEpic(this.title);
 
   @override

@@ -30,7 +30,7 @@ class MyEpicSelfChangeAddressNext extends StatelessWidget {
 
 class MyHomePage1 extends StatefulWidget {
 
-  MyHomePage1({Key? key, required this.title}) : super(key: key);
+  MyHomePage1({Key key,  this.title}) : super(key: key);
 
   final String title;
 
@@ -224,7 +224,7 @@ class _MyHomePageState extends State<MyHomePage1> {
                         style: TextStyle(color: Colors.black, fontSize: 14),
                         onChanged: (newValue) {
                           setState(() {
-                            stateValue = newValue!;
+                            stateValue = newValue;
                           });
                         },
                         items: spinnerState.map<DropdownMenuItem<String>>((String value) {

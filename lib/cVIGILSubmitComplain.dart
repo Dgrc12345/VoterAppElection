@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-import 'package:device_info/device_info.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Api/ApiServiceUrl.dart';
 import 'package:flutter_app/Model/DefaultResponse.dart';
@@ -32,11 +32,11 @@ class _State extends State<cVIGILSubmitComplain> {
   List<IncidentType> spinnerItems = <IncidentType>[];
 
   String lat="",long="",img64="";
-  late File imageFile ;
+   File imageFile ;
   bool imgTaken=false;
   bool isLoading=false;
   String _currentAddress="";
-  late Future<IncidentType> incidentTypes;
+   Future<IncidentType> incidentTypes;
   String incidentName="",incident_id="";
 
 
@@ -44,16 +44,20 @@ class _State extends State<cVIGILSubmitComplain> {
   void initState()
   {
     super.initState();
+
     loadIncident_Type();
 
   }
 
-  void loadIncident_Type() {
+  void loadIncident_Type() async {
 
 
-    setState(() => {
-      spinnerItems=Api.fetchIncidentTypes as List<IncidentType>
-    });
+    // setState (() => {
+      spinnerItems= await Api.fetchIncidentTypes as List<IncidentType>;
+
+
+
+    // });
 
 
   }

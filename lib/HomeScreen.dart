@@ -9,7 +9,7 @@ import 'MyPollingStation.dart';
 
 
 class HomeScreen extends StatelessWidget {
-  late final String title;
+  String title;
   HomeScreen(this.title);
 
   @override

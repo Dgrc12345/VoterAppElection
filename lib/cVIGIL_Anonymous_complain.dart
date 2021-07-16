@@ -69,7 +69,7 @@ class _State extends State<cVIGIL_Anonymous_complain> {
                     style: TextStyle(color: Colors.black, fontSize: 14),
                     onChanged: (newValue) {
                       setState(() {
-                        stateValue = newValue!;
+                        stateValue = newValue;
                       });
                     },
                     items: spinnerState.map<DropdownMenuItem<String>>((String value) {
@@ -113,7 +113,7 @@ class _State extends State<cVIGIL_Anonymous_complain> {
                     style: TextStyle(color: Colors.black, fontSize: 14),
                     onChanged: (newValue) {
                       setState(() {
-                        dropdownValue = newValue!;
+                        dropdownValue = newValue;
                       });
                     },
                     items: spinnerItems.map<DropdownMenuItem<String>>((String value) {
@@ -157,7 +157,7 @@ class _State extends State<cVIGIL_Anonymous_complain> {
                     style: TextStyle(color: Colors.black, fontSize: 14),
                     onChanged: (newValue) {
                       setState(() {
-                        dropdownValue = newValue!;
+                        dropdownValue = newValue;
                       });
                     },
                     items: spinnerItems.map<DropdownMenuItem<String>>((String value) {

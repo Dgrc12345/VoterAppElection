@@ -14,7 +14,7 @@ import 'cVIGIL_Main_Complainlist.dart';
 
 class cVIGILScreen extends StatelessWidget {
   static const String routeName = '/cVIGIL';
-  late final String title;
+ String title;
   cVIGILScreen(this.title);
 
   @override
@@ -34,25 +34,17 @@ class cVIGILScreen extends StatelessWidget {
 
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-
-
             new Container(
-
-
-
               child: Card(
 
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(2.0),
                 ),
 
-
                 elevation: 10,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-
                   children: <Widget>[
                     GestureDetector(
 
