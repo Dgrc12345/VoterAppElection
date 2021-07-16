@@ -53,7 +53,9 @@ class SessionManager {
 
   //firebase cloud messaging token
   final String fcm_token = "mobihub.fcm_token";
-  Future<UserDetails> getUserInfo() async {
+
+
+ /* Future<UserDetails> getUserInfo() async {
     final SharedPreferences pref = await SharedPreferences.getInstance();
     int? _id;
     bool _success;
@@ -72,7 +74,7 @@ class SessionManager {
 
     _userType = (pref.getString(userType) )!;
 
-    _name = (pref.getString(name) )!;
+    _name = (pref.getString(name) );
     _state = (pref.getString(state) )!;
     _district = (pref.getString(district))!;
     _ac = (pref.getString(ac))!;
@@ -81,7 +83,7 @@ class SessionManager {
     _acName = (pref.getString(acName) )!;
     _pincode = (pref.getString(pincode))!;
 
-    UserDetails  user = await UserDetails.fromUser();
+    //UserDetails  user = UserDetails(_success,Token,_userType);
 
     user.userDetails.userType = _userType;
     user.userDetails.name= _name;
@@ -93,7 +95,7 @@ class SessionManager {
     user.userDetails.pincode = _pincode;
 
     return user;
-  }
+  }*/
 
   /// ----------------------------------------------------------
   /// UserInfo
@@ -104,7 +106,7 @@ class SessionManager {
 
 
     prefs.setString(name, mUser.userDetails.name);
-    String vakur=mUser.userDetails.userType;
+    String vakur=mUser.userDetails.name;
     print("valueinnamesession $vakur");
     prefs.setString(district, mUser.userDetails.district);
     prefs.setString(state, mUser.userDetails.state);
@@ -148,6 +150,12 @@ class SessionManager {
     final SharedPreferences pref = await SharedPreferences.getInstance();
     String auth_token;
     auth_token = (pref.getString(this.auth_token) ?? null)!;
+    return auth_token;
+  }
+  Future<String> getUserName() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    String auth_token;
+    auth_token = (pref.getString(this.name) ?? null)!;
     return auth_token;
   }
 

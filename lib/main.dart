@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/Api/ApiServiceUrl.dart';
+import 'package:flutter_app/Api/PreferenceManager.dart';
 import 'package:flutter_app/Dashboard.dart';
+import 'package:flutter_app/HomeScreen.dart';
 import 'package:flutter_app/LoginScreen.dart';
 import 'package:flutter_app/Routes.dart';
 import 'package:flutter_app/cVIGILScreen.dart';
@@ -59,18 +61,32 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3),
-            ()=>Navigator.pushReplacement(context,
-            MaterialPageRoute(builder:
-                (context) =>
-                LoginScreen()
-            )
-        )
-    );
+    asyncMethod();
+
   }
     // startSplashScreen();
 
-
+  void asyncMethod() async {
+    String LoginStatus=await PreferenceManager.getStringValuesSF("LoginStatus");
+    if(LoginStatus=='true') {
+      Timer(Duration(seconds: 3),
+              () =>
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()
+                  )
+              )
+      );
+    }else{
+      Timer(Duration(seconds: 3),
+              () =>
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => Dashboard()
+                  )
+              )
+      );
+    }
+    // ....
+  }
 
 
   @override

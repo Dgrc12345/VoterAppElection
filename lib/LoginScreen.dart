@@ -3,9 +3,13 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Api/ApiServiceUrl.dart';
 import 'package:flutter_app/LoginScreen.dart';
+import 'package:flutter_app/Model/DefaultResponse.dart';
+import 'package:flutter_app/Model/LoginResponse.dart';
+import 'package:flutter_app/Utilitise/Utilitise.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
+import 'Api/PreferenceManager.dart';
 import 'EnterOtpScreen.dart';
 
 
@@ -56,10 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
     if (value.length == 0) {
       check=false;
       return check;
-    }else{}
+    }else{
+
+    }
 
     return check;
   }
+
 
   Future makePostRequest() async {
     final uri = Uri.parse(Api.login);
@@ -185,16 +192,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
                                 color: Colors.yellow,
                                 child:Text("GENERATE OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
-                                onPressed: () {
-                                  setState(() {
+                                onPressed: () async{
 
-                                    if(validateMobile(phoneController.text)){
-                                      makePostRequest();
-                                    }
+                                  if(validateMobile(phoneController.text)){
+                                  LoginResponse defaultResponse= await Api.makePostRequest(phoneController.text,"7854220","5874988");
+                                  if(defaultResponse.status=true){
+                                    Utilitise.showToast(context,"Login Successfully");}
+
                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
-                                  });
-                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => EnterOtpScreen()));
-                                },)
+
+                                  }else{
+                                    Utilitise.showToast(context,"Please Enter Vaild Mobile Number or EmailId");
+                                  } },)
                           ),
                         ],
 

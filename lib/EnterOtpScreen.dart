@@ -12,6 +12,7 @@ import 'Api/ApiServiceUrl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer';
 
+import 'Api/PreferenceManager.dart';
 import 'Api/SessionManager.dart';
 import 'ServicesForDivyang.dart';
 import 'main1.dart';
@@ -163,28 +164,29 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.yellow,
                                 child:Text("Veify OTP",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0,decorationStyle:TextDecorationStyle.solid),),
                                 onPressed: () async{
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dashboard()));
-                                  UserDetails user=await Api.userLogin("7667426822","7854220",otp);
+
+                                  UserDetails user=await Api.userLogin("7739763684","7854220",otp);
 
 
 
-                                  SessionManager prefs1 =  SessionManager();
-                                  prefs1.setAuthToken(user.token);
-                                  prefs1.setUserInfo(user);
+
+
+
+
                                   if(user.success=true){
+                                    PreferenceManager.addStringToSF("LoginStatus","true");
+                                    PreferenceManager.addStringToSF("Token",user.token);
+                                    PreferenceManager.addStringToSF("Name",user.userDetails.name);
+                                    PreferenceManager.addStringToSF("UserType",user.userDetails.userType);
+                                    PreferenceManager.addStringToSF("District",user.userDetails.district);
+                                    PreferenceManager.addStringToSF("State",user.userDetails.state);
+                                    PreferenceManager.addStringToSF("MobileNo",user.userDetails.mobileNumber);
+                                    PreferenceManager.addStringToSF("Id",user.userDetails.id.toString());
+                                    String s=await  PreferenceManager.getStringValuesSF("Id");
                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Dashboard()));
                                   }
 
 
-                                  int ggdg=user.userDetails.id;
-                                  String ggdg1=user.userDetails.name;
-                                  print("valueinname $ggdg1");
-                                  print("valueid $ggdg");
-
-                                  UserDetails userverify;
-                                  userverify= await prefs1.getUserInfo() ;
-                                  String gdygfyg=userverify.userDetails.name;
-                                  print("print uservalue,$gdygfyg");
 
 
                                 },)

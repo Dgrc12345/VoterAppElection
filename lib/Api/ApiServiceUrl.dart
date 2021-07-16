@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Model/DefaultResponse.dart';
 import 'package:flutter_app/Model/IncidentType.dart';
+import 'package:flutter_app/Model/LoginResponse.dart';
 import 'package:flutter_app/Model/StoreComplain.dart';
 import 'package:flutter_app/Model/UserDetails.dart';
 import 'package:http/http.dart' as http;
@@ -18,31 +19,33 @@ class Api{
 
 
 
-  static Future makeVeifyOtpRequest(String mobNo,String devceId,String otp) async {
-    final uri = Uri.parse(OtpVerify);
-    final headers = {
-      'Content-Type': 'application/json'};
-    Map<String, dynamic> body = {'mobile_number': mobNo, 'device_id':devceId,"OTP":otp};
-    String jsonBody = json.encode(body);
-    final encoding = Encoding.getByName('utf-8');
-    http.Response response = await http.post(
-      uri,
-      headers: headers,
-      body: jsonBody,
-      encoding: encoding,
-    );
-    int statusCode = response.statusCode;
-    String responseBody = response.body;
-    if(response.statusCode==200) {
-      return true;
-    }
-    else {
+  static Future<LoginResponse>makePostRequest(String mobNo,String devceId,String fcmId) async {
 
-    }
+    var model = {
+      "mobile_number": mobNo,
+      "device_id": devceId,
+      "fcm_id": fcmId,
+      // "RememberMe": true
+    };
+    print(model.toString());
+    return await http.post(Uri.parse(OtpVerify),
+        headers: {"Content-Type": "application/json"},
+        body: json.encode(model)).then((response) async {
 
+      print(response.body.toString());
+      print(response.statusCode.toString());
+      if (response.statusCode == 200) {
+        String nestedObjText =response.body.toString();
+        return LoginResponse.fromJson(jsonDecode(response.body));
+
+
+      }else(
+          throw Exception('Failed to get userdetails'));
+
+    });
   }
 
-  static Future<UserDetails>  userLogin(String mobNo,String devceId,String otp) async {
+    static Future<UserDetails>  userLogin(String mobNo,String devceId,String otp) async {
     var model = {
       "mobile_number": mobNo,
       "device_id": devceId,
@@ -69,13 +72,7 @@ class Api{
 
 
   static Future<DefaultResponse> InsertComplain(StoreComplain data) async {
-    // var model = {
-    //   "mobile_number": data.deviceId,
-    //   "device_id": devceId,
-    //   "OTP": otp,
-    //   // "RememberMe": true
-    // };
-    //  print(model.toString());
+
     return await http.post(Uri.parse(store_complain),
         headers: {"Content-Type": "application/json"},
         // body: json.encode(model))

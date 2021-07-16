@@ -24,7 +24,9 @@ class _State extends State<Dashboard> {
     return Scaffold(
       drawer: AppDrawer(),
       appBar: new AppBar(
-        title: Text("gdgygydgyg"),
+        backgroundColor:Color.fromARGB(109, 20, 134, 147),
+        //title: Image.asset("images/logo_Voter.png"),
+          title:Text("Home"),
       ),
 
       body: SafeArea(
