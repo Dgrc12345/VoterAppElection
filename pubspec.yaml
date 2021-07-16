@@ -33,6 +33,8 @@ dependencies:
   geocoding: ^1.0.5
   geolocator: ^6.1.1
   permission_handler: 3.3.0
+  device_info: ^2.0.2
+
   http: ^0.13.3
   shared_preferences: '>=0.5.12+2 <2.0.0'
 

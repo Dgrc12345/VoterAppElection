@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Model/DefaultResponse.dart';
+import 'package:flutter_app/Model/IncidentType.dart';
+import 'package:flutter_app/Model/StoreComplain.dart';
 import 'package:flutter_app/Model/UserDetails.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,7 +13,8 @@ class Api{
   static const String login=mainUrl + "otp";
   static const String OtpVerify=mainUrl + "otpVerify";
 
-
+  static const String store_complain=mainUrl + "storecomplaint";
+  static const String Get_IncidentTypes=mainUrl + "getincidenttype";
 
 
 
@@ -60,6 +64,59 @@ class Api{
 
     });
 
+  }
+
+
+  static Future<DefaultResponse> InsertComplain(StoreComplain data) async {
+    // var model = {
+    //   "mobile_number": data.deviceId,
+    //   "device_id": devceId,
+    //   "OTP": otp,
+    //   // "RememberMe": true
+    // };
+    //  print(model.toString());
+    return await http.post(Uri.parse(store_complain),
+        headers: {"Content-Type": "application/json"},
+        // body: json.encode(model))
+        body: json.encode(data.toJson()))
+        .then((response) async {
+      print(response.body.toString());
+      print(response.statusCode.toString());
+      if (response.statusCode == 200) {
+        return DefaultResponse.fromJson(jsonDecode(response.body));
+
+
+      }else(
+          throw Exception('Failed to store complain'));
+
+    });
+
+  }
+
+//   static Future<List<IncidentType>> fetchIncidentTypes(http.Client client) async {
+//     final response = await client
+//         .get(Uri.parse(Get_IncidentTypes));
+//
+//     // Use the compute function to run parsePhotos in a separate isolate.
+//     return compute(parseIncidenttype, response.body);
+//   }
+//
+// // A function that converts a response body into a List<Photo>.
+//   List<IncidentType> parseIncidenttype(String responseBody) {
+//     final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
+//
+//     return parsed.map<IncidentType>((json) => IncidentType.fromJson(json)).toList();
+//   }
+
+  static Future<List<IncidentType>> fetchIncidentTypes() async{
+    var members = <IncidentType>[];
+    var url =Get_IncidentTypes;
+    var response = await http.get(Uri.parse(Get_IncidentTypes));
+    var jsonMembers = json.decode(response.body);
+
+    members =  jsonMembers.map<IncidentType>((json) => new IncidentType.fromJson(json)).toList();
+
+    return members;
   }
 
 }
